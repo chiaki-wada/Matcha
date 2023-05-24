@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return array.count
     }
     
+    //TableViewのどのセルにarrayを表示させるか
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "LevelCell", for: indexPath)
         //セルに表示する値を設定する

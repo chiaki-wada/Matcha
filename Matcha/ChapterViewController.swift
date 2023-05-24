@@ -45,10 +45,15 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.textLabel!.text = n2array[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let saveData = UserDefaults.standard
+        saveData.set(indexPath.row, forKey: "CHAPTER")
+        self.performSegue(withIdentifier: "toHiraganaInputView", sender: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         //画面が読み込まれた時に表示するラベル
         if LEVEL as! Int == 0 {
