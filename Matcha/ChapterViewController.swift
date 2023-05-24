@@ -68,8 +68,8 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         else if LEVEL as! Int == 0 {
             titleLabel.text = "JLPT N3 Vocabulary"
-            descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N2 exam."
-            messageLabel.text = ""
+            descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N3 exam."
+            messageLabel.text = "If you pass N3, you have met one of the requirements to be able to work or get a scholarship in Japan! :)"
         }
     }
     
