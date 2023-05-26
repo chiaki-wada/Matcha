@@ -21,6 +21,8 @@
 		F490700E2A1D193200599340 /* HiraganaInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490700D2A1D193200599340 /* HiraganaInputViewController.swift */; };
 		F49070122A204A7700599340 /* HiraganaQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070112A204A7700599340 /* HiraganaQuestionViewController.swift */; };
 		F49070142A20C49100599340 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49070132A20C49000599340 /* Launch Screen.storyboard */; };
+		F490701B2A20F2E700599340 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070192A20F2E700599340 /* TableViewCell.swift */; };
+		F490701C2A20F2E700599340 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F490701A2A20F2E700599340 /* TableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		F490700D2A1D193200599340 /* HiraganaInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaInputViewController.swift; sourceTree = "<group>"; };
 		F49070112A204A7700599340 /* HiraganaQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaQuestionViewController.swift; sourceTree = "<group>"; };
 		F49070132A20C49000599340 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F49070192A20F2E700599340 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		F490701A2A20F2E700599340 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +80,8 @@
 				F477583E2A19F76000A06944 /* AppDelegate.swift */,
 				F47758402A19F76000A06944 /* SceneDelegate.swift */,
 				F47758422A19F76000A06944 /* ViewController.swift */,
+				F49070192A20F2E700599340 /* TableViewCell.swift */,
+				F490701A2A20F2E700599340 /* TableViewCell.xib */,
 				F490700B2A1D191000599340 /* ChapterViewController.swift */,
 				F490700D2A1D193200599340 /* HiraganaInputViewController.swift */,
 				F49070112A204A7700599340 /* HiraganaQuestionViewController.swift */,
@@ -177,6 +183,7 @@
 				F47758482A19F76E00A06944 /* Assets.xcassets in Resources */,
 				F49070142A20C49100599340 /* Launch Screen.storyboard in Resources */,
 				F47758562A1A0B5C00A06944 /* OFL.txt in Resources */,
+				F490701C2A20F2E700599340 /* TableViewCell.xib in Resources */,
 				F47758462A19F76000A06944 /* Main.storyboard in Resources */,
 				F47758572A1A0B5C00A06944 /* Pacifico-Regular.ttf in Resources */,
 				F477585E2A1A117600A06944 /* kefa-bold.ttf in Resources */,
@@ -196,6 +203,7 @@
 				F490700C2A1D191000599340 /* ChapterViewController.swift in Sources */,
 				F47758432A19F76000A06944 /* ViewController.swift in Sources */,
 				F477583F2A19F76000A06944 /* AppDelegate.swift in Sources */,
+				F490701B2A20F2E700599340 /* TableViewCell.swift in Sources */,
 				F47758412A19F76000A06944 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

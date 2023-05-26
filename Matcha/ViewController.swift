@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var logoImageView: UIImageView!
-    var array = ["JLPT N1","JLPT N2","JLPT N3"]
+    var array = ["N1","N2","N3"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
@@ -37,7 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
     }
-
-
+    
+    
 }
 

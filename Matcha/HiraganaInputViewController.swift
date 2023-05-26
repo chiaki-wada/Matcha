@@ -43,7 +43,7 @@ class HiraganaInputViewController: UIViewController {
         ["hiragana":"ちょうせん","meaning":"challenge, defiance, dare"],
         ["hiragana":"ふとう","meaning":"injustice, impropriety, unfair"],
         ["hiragana":"ぐんじ","meaning":"military affairs"]
-
+        
     ]
     var n1ch2array = [
         ["hiragana":"かだい","meaning":"subject; theme; issue; matter; homework; assignment; task; challenge; problem; question"],
@@ -92,15 +92,15 @@ class HiraganaInputViewController: UIViewController {
     ]
     var n2ch1array = [
         ["hiragana":"","meaning":""]
-        ]
+    ]
     
     var n2ch2array = [
         ["hiragana":"","meaning":""]
-        ]
+    ]
     
     var n2ch3array = [
         ["hiragana":"","meaning":""]
-        ]
+    ]
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -125,7 +125,7 @@ class HiraganaInputViewController: UIViewController {
         return n2ch3array.count
         
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -171,53 +171,37 @@ class HiraganaInputViewController: UIViewController {
     
     @IBAction func tapnextButton() {
         index += 1
-            
+        
         if index >= n1ch1array.count-1 {
             nextButton.isHidden = true
-        } else {
-            backButton.isHidden = false
-            hiraganaLabel.text = n1ch1array[index]["hiragana"]
-            meaningLabel.text = n1ch1array[index]["meaning"]
         }
-            
-        if index >= n1ch2array.count-1 {
-            nextButton.isHidden = true
-        } else {
-            backButton.isHidden = false
-            hiraganaLabel.text = n1ch2array[index]["hiragana"]
-            meaningLabel.text = n1ch2array[index]["meaning"]
-        }
+        backButton.isHidden = false
+        hiraganaLabel.text = n1ch1array[index]["hiragana"]
+        meaningLabel.text = n1ch1array[index]["meaning"]
+        
     }
-
+    
     @IBAction func tapbackButton() {
         index -= 1
-            
-        if index == 0 {
-            backButton.isHidden = true
-        } else {
-            nextButton.isHidden = false
-            hiraganaLabel.text = n1ch1array[index]["hiragana"]
-            meaningLabel.text = n1ch1array[index]["meaning"]
-        }
         
         if index == 0 {
             backButton.isHidden = true
-        } else {
-            nextButton.isHidden = false
-            hiraganaLabel.text = n1ch2array[index]["hiragana"]
-            meaningLabel.text = n1ch2array[index]["meaning"]
         }
+        nextButton.isHidden = false
+        
+        hiraganaLabel.text = n1ch1array[index]["hiragana"]
+        meaningLabel.text = n1ch1array[index]["meaning"]
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

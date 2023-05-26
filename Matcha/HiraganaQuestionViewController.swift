@@ -10,67 +10,123 @@ import UIKit
 class HiraganaQuestionViewController: UIViewController, UITextFieldDelegate {
     
     
-    @IBOutlet var questionLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
-    @IBOutlet var returnButton: UIButton!
+    @IBOutlet var checkButton: UIButton!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var chapterLabel: UILabel!
+    @IBOutlet var totalLabel: UILabel!
+    @IBOutlet var meaningLabel: UILabel!
+    @IBOutlet var checkLabel: UILabel!
     
-    var CHAPTER = saveData.object(forKey:"CHAPTER")
-    var LEVEL = saveData.object(forKey:"LEVEL")
+    var CHAPTER: Int = 0
+    var LEVEL: Int = 0
     
-    var n1ch1QuestionArray =  ["document, writing, paperwork","blow, shock, strike","emuneration, recompense, reward","emigration, immigration","still; as yet; as it has been","continuation; persisting; lasting; sustaining; enduring","to incline, to lean, to tilt","good will, favor, courtesy","purchase, buy","clear; plain; distinct; obvious; evident; articulate","theory","establishment, founding","field of vision; view; one’;s outlook","minority; few","to grow violent, to become stronger","place, room, margin","public finance, financial affairs","challenge, defiance, dare","injustice, impropriety, unfair","military affairs"]
+    var n1ch1array = [
+        ["hiragana":"ぶんしょ","meaning":"document, writing, paperwork"],
+        ["hiragana":"だげき","meaning":"blow, shock, strike"],
+        ["hiragana":"ほうしゅう","meaning":"emuneration, recompense, reward"],
+        ["hiragana":"いみん","meaning":"emigration, immigration"],
+        ["hiragana":"いぜん","meaning":"still; as yet; as it has been"],
+        ["hiragana":"じぞく","meaning":"continuation; persisting; lasting; sustaining; enduring"],
+        ["hiragana":"かたむける","meaning":"to incline, to lean, to tilt"],
+        ["hiragana":"こうい","meaning":"good will, favor, courtesy"],
+        ["hiragana":"こうにゅう","meaning":"purchase, buy"],
+        ["hiragana":"めいりょう","meaning":"clear; plain; distinct; obvious; evident; articulate"],
+        ["hiragana":"りろん","meaning":"theory"],
+        ["hiragana":"せつりつ","meaning":"establishment, founding"],
+        ["hiragana":"しや","meaning":"field of vision; view; one’;s outlook"],
+        ["hiragana":"しょうすう","meaning":"minority; few"],
+        ["hiragana":"つのる","meaning":"to grow violent, to become stronger"],
+        ["hiragana":"よち","meaning":"place, room, margin"],
+        ["hiragana":"ざいせい","meaning":"public finance, financial affairs"],
+        ["hiragana":"ちょうせん","meaning":"challenge, defiance, dare"],
+        ["hiragana":"ふとう","meaning":"injustice, impropriety, unfair"],
+        ["hiragana":"ぐんじ","meaning":"military affairs"]
+        
+    ]
+    var n1ch2array = [
+        ["hiragana":"かだい","meaning":"subject; theme; issue; matter; homework; assignment; task; challenge; problem; question"],
+        ["hiragana":"きこう","meaning":"mechanism, organization"],
+        ["hiragana":"きそう","meaning":"to compete; to contend; to vie; to contest"],
+        ["hiragana":"きょうれつ","meaning":"strong, intense, severe"],
+        ["hiragana":"りせい","meaning":"reason, reasoning power"],
+        ["hiragana":"りょういき","meaning":"area; domain; territory; field; range; region; regime"],
+        ["hiragana":"せんとう","meaning":"battle, fight, combat"],
+        ["hiragana":"しじ","meaning":"instructions, directions, indication"],
+        ["hiragana":"しかく","meaning":"qualifications; requirements; capabilities"],
+        ["hiragana":"しこう","meaning":"thought; consideration; thinking"],
+        ["hiragana":"しょうめい","meaning":"illumination; lighting"],
+        ["hiragana":"しょうれい","meaning":"encouragement, promotion"],
+        ["hiragana":"しょうり","meaning":"victory, triumph, win"],
+        ["hiragana":"とぼしい","meaning":"meagre; meager; scarce; limited; destitute; hard up; lacking; scanty; poor"],
+        ["hiragana":"ぞうきょう","meaning":"augment, reinforce, increase"],
+        ["hiragana":"あやまち","meaning":"fault, error, indiscretion"],
+        ["hiragana":"どくさい","meaning":"dictatorship, despotism"],
+        ["hiragana":"じかく","meaning":"self-consciousness; self-awareness"],
+        ["hiragana":"じぜん","meaning":"prior; beforehand; in advance; before the fact; ex ante"],
+        ["hiragana":"かんし","meaning":"monitoring, watching, observation"],
+    ]
     
-    var n1ch1AnswerArray =  ["ぶんしょ","だげき","ほうしゅう","いみん","いぜん","じぞく","かたむける","こうい","こうにゅう","めいりょう","りろん","せつりつ","しや","しょうすう","つのる","よち","ざいせい","ちょうせん","ふとう","ぐんじ"]
+    var currentQuestionIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         textField.delegate = self
-    }
-    
-    // UITextFieldの編集が完了した時に呼ばれるメソッド
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        checkAnswer()
-    }
-    
-    // UITextFieldでReturnキーが押された時に呼ばれるメソッド
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        checkAnswer()
-        return true
-    }
-    
-    // 答えのチェックを行うメソッド
-    func checkAnswer() {
-        guard let inputText = textField.text else {
-            return
+        
+        if let level = UserDefaults.standard.object(forKey: "LEVEL") as? Int,
+           let chapter = UserDefaults.standard.object(forKey: "CHAPTER") as? Int {
+            LEVEL = level
+            CHAPTER = chapter
         }
         
-        let trimmedInput = inputText.trimmingCharacters(in: .whitespacesAndNewlines)
-        let currentIndex = n1ch1QuestionArray.firstIndex(of: trimmedInput)
+        if LEVEL as! Int == 0 && CHAPTER as! Int == 0 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 1"
+            totalLabel.text = "total 20 words"
+            meaningLabel.text = n1ch1array[currentQuestionIndex]["meaning"]
+        } else if LEVEL as! Int == 0 && CHAPTER as! Int == 1 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 2"
+            totalLabel.text = "total 20 words"
+            meaningLabel.text = n1ch2array[currentQuestionIndex]["meaning"]
+        }
         
-        if let index = currentIndex, index < n1ch1AnswerArray.count {
-            // 正解の場合
-            textField.placeholder = "正解"
-            textField.attributedPlaceholder = NSAttributedString(string: "正解", attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
-            // 次に進む処理を追加する
-        } else {
-            // 不正解の場合
-            textField.placeholder = "不正解"
-            textField.attributedPlaceholder = NSAttributedString(string: "不正解", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-            // 答えを表示する処理を追加する
-            let correctAnswer = n1ch1AnswerArray.first ?? ""
-            print("正解は: \(correctAnswer)")
-            // 次に進む処理を追加する
+    }
+    
+    @IBAction func tapCheckButton() {
+        
+        guard let answer = textField.text else { return }
+        
+        let currentQuestionArray = (LEVEL == 0 && CHAPTER == 0) ? n1ch1array : n1ch2array
+        let currentQuestion = currentQuestionArray[currentQuestionIndex]
+        
+        if answer == currentQuestion["hiragana"] {
+            currentQuestionIndex += 1
             
-            /*
-             // MARK: - Navigation
-             
-             // In a storyboard-based application, you will often want to do a little preparation before navigation
-             override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-             // Get the new view controller using segue.destination.
-             // Pass the selected object to the new view controller.
-             }
-             */
+            if currentQuestionIndex < currentQuestionArray.count {
+                let nextQuestion = currentQuestionArray[currentQuestionIndex]
+                meaningLabel.text = nextQuestion["meaning"]
+            } else {
+                // Reached the end of the question array
+                // Handle completion or transition to next level/chapter
+                //次のViewControllerへ行くようにしたい
+            }
+            
+            textField.text = ""
             
         }
+        
     }
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
