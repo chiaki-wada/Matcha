@@ -16,7 +16,10 @@ class HiraganaQuestionViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var chapterLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
     @IBOutlet var meaningLabel: UILabel!
-    @IBOutlet var checkLabel: UILabel!
+    @IBOutlet var checkmarkImageView: UIImageView!
+    @IBOutlet var goodjobLabel: UILabel!
+    @IBOutlet var relearnImageView: UIImageView!
+    @IBOutlet var kotaeLabel: UILabel!
     
     var CHAPTER: Int = 0
     var LEVEL: Int = 0
@@ -73,6 +76,12 @@ class HiraganaQuestionViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         textField.delegate = self
         
+        // 初期状態で非表示に設定する
+        checkmarkImageView.isHidden = true
+        goodjobLabel.isHidden = true
+        relearnImageView.isHidden = true
+        kotaeLabel.isHidden = true
+        
         if let level = UserDefaults.standard.object(forKey: "LEVEL") as? Int,
            let chapter = UserDefaults.standard.object(forKey: "CHAPTER") as? Int {
             LEVEL = level
@@ -101,6 +110,9 @@ class HiraganaQuestionViewController: UIViewController, UITextFieldDelegate {
         let currentQuestion = currentQuestionArray[currentQuestionIndex]
         
         if answer == currentQuestion["hiragana"] {
+            checkmarkImageView.isHidden = false
+            goodjobLabel.isHidden = false
+            
             currentQuestionIndex += 1
             
             if currentQuestionIndex < currentQuestionArray.count {
@@ -108,14 +120,24 @@ class HiraganaQuestionViewController: UIViewController, UITextFieldDelegate {
                 meaningLabel.text = nextQuestion["meaning"]
             } else {
                 // Reached the end of the question array
-                // Handle completion or transition to next level/chapter
-                //次のViewControllerへ行くようにしたい
+                // Handle completion or transition to the next level/chapter
+                // NextViewControllerに遷移するコードを追加する！
             }
             
             textField.text = ""
-            
+        } else {
+            relearnImageView.isHidden = false
+            kotaeLabel.isHidden = false
+            kotaeLabel.text = currentQuestion["hiragana"]
         }
         
+        // ビューを非表示にする
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.checkmarkImageView.isHidden = true
+            self.goodjobLabel.isHidden = true
+            self.relearnImageView.isHidden = true
+            self.kotaeLabel.isHidden = true
+        }
     }
     
     
