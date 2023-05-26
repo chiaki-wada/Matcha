@@ -12,7 +12,6 @@
 		F47758432A19F76000A06944 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47758422A19F76000A06944 /* ViewController.swift */; };
 		F47758462A19F76000A06944 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47758442A19F76000A06944 /* Main.storyboard */; };
 		F47758482A19F76E00A06944 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F47758472A19F76E00A06944 /* Assets.xcassets */; };
-		F477584B2A19F76E00A06944 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F47758492A19F76E00A06944 /* LaunchScreen.storyboard */; };
 		F47758562A1A0B5C00A06944 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = F47758542A1A0B5C00A06944 /* OFL.txt */; };
 		F47758572A1A0B5C00A06944 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F47758552A1A0B5C00A06944 /* Pacifico-Regular.ttf */; };
 		F477585B2A1A115100A06944 /* 获取商用授权.url in Resources */ = {isa = PBXBuildFile; fileRef = F47758592A1A115100A06944 /* 获取商用授权.url */; };
@@ -20,6 +19,8 @@
 		F477585E2A1A117600A06944 /* kefa-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F477585D2A1A117600A06944 /* kefa-bold.ttf */; };
 		F490700C2A1D191000599340 /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490700B2A1D191000599340 /* ChapterViewController.swift */; };
 		F490700E2A1D193200599340 /* HiraganaInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490700D2A1D193200599340 /* HiraganaInputViewController.swift */; };
+		F49070122A204A7700599340 /* HiraganaQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070112A204A7700599340 /* HiraganaQuestionViewController.swift */; };
+		F49070142A20C49100599340 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49070132A20C49000599340 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,6 @@
 		F47758422A19F76000A06944 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F47758452A19F76000A06944 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F47758472A19F76E00A06944 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F477584A2A19F76E00A06944 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F477584C2A19F76E00A06944 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F47758542A1A0B5C00A06944 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		F47758552A1A0B5C00A06944 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
@@ -38,6 +38,8 @@
 		F477585D2A1A117600A06944 /* kefa-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "kefa-bold.ttf"; sourceTree = "<group>"; };
 		F490700B2A1D191000599340 /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
 		F490700D2A1D193200599340 /* HiraganaInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaInputViewController.swift; sourceTree = "<group>"; };
+		F49070112A204A7700599340 /* HiraganaQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaQuestionViewController.swift; sourceTree = "<group>"; };
+		F49070132A20C49000599340 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +78,10 @@
 				F47758422A19F76000A06944 /* ViewController.swift */,
 				F490700B2A1D191000599340 /* ChapterViewController.swift */,
 				F490700D2A1D193200599340 /* HiraganaInputViewController.swift */,
+				F49070112A204A7700599340 /* HiraganaQuestionViewController.swift */,
+				F49070132A20C49000599340 /* Launch Screen.storyboard */,
 				F47758442A19F76000A06944 /* Main.storyboard */,
 				F47758472A19F76E00A06944 /* Assets.xcassets */,
-				F47758492A19F76E00A06944 /* LaunchScreen.storyboard */,
 				F477584C2A19F76E00A06944 /* Info.plist */,
 			);
 			path = Matcha;
@@ -170,9 +173,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F477584B2A19F76E00A06944 /* LaunchScreen.storyboard in Resources */,
 				F477585B2A1A115100A06944 /* 获取商用授权.url in Resources */,
 				F47758482A19F76E00A06944 /* Assets.xcassets in Resources */,
+				F49070142A20C49100599340 /* Launch Screen.storyboard in Resources */,
 				F47758562A1A0B5C00A06944 /* OFL.txt in Resources */,
 				F47758462A19F76000A06944 /* Main.storyboard in Resources */,
 				F47758572A1A0B5C00A06944 /* Pacifico-Regular.ttf in Resources */,
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F490700E2A1D193200599340 /* HiraganaInputViewController.swift in Sources */,
+				F49070122A204A7700599340 /* HiraganaQuestionViewController.swift in Sources */,
 				F490700C2A1D191000599340 /* ChapterViewController.swift in Sources */,
 				F47758432A19F76000A06944 /* ViewController.swift in Sources */,
 				F477583F2A19F76000A06944 /* AppDelegate.swift in Sources */,
@@ -205,14 +209,6 @@
 				F47758452A19F76000A06944 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		F47758492A19F76E00A06944 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F477584A2A19F76E00A06944 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -341,8 +337,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Matcha/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -368,8 +365,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Matcha/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

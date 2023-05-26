@@ -111,7 +111,7 @@ Easier.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="-94"/>
+            <point key="canvasLocation" x="885" y="-81"/>
         </scene>
         <!--Hiragana Input View Controller-->
         <scene sceneID="ddr-iI-4X0">
@@ -167,7 +167,7 @@ Easier.</string>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="tapbackButton" destination="ek8-tC-7qt" eventType="touchUpInside" id="1Q7-8H-fzN"/>
+                                    <action selector="tapbackButton" destination="ek8-tC-7qt" eventType="touchUpInside" id="bMv-7C-qEw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wx0-E7-7uZ">
@@ -182,7 +182,7 @@ Easier.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="tapnextButton" destination="ek8-tC-7qt" eventType="touchUpInside" id="K2O-mW-H1g"/>
+                                    <action selector="tapnextButton" destination="ek8-tC-7qt" eventType="touchUpInside" id="Ont-OX-Htw"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6t-dy-RUR">
@@ -248,17 +248,17 @@ Easier.</string>
                                 <rect key="frame" x="54" y="284" width="285" height="285"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mountain climbing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5W-DQ-yt2">
-                                        <rect key="frame" x="8" y="173" width="269" height="37"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mountain climbing" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5W-DQ-yt2">
+                                        <rect key="frame" x="8" y="166" width="269" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="YuKyo_Yoko-Medium" family="YuKyokasho Yoko" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="YuKyo_Yoko-Medium" family="YuKyokasho Yoko" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="とざん" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zFs-8m-WUC">
-                                        <rect key="frame" x="1" y="83" width="285" height="60"/>
+                                        <rect key="frame" x="-43" y="84" width="371" height="60"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="YuKyo_Yoko-Medium" family="YuKyokasho Yoko" pointSize="60"/>
+                                        <fontDescription key="fontDescription" name="YuKyo_Yoko-Medium" family="YuKyokasho Yoko" pointSize="56"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -295,7 +295,7 @@ Easier.</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="2Lg-Nc-cVN" kind="presentation" identifier="toHiraganaQuestionView" modalPresentationStyle="fullScreen" id="H83-ux-pkA"/>
+                                    <segue destination="2Lg-Nc-cVN" kind="show" identifier="toHiraganaQuesionView" id="12w-Ah-Kse"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowtriangle.backward.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nnl-Yz-XMD">
@@ -325,12 +325,12 @@ Easier.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9F-K8-dAm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="664.78873239436621"/>
+            <point key="canvasLocation" x="885" y="665"/>
         </scene>
-        <!--View Controller-->
+        <!--Hiragana Question View Controller-->
         <scene sceneID="BLR-iZ-eS1">
             <objects>
-                <viewController id="2Lg-Nc-cVN" sceneMemberID="viewController">
+                <viewController id="2Lg-Nc-cVN" customClass="HiraganaQuestionViewController" customModule="Matcha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fLo-c7-SU4">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -447,12 +447,6 @@ Easier.</string>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NR4-mF-1mg">
-                                <rect key="frame" x="71" y="494" width="254" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Matcha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJj-ab-tkz">
                                 <rect key="frame" x="152" y="770" width="89" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -460,15 +454,43 @@ Easier.</string>
                                 <color key="textColor" red="0.43921568630000002" green="0.50196078430000002" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in Hiragana" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NR4-mF-1mg">
+                                <rect key="frame" x="118" y="478" width="157" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="YuKyo_Yoko-Medium" family="YuKyokasho Yoko" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VkA-4l-FR5">
+                                <rect key="frame" x="278" y="478" width="60" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.68627450980000004" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrowshape.forward.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="urq-WU-JSa">
+                                <rect key="frame" x="280" y="484" width="56" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uli-U8-aq8"/>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="0bt-0t-Fe0"/>
+                    <connections>
+                        <outlet property="TextField" destination="NR4-mF-1mg" id="if9-6s-8UH"/>
+                        <outlet property="textField" destination="NR4-mF-1mg" id="U1w-W1-8iS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4y-UB-8DT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="884.73282442748086" y="664.78873239436621"/>
+            <point key="canvasLocation" x="1674" y="665"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Xme-kA-RPh">
@@ -654,7 +676,7 @@ Easier.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06R-Ya-XTL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1632.824427480916" y="664.78873239436621"/>
+            <point key="canvasLocation" x="2439" y="665"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Bun-qc-hl7">
@@ -796,7 +818,7 @@ Easier.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O23-aW-0TK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2369" y="665"/>
+            <point key="canvasLocation" x="3228" y="665"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="IEh-9g-1CC">
@@ -846,14 +868,14 @@ Easier.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mml-XT-x1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3125.9541984732823" y="664.78873239436621"/>
+            <point key="canvasLocation" x="4979.3893129770986" y="664.78873239436621"/>
         </scene>
         <!--Chapter View Controller-->
         <scene sceneID="XOU-d1-i7s">
             <objects>
                 <viewController id="xAW-eY-32b" customClass="ChapterViewController" customModule="Matcha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="y9G-Gs-JII">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ded-6M-WSK">
@@ -934,12 +956,12 @@ to be able to work or get a scholarship in Japan! :)</string>
                         <outlet property="descriptionLabel" destination="Qsv-EW-CRW" id="J7l-Qw-VPE"/>
                         <outlet property="messageLabel" destination="19e-WU-Cy5" id="cdy-us-xuM"/>
                         <outlet property="titleLabel" destination="OWP-QI-BXR" id="fGB-qN-qq8"/>
-                        <segue destination="ek8-tC-7qt" kind="presentation" identifier="toHiraganaInputView" modalPresentationStyle="fullScreen" id="8O7-qq-cYV"/>
+                        <segue destination="ek8-tC-7qt" kind="show" identifier="toHiraganaInputView" id="ph4-N3-BeP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hoZ-iL-TAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2369" y="-94"/>
+            <point key="canvasLocation" x="2439" y="-82"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eUR-36-pgP">
@@ -961,9 +983,10 @@ to be able to work or get a scholarship in Japan! :)</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gPc-KW-RMG"/>
+        <segue reference="iqH-Fk-hFd"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="arrowshape.forward.fill" catalog="system" width="128" height="104"/>
         <image name="arrowshape.turn.up.forward.fill" catalog="system" width="128" height="104"/>
         <image name="arrowtriangle.backward.fill" catalog="system" width="128" height="113"/>
         <image name="arrowtriangle.right.fill" catalog="system" width="128" height="113"/>

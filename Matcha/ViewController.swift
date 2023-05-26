@@ -9,7 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var array = ["JLPT N1","JLPT N2","JLPT N3","JLPT N4","JLPT N5"]
+    var logoImageView: UIImageView!
+    var array = ["JLPT N1","JLPT N2","JLPT N3"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return array.count
@@ -34,9 +35,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
-    
 
 
 }

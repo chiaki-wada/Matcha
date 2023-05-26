@@ -25,10 +25,10 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         if LEVEL as! Int == 0 {
             return n1array.count
         }
-        if LEVEL as! Int == 1 {
+        else if LEVEL as! Int == 1 {
             return n2array.count
         }
-        if LEVEL as! Int == 2 {
+        else if LEVEL as! Int == 2 {
             return n3array.count
         }
         return n3array.count
@@ -37,12 +37,15 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChapterCell", for: indexPath)
-        //セルに表示する値を設定する
+        
         if LEVEL as! Int == 0 {
             cell.textLabel!.text = n1array[indexPath.row]
-            return cell
+        } else if LEVEL as! Int == 1 {
+            cell.textLabel!.text = n2array[indexPath.row]
+        } else if LEVEL as! Int == 2 {
+            cell.textLabel!.text = n3array[indexPath.row]
         }
-        cell.textLabel!.text = n2array[indexPath.row]
+        
         return cell
     }
     
@@ -61,12 +64,12 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
             descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N1 exam."
             messageLabel.text = ""
         }
-        else if LEVEL as! Int == 0 {
+        else if LEVEL as! Int == 1 {
             titleLabel.text = "JLPT N2 Vocabulary"
             descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N2 exam."
             messageLabel.text = ""
         }
-        else if LEVEL as! Int == 0 {
+        else if LEVEL as! Int == 2 {
             titleLabel.text = "JLPT N3 Vocabulary"
             descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N3 exam."
             messageLabel.text = "If you pass N3, you have met one of the requirements to be able to work or get a scholarship in Japan! :)"
