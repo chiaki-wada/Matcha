@@ -1,5 +1,5 @@
 //
-//  HiraganaQuestionViewController.swift
+//  kanjiQuestionViewController.swift
 //  Matcha
 //
 //  Created by Chiaki Wada on 2023/05/26.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HiraganaQuestionViewController: UIViewController, UITextFieldDelegate {
+class kanjiQuestionViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var textField: UITextField!
@@ -25,49 +25,49 @@ class HiraganaQuestionViewController: UIViewController, UITextFieldDelegate {
     var LEVEL: Int = 0
     
     var n1ch1array = [
-        ["hiragana":"ぶんしょ","meaning":"document, writing, paperwork"],
-        ["hiragana":"だげき","meaning":"blow, shock, strike"],
-        ["hiragana":"ほうしゅう","meaning":"emuneration, recompense, reward"],
-        ["hiragana":"いみん","meaning":"emigration, immigration"],
-        ["hiragana":"いぜん","meaning":"still; as yet; as it has been"],
-        ["hiragana":"じぞく","meaning":"continuation; persisting; lasting; sustaining; enduring"],
-        ["hiragana":"かたむける","meaning":"to incline, to lean, to tilt"],
-        ["hiragana":"こうい","meaning":"good will, favor, courtesy"],
-        ["hiragana":"こうにゅう","meaning":"purchase, buy"],
-        ["hiragana":"めいりょう","meaning":"clear; plain; distinct; obvious; evident; articulate"],
-        ["hiragana":"りろん","meaning":"theory"],
-        ["hiragana":"せつりつ","meaning":"establishment, founding"],
-        ["hiragana":"しや","meaning":"field of vision; view; one’;s outlook"],
-        ["hiragana":"しょうすう","meaning":"minority; few"],
-        ["hiragana":"つのる","meaning":"to grow violent, to become stronger"],
-        ["hiragana":"よち","meaning":"place, room, margin"],
-        ["hiragana":"ざいせい","meaning":"public finance, financial affairs"],
-        ["hiragana":"ちょうせん","meaning":"challenge, defiance, dare"],
-        ["hiragana":"ふとう","meaning":"injustice, impropriety, unfair"],
-        ["hiragana":"ぐんじ","meaning":"military affairs"]
+        ["kanji":"文書","meaning":"document, writing, paperwork"],
+        ["kanji":"打撃","meaning":"blow, shock, strike"],
+        ["kanji":"報酬","meaning":"emuneration, recompense, reward"],
+        ["kanji":"移民","meaning":"emigration, immigration"],
+        ["kanji":"依然","meaning":"still; as yet; as it has been"],
+        ["kanji":"持続","meaning":"continuation; persisting; lasting; sustaining; enduring"],
+        ["kanji":"傾ける","meaning":"to incline, to lean, to tilt"],
+        ["kanji":"厚意","meaning":"good will, favor, courtesy"],
+        ["kanji":"購入","meaning":"purchase, buy"],
+        ["kanji":"明瞭","meaning":"clear; plain; distinct; obvious; evident; articulate"],
+        ["kanji":"理論","meaning":"theory"],
+        ["kanji":"設立","meaning":"establishment, founding"],
+        ["kanji":"視野","meaning":"field of vision; view; one’;s outlook"],
+        ["kanji":"少数","meaning":"minority; few"],
+        ["kanji":"募る","meaning":"to grow violent, to become stronger"],
+        ["kanji":"余地","meaning":"place, room, margin"],
+        ["kanji":"財政","meaning":"public finance, financial affairs"],
+        ["kanji":"挑戦","meaning":"challenge, defiance, dare"],
+        ["kanji":"不当","meaning":"injustice, impropriety, unfair"],
+        ["kanji":"軍事","meaning":"military affairs"]
         
     ]
     var n1ch2array = [
-        ["hiragana":"かだい","meaning":"subject; theme; issue; matter; homework; assignment; task; challenge; problem; question"],
-        ["hiragana":"きこう","meaning":"mechanism, organization"],
-        ["hiragana":"きそう","meaning":"to compete; to contend; to vie; to contest"],
-        ["hiragana":"きょうれつ","meaning":"strong, intense, severe"],
-        ["hiragana":"りせい","meaning":"reason, reasoning power"],
-        ["hiragana":"りょういき","meaning":"area; domain; territory; field; range; region; regime"],
-        ["hiragana":"せんとう","meaning":"battle, fight, combat"],
-        ["hiragana":"しじ","meaning":"instructions, directions, indication"],
-        ["hiragana":"しかく","meaning":"qualifications; requirements; capabilities"],
-        ["hiragana":"しこう","meaning":"thought; consideration; thinking"],
-        ["hiragana":"しょうめい","meaning":"illumination; lighting"],
-        ["hiragana":"しょうれい","meaning":"encouragement, promotion"],
-        ["hiragana":"しょうり","meaning":"victory, triumph, win"],
-        ["hiragana":"とぼしい","meaning":"meagre; meager; scarce; limited; destitute; hard up; lacking; scanty; poor"],
-        ["hiragana":"ぞうきょう","meaning":"augment, reinforce, increase"],
-        ["hiragana":"あやまち","meaning":"fault, error, indiscretion"],
-        ["hiragana":"どくさい","meaning":"dictatorship, despotism"],
-        ["hiragana":"じかく","meaning":"self-consciousness; self-awareness"],
-        ["hiragana":"じぜん","meaning":"prior; beforehand; in advance; before the fact; ex ante"],
-        ["hiragana":"かんし","meaning":"monitoring, watching, observation"],
+        ["kanji":"課題","meaning":"subject; theme; issue; matter; homework; assignment; task; challenge; problem; question"],
+        ["kanji":"機構","meaning":"mechanism, organization"],
+        ["kanji":"きそう","meaning":"to compete; to contend; to vie; to contest"],
+        ["kanji":"きょうれつ","meaning":"strong, intense, severe"],
+        ["kanji":"りせい","meaning":"reason, reasoning power"],
+        ["kanji":"りょういき","meaning":"area; domain; territory; field; range; region; regime"],
+        ["kanji":"せんとう","meaning":"battle, fight, combat"],
+        ["kanji":"しじ","meaning":"instructions, directions, indication"],
+        ["kanji":"しかく","meaning":"qualifications; requirements; capabilities"],
+        ["kanji":"しこう","meaning":"thought; consideration; thinking"],
+        ["kanji":"しょうめい","meaning":"illumination; lighting"],
+        ["kanji":"しょうれい","meaning":"encouragement, promotion"],
+        ["kanji":"しょうり","meaning":"victory, triumph, win"],
+        ["kanji":"とぼしい","meaning":"meagre; meager; scarce; limited; destitute; hard up; lacking; scanty; poor"],
+        ["kanji":"ぞうきょう","meaning":"augment, reinforce, increase"],
+        ["kanji":"あやまち","meaning":"fault, error, indiscretion"],
+        ["kanji":"どくさい","meaning":"dictatorship, despotism"],
+        ["kanji":"じかく","meaning":"self-consciousness; self-awareness"],
+        ["kanji":"じぜん","meaning":"prior; beforehand; in advance; before the fact; ex ante"],
+        ["kanji":"かんし","meaning":"monitoring, watching, observation"],
     ]
     
     var currentQuestionIndex: Int = 0
@@ -109,7 +109,7 @@ class HiraganaQuestionViewController: UIViewController, UITextFieldDelegate {
         let currentQuestionArray = (LEVEL == 0 && CHAPTER == 0) ? n1ch1array : n1ch2array
         let currentQuestion = currentQuestionArray[currentQuestionIndex]
         
-        if answer == currentQuestion["hiragana"] {
+        if answer == currentQuestion["kanji"] {
             checkmarkImageView.isHidden = false
             goodjobLabel.isHidden = false
             
@@ -121,18 +121,18 @@ class HiraganaQuestionViewController: UIViewController, UITextFieldDelegate {
             } else {
                 // Reached the end of the question array
                 // Handle completion or transition to the next level/chapter
-                // NextViewControllerに遷移するコードを追加する！
+                // NextViewControllerに遷移するコードを追加する！h
             }
             
             textField.text = ""
         } else {
             relearnImageView.isHidden = false
             kotaeLabel.isHidden = false
-            kotaeLabel.text = currentQuestion["hiragana"]
+            kotaeLabel.text = currentQuestion["kanji"]
         }
         
         // ビューを非表示にする
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             self.checkmarkImageView.isHidden = true
             self.goodjobLabel.isHidden = true
             self.relearnImageView.isHidden = true

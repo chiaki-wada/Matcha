@@ -52,7 +52,7 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let saveData = UserDefaults.standard
         saveData.set(indexPath.row, forKey: "CHAPTER")
-        self.performSegue(withIdentifier: "toHiraganaInputView", sender: nil)
+        self.performSegue(withIdentifier: "toVocabInputView", sender: nil)
     }
 
     override func viewDidLoad() {
@@ -62,7 +62,7 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         if LEVEL as! Int == 0 {
             titleLabel.text = "JLPT N1 Vocabulary"
             descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N1 exam."
-            messageLabel.text = ""
+            messageLabel.text = "If you’re discussing current issues, or topics that interest you, then you will likely end up using N1 vocabulary...👀"
         }
         else if LEVEL as! Int == 1 {
             titleLabel.text = "JLPT N2 Vocabulary"
@@ -72,7 +72,7 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         else if LEVEL as! Int == 2 {
             titleLabel.text = "JLPT N3 Vocabulary"
             descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N3 exam."
-            messageLabel.text = "If you pass N3, you have met one of the requirements to be able to work or get a scholarship in Japan! :)"
+            messageLabel.text = "If you pass N3, you have met one of the requirements to be able to work or get a scholarship in Japan! 🎓"
         }
     }
     

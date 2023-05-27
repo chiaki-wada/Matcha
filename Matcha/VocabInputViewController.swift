@@ -2,13 +2,13 @@
 //  VocabInputViewController.swift
 //  Matcha
 //
-//  Created by Chiaki Wada on 2023/05/24.
+//  Created by Chiaki Wada on 2023/05/28.
 //
 
 import UIKit
 
-class HiraganaInputViewController: UIViewController {
-    
+class VocabInputViewController: UIViewController {
+
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
