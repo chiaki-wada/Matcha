@@ -18,12 +18,12 @@
 		F477585C2A1A115100A06944 /* Kyokasho.ttc in Resources */ = {isa = PBXBuildFile; fileRef = F477585A2A1A115100A06944 /* Kyokasho.ttc */; };
 		F477585E2A1A117600A06944 /* kefa-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F477585D2A1A117600A06944 /* kefa-bold.ttf */; };
 		F490700C2A1D191000599340 /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490700B2A1D191000599340 /* ChapterViewController.swift */; };
-		F49070122A204A7700599340 /* HiraganaQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070112A204A7700599340 /* HiraganaQuestionViewController.swift */; };
 		F49070142A20C49100599340 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49070132A20C49000599340 /* Launch Screen.storyboard */; };
 		F490701B2A20F2E700599340 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070192A20F2E700599340 /* TableViewCell.swift */; };
 		F490701C2A20F2E700599340 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F490701A2A20F2E700599340 /* TableViewCell.xib */; };
 		F490701E2A2256A000599340 /* VocabInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490701D2A2256A000599340 /* VocabInputViewController.swift */; };
 		F49070202A22617E00599340 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490701F2A22617D00599340 /* QuizViewController.swift */; };
+		F49070242A23641F00599340 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070232A23641F00599340 /* FinishViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,12 +40,12 @@
 		F477585A2A1A115100A06944 /* Kyokasho.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kyokasho.ttc; sourceTree = "<group>"; };
 		F477585D2A1A117600A06944 /* kefa-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "kefa-bold.ttf"; sourceTree = "<group>"; };
 		F490700B2A1D191000599340 /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
-		F49070112A204A7700599340 /* HiraganaQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiraganaQuestionViewController.swift; sourceTree = "<group>"; };
 		F49070132A20C49000599340 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F49070192A20F2E700599340 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F490701A2A20F2E700599340 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		F490701D2A2256A000599340 /* VocabInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabInputViewController.swift; sourceTree = "<group>"; };
 		F490701F2A22617D00599340 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		F49070232A23641F00599340 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 				F490701A2A20F2E700599340 /* TableViewCell.xib */,
 				F490700B2A1D191000599340 /* ChapterViewController.swift */,
 				F490701D2A2256A000599340 /* VocabInputViewController.swift */,
-				F49070112A204A7700599340 /* HiraganaQuestionViewController.swift */,
 				F490701F2A22617D00599340 /* QuizViewController.swift */,
+				F49070232A23641F00599340 /* FinishViewController.swift */,
 				F49070132A20C49000599340 /* Launch Screen.storyboard */,
 				F47758442A19F76000A06944 /* Main.storyboard */,
 				F47758472A19F76E00A06944 /* Assets.xcassets */,
@@ -201,12 +201,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F49070122A204A7700599340 /* HiraganaQuestionViewController.swift in Sources */,
 				F490700C2A1D191000599340 /* ChapterViewController.swift in Sources */,
 				F490701E2A2256A000599340 /* VocabInputViewController.swift in Sources */,
 				F49070202A22617E00599340 /* QuizViewController.swift in Sources */,
 				F47758432A19F76000A06944 /* ViewController.swift in Sources */,
 				F477583F2A19F76000A06944 /* AppDelegate.swift in Sources */,
+				F49070242A23641F00599340 /* FinishViewController.swift in Sources */,
 				F490701B2A20F2E700599340 /* TableViewCell.swift in Sources */,
 				F47758412A19F76000A06944 /* SceneDelegate.swift in Sources */,
 			);

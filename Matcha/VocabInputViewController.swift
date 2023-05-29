@@ -41,7 +41,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"めいりょう","kanji":"明瞭","meaning":"clear; plain; distinct; obvious; evident; articulate"],
         ["hiragana":"りろん","kanji":"理論","meaning":"theory"],
         ["hiragana":"せつりつ","kanji":"設立","meaning":"establishment, founding"],
-        ["hiragana":"しや","kanji":"視野","meaning":"field of vision; view; one’;s outlook"],
+        ["hiragana":"しや","kanji":"視野","meaning":"field of vision; view; one’s outlook"],
         ["hiragana":"しょうすう","kanji":"少数","meaning":"minority; few"],
         ["hiragana":"つのる","kanji":"募る","meaning":"to grow violent, to become stronger"],
         ["hiragana":"よち","kanji":"余地","meaning":"place, room, margin"],
