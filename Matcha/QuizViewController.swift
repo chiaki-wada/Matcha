@@ -26,7 +26,24 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
     var n1ch1array = [
         ["kanji":"文書","meaning":"document, writing, paperwork"],
         ["kanji":"打撃","meaning":"blow, shock, strike"],
-        ["kanji":"報酬","meaning":"emuneration, recompense, reward"]
+        ["kanji":"報酬","meaning":"emuneration, recompense, reward"],
+        ["kanji":"移民","meaning":"emigration, immigration"],
+        ["kanji":"依然","meaning":"still; as yet; as it has been"],
+        ["kanji":"持続","meaning":"continuation; persisting; lasting; sustaining; enduring"],
+        ["kanji":"傾ける","meaning":"to incline, to lean, to tilt"],
+        ["kanji":"厚意","meaning":"good will, favor, courtesy"],
+        ["kanji":"購入","meaning":"purchase, buy"],
+        ["kanji":"明瞭","meaning":"clear; plain; distinct; obvious; evident; articulate"],
+        ["kanji":"理論","meaning":"theory"],
+        ["kanji":"設立","meaning":"establishment, founding"],
+        ["kanji":"視野","meaning":"field of vision; view; one’;s outlook"],
+        ["kanji":"少数","meaning":"minority; few"],
+        ["kanji":"募る","meaning":"to grow violent, to become stronger"],
+        ["kanji":"余地","meaning":"place, room, margin"],
+        ["kanji":"財政","meaning":"public finance, financial affairs"],
+        ["kanji":"挑戦","meaning":"challenge, defiance, dare"],
+        ["kanji":"不当","meaning":"injustice, impropriety, unfair"],
+        ["kanji":"軍事","meaning":"military affairs"]
         
     ]
     var n1ch2array = [
@@ -56,6 +73,9 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         textField.delegate = self
         
         // 初期状態で非表示に設定する

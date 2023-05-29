@@ -137,6 +137,8 @@ class VocabInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         backButton.isHidden = true
         
         if LEVEL as! Int == 0 && CHAPTER as! Int == 0 {

@@ -58,6 +58,8 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
         //画面が読み込まれた時に表示するラベル
         if LEVEL as! Int == 0 {
             titleLabel.text = "JLPT N1 Vocabulary"
