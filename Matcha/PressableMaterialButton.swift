@@ -10,7 +10,7 @@ import UIKit
 
 class PressableMaterialButton: UIButton {
     
-    private var shadowOffsetHeight: CGFloat = 5
+    private var shadowOffsetHeight: CGFloat = 4
     
     override init(frame: CGRect) {
         super.init(frame: frame)

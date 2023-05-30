@@ -491,7 +491,7 @@ paperwork</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4y-UB-8DT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672.5190839694656" y="664.78873239436621"/>
+            <point key="canvasLocation" x="1688" y="665"/>
         </scene>
         <!--Finish View Controller-->
         <scene sceneID="IEh-9g-1CC">

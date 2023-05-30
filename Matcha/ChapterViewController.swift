@@ -49,11 +49,11 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let saveData = UserDefaults.standard
-        saveData.set(indexPath.row, forKey: "CHAPTER")
-        self.performSegue(withIdentifier: "toVocabInputView", sender: nil)
-    }
+    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       //let saveData = UserDefaults.standard
+        //saveData.set(indexPath.row, forKey: "CHAPTER")
+        //self.performSegue(withIdentifier: "toVocabInputView", sender: nil)
+    //}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,7 +69,7 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         else if LEVEL as! Int == 1 {
             titleLabel.text = "JLPT N2 Vocabulary"
             descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N2 exam."
-            messageLabel.text = ""
+            messageLabel.text = "N2 is about the minimum level you should have if you will be using Japanese in your job 💼"
         }
         else if LEVEL as! Int == 2 {
             titleLabel.text = "JLPT N3 Vocabulary"
