@@ -94,6 +94,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
     ]
     
     var currentQuestionIndex: Int = 0
+    var shuffledQuestions: [[String:String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,73 +120,91 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 1"
             totalLabel.text = "total 20 words"
-            meaningLabel.text = n1ch1array[currentQuestionIndex]["meaning"]
+            shuffledQuestions = shuffleArray(n1ch1array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 1 {
             titleLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 2"
             totalLabel.text = "total 20 words"
-            meaningLabel.text = n1ch2array[currentQuestionIndex]["meaning"]
+            shuffledQuestions = shuffleArray(n1ch2array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 2 {
             titleLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 3"
             totalLabel.text = "total 20 words"
-            meaningLabel.text = n1ch3array[currentQuestionIndex]["meaning"]
+            shuffledQuestions = shuffleArray(n1ch3array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         }
     }
+    
+    // 問題の配列をランダムにシャッフルする関数
+    func shuffleArray(_ array: [[String:String]]) -> [[String:String]] {
+        var newArray = array
+        for i in 0..<newArray.count {
+            let randomIndex = Int.random(in: i..<newArray.count)
+            let temp = newArray[i]
+            newArray[i] = newArray[randomIndex]
+            newArray[randomIndex] = temp
+        }
+        return newArray
+    }
+    
+    @IBAction func tapCheckButton() {
         
-        @IBAction func tapCheckButton() {
+        guard let answer = textField.text else { return }
+        
+        let currentQuestionArray = (LEVEL == 0 && CHAPTER == 0) ? n1ch1array : ((LEVEL == 0 && CHAPTER == 1) ? n1ch2array : n1ch3array)
+        let currentQuestion = shuffledQuestions[currentQuestionIndex]
+        
+        let shuffledAnswer = currentQuestion["kanji"]
+        let shuffledHiragana = currentQuestion["hiragana"]
+        
+        if answer == shuffledAnswer {
+            checkmarkImageView.isHidden = false
+            goodjobLabel.isHidden = false
             
-            guard let answer = textField.text else { return }
-            
-            let currentQuestionArray = (LEVEL == 0 && CHAPTER == 0) ? n1ch1array : ((LEVEL == 0 && CHAPTER == 1) ? n1ch2array : n1ch3array)
-            let currentQuestion = currentQuestionArray[currentQuestionIndex]
-            
-            if answer == currentQuestion["kanji"] {
-                checkmarkImageView.isHidden = false
-                goodjobLabel.isHidden = false
+            if currentQuestionIndex < shuffledQuestions.count - 1 {
+                currentQuestionIndex += 1
+                let nextQuestion = shuffledQuestions[currentQuestionIndex]
+                meaningLabel.text = nextQuestion["meaning"]
                 
-                if currentQuestionIndex < currentQuestionArray.count - 1 {
-                    currentQuestionIndex += 1
-                    let nextQuestion = currentQuestionArray[currentQuestionIndex]
-                    meaningLabel.text = nextQuestion["meaning"]
-                    
-                    textField.text = ""
-                } else {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                        let finishViewController = storyboard.instantiateViewController(withIdentifier: "FinishViewController") as! FinishViewController
-                        self.navigationController?.pushViewController(finishViewController, animated: true)
-                    }
-                    return
-                }
+                textField.text = ""
             } else {
-                relearnImageView.isHidden = false
-                kotaeLabel.isHidden = false
-                yomiganaLabel.isHidden = false
-                kotaeLabel.text = currentQuestion["kanji"]
-                yomiganaLabel.text = currentQuestion["hiragana"]
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    let finishViewController = storyboard.instantiateViewController(withIdentifier: "FinishViewController") as! FinishViewController
+                    self.navigationController?.pushViewController(finishViewController, animated: true)
+                }
+                return
             }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                self.checkmarkImageView.isHidden = true
-                self.goodjobLabel.isHidden = true
-                self.relearnImageView.isHidden = true
-                self.kotaeLabel.isHidden = true
-                self.yomiganaLabel.isHidden = true
-            }
+        } else {
+            relearnImageView.isHidden = false
+            kotaeLabel.isHidden = false
+            yomiganaLabel.isHidden = false
+            kotaeLabel.text = shuffledAnswer
+            yomiganaLabel.text = shuffledHiragana
         }
         
-        
-        
-        
-        /*
-         // MARK: - Navigation
-         
-         // In a storyboard-based application, you will often want to do a little preparation before navigation
-         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         // Get the new view controller using segue.destination.
-         // Pass the selected object to the new view controller.
-         }
-         */
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.checkmarkImageView.isHidden = true
+            self.goodjobLabel.isHidden = true
+            self.relearnImageView.isHidden = true
+            self.kotaeLabel.isHidden = true
+            self.yomiganaLabel.isHidden = true
+        }
     }
+    
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+}
