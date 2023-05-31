@@ -25,12 +25,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //セルがタップされた時に呼ばれる
-    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       //let saveData = UserDefaults.standard
-        //saveData.set(indexPath.row, forKey: "LEVEL")
-        //self.performSegue(withIdentifier: "toChapterView", sender: nil)
-        
-    //}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       let saveData = UserDefaults.standard
+        saveData.set(indexPath.row, forKey: "LEVEL")
+            
+    }
     
     
     override func viewDidLoad() {

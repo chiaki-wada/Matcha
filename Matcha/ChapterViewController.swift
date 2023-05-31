@@ -17,8 +17,8 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var LEVEL = saveData.object(forKey:"LEVEL")
     
-    var n1array = ["Chapter 1","Chapter 2","Chapter 3","Chapter 4"]
-    var n2array = ["Chapter 1","Chapter 2","Chapter 3"]
+    var n1array = ["Chapter 1","Chapter 2","Chapter 3"]
+    var n2array = ["Chapter 1","Chapter 2","Chapter ?"]
     var n3array = ["Chapter 1","Chapter 2"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,7 +31,7 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         else if LEVEL as! Int == 2 {
             return n3array.count
         }
-        return n3array.count
+        return 0
         
     }
     
@@ -49,11 +49,10 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       //let saveData = UserDefaults.standard
-        //saveData.set(indexPath.row, forKey: "CHAPTER")
-        //self.performSegue(withIdentifier: "toVocabInputView", sender: nil)
-    //}
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       let saveData = UserDefaults.standard
+        saveData.set(indexPath.row, forKey: "CHAPTER")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

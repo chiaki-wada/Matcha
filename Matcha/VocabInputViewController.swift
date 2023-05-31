@@ -71,30 +71,30 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"どくさい","kanji":"独裁","meaning":"dictatorship, despotism"],
         ["hiragana":"じかく","kanji":"自覚","meaning":"self-consciousness; self-awareness"],
         ["hiragana":"じぜん","kanji":"事前","meaning":"prior; beforehand; in advance; before the fact; ex ante"],
-        ["hiragana":"かんし","kanji":"監視","meaning":"monitoring, watching, observation"],
+        ["hiragana":"かんし","kanji":"監視","meaning":"monitoring, watching, observation"]
     ]
     
     var n1ch3array = [
-        ["hiragana":"しきん","meaning":"funds, capital"],
-        ["hiragana":"しょゆう","meaning":"one’;s possessions; ownership"],
-        ["hiragana":"そまる","meaning":"to be dyed; to be tainted; to be infected; to be stained; to be steeped"],
-        ["hiragana":"そくざに","meaning":"immediately; right away; on the spot"],
-        ["hiragana":"たいしゅう","meaning":"general public, the masses"],
-        ["hiragana":"うごき","meaning":"movement; move; motion; trend; development; change; fluctuation"],
-        ["hiragana":"ゆうし","meaning":"financing, loan"],
-        ["hiragana":"ぜつぼう","meaning":"despair, hopelessness"],
-        ["hiragana":"びんぼう","meaning":"poverty, destitute, poor"],
-        ["hiragana":"ぼうえい","meaning":"defense, protection"],
-        ["hiragana":"どういん","meaning":"mobilization"],
-        ["hiragana":"はいご","meaning":"back, rear, background"],
-        ["hiragana":"はんのう","meaning":"reaction, response"],
-        ["hiragana":"ひきいる","meaning":"to lead, to command"],
-        ["hiragana":"ほんしつ","meaning":"essence, true nature"],
-        ["hiragana":"いじゅう","meaning":"migration, immigration"],
-        ["hiragana":"いよく","meaning":"will; desire; ambition; urge"],
-        ["hiragana":"かんじん","meaning":"essential, fundamental, crucial"],
-        ["hiragana":"きせい","meaning":"regulation, control, restriction"],
-        ["hiragana":"ねつい","meaning":"zeal, enthusiasm"]
+        ["hiragana":"しきん","kanji":"資金","meaning":"funds, capital"],
+        ["hiragana":"しょゆう","kanji":"所有","meaning":"one’s possessions; ownership"],
+        ["hiragana":"そまる","kanji":"染まる","meaning":"to be dyed; to be tainted; to be infected; to be stained; to be steeped"],
+        ["hiragana":"そくざに","kanji":"即座に","meaning":"immediately; right away; on the spot"],
+        ["hiragana":"たいしゅう","kanji":"大衆","meaning":"general public, the masses"],
+        ["hiragana":"うごき","kanji":"動き","meaning":"movement; move; motion; trend; development; change; fluctuation"],
+        ["hiragana":"ゆうし","kanji":"融資","meaning":"financing, loan"],
+        ["hiragana":"ぜつぼう","kanji":"絶望","meaning":"despair, hopelessness"],
+        ["hiragana":"びんぼう","kanji":"貧乏","meaning":"poverty, destitute, poor"],
+        ["hiragana":"ぼうえい","kanji":"防衛","meaning":"defense, protection"],
+        ["hiragana":"どういん","kanji":"動員","meaning":"mobilization"],
+        ["hiragana":"はいご","kanji":"背後","meaning":"back, rear, background"],
+        ["hiragana":"はんのう","kanji":"反応","meaning":"reaction, response"],
+        ["hiragana":"ひきいる","kanji":"率いる","meaning":"to lead, to command"],
+        ["hiragana":"ほんしつ","kanji":"本質","meaning":"essence, true nature"],
+        ["hiragana":"いじゅう","kanji":"移住","meaning":"migration, immigration"],
+        ["hiragana":"いよく","kanji":"意欲","meaning":"will; desire; ambition; urge"],
+        ["hiragana":"かんじん","kanji":"肝心","meaning":"essential, fundamental, crucial"],
+        ["hiragana":"きせい","kanji":"規制","meaning":"regulation, control, restriction"],
+        ["hiragana":"ねつい","kanji":"熱意","meaning":"zeal, enthusiasm"]
     ]
     var n2ch1array = [
         ["hiragana":"","meaning":""]
@@ -130,7 +130,7 @@ class VocabInputViewController: UIViewController {
         if LEVEL as! Int == 1 && CHAPTER as! Int == 2 {
             return n2ch3array.count
         }
-        return n2ch3array.count
+        return 0
         
     }
     
@@ -146,6 +146,18 @@ class VocabInputViewController: UIViewController {
             chapterLabel.text = "Chapter 1"
             totalLabel.text = "total 20 words"
             updateLabels(with: n1ch1array[0])
+        }
+        else if LEVEL as! Int == 0 && CHAPTER as! Int == 1 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 2"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n1ch2array[0])
+        }
+        else if LEVEL as! Int == 0 && CHAPTER as! Int == 2 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 3"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n1ch3array[0])
         }
         
         updateCurrentArray()

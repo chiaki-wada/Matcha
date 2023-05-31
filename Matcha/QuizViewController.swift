@@ -19,54 +19,78 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var goodjobLabel: UILabel!
     @IBOutlet var relearnImageView: UIImageView!
     @IBOutlet var kotaeLabel: UILabel!
+    @IBOutlet var yomiganaLabel: UILabel!
     
     var CHAPTER: Int = 0
     var LEVEL: Int = 0
     
     var n1ch1array = [
-        ["kanji":"文書","meaning":"document, writing, paperwork"],
-        ["kanji":"打撃","meaning":"blow, shock, strike"],
-        ["kanji":"報酬","meaning":"emuneration, recompense, reward"],
-        ["kanji":"移民","meaning":"emigration, immigration"],
-        ["kanji":"依然","meaning":"still; as yet; as it has been"],
-        ["kanji":"持続","meaning":"continuation; persisting; lasting; sustaining; enduring"],
-        ["kanji":"傾ける","meaning":"to incline, to lean, to tilt"],
-        ["kanji":"厚意","meaning":"good will, favor, courtesy"],
-        ["kanji":"購入","meaning":"purchase, buy"],
-        ["kanji":"明瞭","meaning":"clear; plain; distinct; obvious; evident; articulate"],
-        ["kanji":"理論","meaning":"theory"],
-        ["kanji":"設立","meaning":"establishment, founding"],
-        ["kanji":"視野","meaning":"field of vision; view; one’;s outlook"],
-        ["kanji":"少数","meaning":"minority; few"],
-        ["kanji":"募る","meaning":"to grow violent, to become stronger"],
-        ["kanji":"余地","meaning":"place, room, margin"],
-        ["kanji":"財政","meaning":"public finance, financial affairs"],
-        ["kanji":"挑戦","meaning":"challenge, defiance, dare"],
-        ["kanji":"不当","meaning":"injustice, impropriety, unfair"],
-        ["kanji":"軍事","meaning":"military affairs"]
+        ["hiragana":"ぶんしょ","kanji":"文書","meaning":"document, writing, paperwork"],
+        ["hiragana":"だげき","kanji":"打撃","meaning":"blow, shock, strike"],
+        ["hiragana":"ほうしゅう","kanji":"報酬","meaning":"emuneration, recompense, reward"],
+        ["hiragana":"いみん","kanji":"移民","meaning":"emigration, immigration"],
+        ["hiragana":"いぜん","kanji":"依然","meaning":"still; as yet; as it has been"],
+        ["hiragana":"じぞく","kanji":"持続","meaning":"continuation; persisting; lasting; sustaining; enduring"],
+        ["hiragana":"かたむける","kanji":"傾ける","meaning":"to incline, to lean, to tilt"],
+        ["hiragana":"こうい","kanji":"厚意","meaning":"good will, favor, courtesy"],
+        ["hiragana":"こうにゅう","kanji":"購入","meaning":"purchase, buy"],
+        ["hiragana":"めいりょう","kanji":"明瞭","meaning":"clear; plain; distinct; obvious; evident; articulate"],
+        ["hiragana":"りろん","kanji":"理論","meaning":"theory"],
+        ["hiragana":"せつりつ","kanji":"設立","meaning":"establishment, founding"],
+        ["hiragana":"しや","kanji":"視野","meaning":"field of vision; view; one’s outlook"],
+        ["hiragana":"しょうすう","kanji":"少数","meaning":"minority; few"],
+        ["hiragana":"つのる","kanji":"募る","meaning":"to grow violent, to become stronger"],
+        ["hiragana":"よち","kanji":"余地","meaning":"place, room, margin"],
+        ["hiragana":"ざいせい","kanji":"財政","meaning":"public finance, financial affairs"],
+        ["hiragana":"ちょうせん","kanji":"挑戦","meaning":"challenge, defiance, dare"],
+        ["hiragana":"ふとう","kanji":"不当","meaning":"injustice, impropriety, unfair"],
+        ["hiragana":"ぐんじ","kanji":"軍事","meaning":"military affairs"]
         
     ]
     var n1ch2array = [
-        ["kanji":"課題","meaning":"subject; theme; issue; matter; homework; assignment; task; challenge; problem; question"],
-        ["kanji":"機構","meaning":"mechanism, organization"],
-        ["kanji":"きそう","meaning":"to compete; to contend; to vie; to contest"],
-        ["kanji":"きょうれつ","meaning":"strong, intense, severe"],
-        ["kanji":"りせい","meaning":"reason, reasoning power"],
-        ["kanji":"りょういき","meaning":"area; domain; territory; field; range; region; regime"],
-        ["kanji":"せんとう","meaning":"battle, fight, combat"],
-        ["kanji":"しじ","meaning":"instructions, directions, indication"],
-        ["kanji":"しかく","meaning":"qualifications; requirements; capabilities"],
-        ["kanji":"しこう","meaning":"thought; consideration; thinking"],
-        ["kanji":"しょうめい","meaning":"illumination; lighting"],
-        ["kanji":"しょうれい","meaning":"encouragement, promotion"],
-        ["kanji":"しょうり","meaning":"victory, triumph, win"],
-        ["kanji":"とぼしい","meaning":"meagre; meager; scarce; limited; destitute; hard up; lacking; scanty; poor"],
-        ["kanji":"ぞうきょう","meaning":"augment, reinforce, increase"],
-        ["kanji":"あやまち","meaning":"fault, error, indiscretion"],
-        ["kanji":"どくさい","meaning":"dictatorship, despotism"],
-        ["kanji":"じかく","meaning":"self-consciousness; self-awareness"],
-        ["kanji":"じぜん","meaning":"prior; beforehand; in advance; before the fact; ex ante"],
-        ["kanji":"かんし","meaning":"monitoring, watching, observation"],
+        ["hiragana":"かだい","kanji":"課題","meaning":"subject; theme; issue; matter; homework; assignment; task; challenge; problem; question"],
+        ["hiragana":"きこう","kanji":"機構","meaning":"mechanism, organization"],
+        ["hiragana":"きそう","kanji":"競う","meaning":"to compete; to contend; to vie; to contest"],
+        ["hiragana":"きょうれつ","kanji":"強烈","meaning":"strong, intense, severe"],
+        ["hiragana":"りせい","kanji":"理性","meaning":"reason, reasoning power"],
+        ["hiragana":"りょういき","kanji":"領域","meaning":"area; domain; territory; field; range; region; regime"],
+        ["hiragana":"せんとう","kanji":"戦闘","meaning":"battle, fight, combat"],
+        ["hiragana":"しじ","kanji":"指示","meaning":"instructions, directions, indication"],
+        ["hiragana":"しかく","kanji":"資格","meaning":"qualifications; requirements; capabilities"],
+        ["hiragana":"しこう","kanji":"思考","meaning":"thought; consideration; thinking"],
+        ["hiragana":"しょうめい","kanji":"照明","meaning":"illumination; lighting"],
+        ["hiragana":"しょうれい","kanji":"奨励","meaning":"encouragement, promotion"],
+        ["hiragana":"しょうり","kanji":"勝利","meaning":"victory, triumph, win"],
+        ["hiragana":"とぼしい","kanji":"乏しい","meaning":"meager; scarce; limited; destitute; lacking; scanty"],
+        ["hiragana":"ぞうきょう","kanji":"増強","meaning":"augment, reinforce, increase"],
+        ["hiragana":"あやまち","kanji":"過ち","meaning":"fault, error, indiscretion"],
+        ["hiragana":"どくさい","kanji":"独裁","meaning":"dictatorship, despotism"],
+        ["hiragana":"じかく","kanji":"自覚","meaning":"self-consciousness; self-awareness"],
+        ["hiragana":"じぜん","kanji":"事前","meaning":"prior; beforehand; in advance; before the fact; ex ante"],
+        ["hiragana":"かんし","kanji":"監視","meaning":"monitoring, watching, observation"]
+        
+    ]
+    var n1ch3array = [
+        ["hiragana":"しきん","kanji":"資金","meaning":"funds, capital"],
+        ["hiragana":"しょゆう","kanji":"所有","meaning":"one’s possessions; ownership"],
+        ["hiragana":"そまる","kanji":"染まる","meaning":"to be dyed; to be tainted; to be infected; to be stained; to be steeped"],
+        ["hiragana":"そくざに","kanji":"即座に","meaning":"immediately; right away; on the spot"],
+        ["hiragana":"たいしゅう","kanji":"大衆","meaning":"general public, the masses"],
+        ["hiragana":"うごき","kanji":"動き","meaning":"movement; move; motion; trend; development; change; fluctuation"],
+        ["hiragana":"ゆうし","kanji":"融資","meaning":"financing, loan"],
+        ["hiragana":"ぜつぼう","kanji":"絶望","meaning":"despair, hopelessness"],
+        ["hiragana":"びんぼう","kanji":"貧乏","meaning":"poverty, destitute, poor"],
+        ["hiragana":"ぼうえい","kanji":"防衛","meaning":"defense, protection"],
+        ["hiragana":"どういん","kanji":"動員","meaning":"mobilization"],
+        ["hiragana":"はいご","kanji":"背後","meaning":"back, rear, background"],
+        ["hiragana":"はんのう","kanji":"反応","meaning":"reaction, response"],
+        ["hiragana":"ひきいる","kanji":"率いる","meaning":"to lead, to command"],
+        ["hiragana":"ほんしつ","kanji":"本質","meaning":"essence, true nature"],
+        ["hiragana":"いじゅう","kanji":"移住","meaning":"migration, immigration"],
+        ["hiragana":"いよく","kanji":"意欲","meaning":"will; desire; ambition; urge"],
+        ["hiragana":"かんじん","kanji":"肝心","meaning":"essential, fundamental, crucial"],
+        ["hiragana":"きせい","kanji":"規制","meaning":"regulation, control, restriction"],
+        ["hiragana":"ねつい","kanji":"熱意","meaning":"zeal, enthusiasm"]
     ]
     
     var currentQuestionIndex: Int = 0
@@ -83,6 +107,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
         goodjobLabel.isHidden = true
         relearnImageView.isHidden = true
         kotaeLabel.isHidden = true
+        yomiganaLabel.isHidden = true
         
         if let level = UserDefaults.standard.object(forKey: "LEVEL") as? Int,
            let chapter = UserDefaults.standard.object(forKey: "CHAPTER") as? Int {
@@ -90,71 +115,77 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
             CHAPTER = chapter
         }
         
-        if LEVEL as! Int == 0 && CHAPTER as! Int == 0 {
+        if LEVEL == 0 && CHAPTER == 0 {
             titleLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 1"
             totalLabel.text = "total 20 words"
             meaningLabel.text = n1ch1array[currentQuestionIndex]["meaning"]
-        } else if LEVEL as! Int == 0 && CHAPTER as! Int == 1 {
+        } else if LEVEL == 0 && CHAPTER == 1 {
             titleLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 2"
             totalLabel.text = "total 20 words"
             meaningLabel.text = n1ch2array[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 0 && CHAPTER == 2 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 3"
+            totalLabel.text = "total 20 words"
+            meaningLabel.text = n1ch3array[currentQuestionIndex]["meaning"]
         }
-        
     }
-    
-    @IBAction func tapCheckButton() {
         
-        guard let answer = textField.text else { return }
-        
-        let currentQuestionArray = (LEVEL == 0 && CHAPTER == 0) ? n1ch1array : n1ch2array
-        let currentQuestion = currentQuestionArray[currentQuestionIndex]
-        
-        if answer == currentQuestion["kanji"] {
-            checkmarkImageView.isHidden = false
-            goodjobLabel.isHidden = false
+        @IBAction func tapCheckButton() {
             
-            if currentQuestionIndex < currentQuestionArray.count - 1 {
-                currentQuestionIndex += 1
-                let nextQuestion = currentQuestionArray[currentQuestionIndex]
-                meaningLabel.text = nextQuestion["meaning"]
+            guard let answer = textField.text else { return }
+            
+            let currentQuestionArray = (LEVEL == 0 && CHAPTER == 0) ? n1ch1array : ((LEVEL == 0 && CHAPTER == 1) ? n1ch2array : n1ch3array)
+            let currentQuestion = currentQuestionArray[currentQuestionIndex]
+            
+            if answer == currentQuestion["kanji"] {
+                checkmarkImageView.isHidden = false
+                goodjobLabel.isHidden = false
                 
-                textField.text = ""
-            } else {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let finishViewController = storyboard.instantiateViewController(withIdentifier: "FinishViewController") as! FinishViewController
-                    self.navigationController?.pushViewController(finishViewController, animated: true)
+                if currentQuestionIndex < currentQuestionArray.count - 1 {
+                    currentQuestionIndex += 1
+                    let nextQuestion = currentQuestionArray[currentQuestionIndex]
+                    meaningLabel.text = nextQuestion["meaning"]
+                    
+                    textField.text = ""
+                } else {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let finishViewController = storyboard.instantiateViewController(withIdentifier: "FinishViewController") as! FinishViewController
+                        self.navigationController?.pushViewController(finishViewController, animated: true)
+                    }
+                    return
                 }
-                return
+            } else {
+                relearnImageView.isHidden = false
+                kotaeLabel.isHidden = false
+                yomiganaLabel.isHidden = false
+                kotaeLabel.text = currentQuestion["kanji"]
+                yomiganaLabel.text = currentQuestion["hiragana"]
             }
-        } else {
-            relearnImageView.isHidden = false
-            kotaeLabel.isHidden = false
-            kotaeLabel.text = currentQuestion["kanji"]
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.checkmarkImageView.isHidden = true
+                self.goodjobLabel.isHidden = true
+                self.relearnImageView.isHidden = true
+                self.kotaeLabel.isHidden = true
+                self.yomiganaLabel.isHidden = true
+            }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.checkmarkImageView.isHidden = true
-            self.goodjobLabel.isHidden = true
-            self.relearnImageView.isHidden = true
-            self.kotaeLabel.isHidden = true
-        }
+        
+        
+        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
     }
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
-}
-
