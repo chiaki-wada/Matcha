@@ -14,6 +14,7 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
+    @IBOutlet var chapterTableView: UITableView!
     
     var LEVEL = saveData.object(forKey:"LEVEL")
     
@@ -21,41 +22,14 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
     var n2array = ["Chapter 1","Chapter 2","Chapter 3"]
     var n3array = ["Chapter 1","Chapter 2"]
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if LEVEL as! Int == 0 {
-            return n1array.count
-        }
-        else if LEVEL as! Int == 1 {
-            return n2array.count
-        }
-        else if LEVEL as! Int == 2 {
-            return n3array.count
-        }
-        return 0
-        
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChapterCell", for: indexPath)
-        
-        if LEVEL as! Int == 0 {
-            cell.textLabel!.text = n1array[indexPath.row]
-        } else if LEVEL as! Int == 1 {
-            cell.textLabel!.text = n2array[indexPath.row]
-        } else if LEVEL as! Int == 2 {
-            cell.textLabel!.text = n3array[indexPath.row]
-        }
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       let saveData = UserDefaults.standard
-        saveData.set(indexPath.row, forKey: "CHAPTER")
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let nib = UINib(nibName: "ChapterTableViewCell", bundle: nil)
+        chapterTableView.register(nib, forCellReuseIdentifier: "ChapterCell")
+        
+        chapterTableView.separatorStyle = .none
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
@@ -75,6 +49,71 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
             descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N3 exam."
             messageLabel.text = "If you pass N3, you have met one of the requirements to be able to work or get a scholarship in Japan! 🎓"
         }
+        
+    }
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if LEVEL as! Int == 0 {
+            return n1array.count
+        }
+        else if LEVEL as! Int == 1 {
+            return n2array.count
+        }
+        else if LEVEL as! Int == 2 {
+            return n3array.count
+        }
+        return 0
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChapterCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChapterCell", for: indexPath) as! ChapterTableViewCell
+        
+        if LEVEL as! Int == 0 {
+            cell.chapterLabel!.text = n1array[indexPath.row]
+        } else if LEVEL as! Int == 1 {
+            cell.chapterLabel!.text = n2array[indexPath.row]
+        } else if LEVEL as! Int == 2 {
+            cell.chapterLabel!.text = n3array[indexPath.row]
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       let saveData = UserDefaults.standard
+        saveData.set(indexPath.row, forKey: "CHAPTER")
+        
+        performSegue(withIdentifier: "toVocabInputView", sender: nil)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        }
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = .clear
+        return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
     
 

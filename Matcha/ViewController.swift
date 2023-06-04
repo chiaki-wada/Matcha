@@ -9,23 +9,27 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var tableView: UITableView!
+    
     var logoImageView: UIImageView!
     var levelArray = ["N1","N2","N3"]
     var wordsArray = ["100 words", "200 words","300 words"]
-    
-    @IBOutlet var tableView: UITableView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "LevelCell")
         
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 90
+        tableView.sectionHeaderHeight = 20
+        tableView.sectionFooterHeight = 20
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        tableView.rowHeight = UITableView.automaticDimension // セルの高さを自動調整する
-        tableView.estimatedRowHeight = 200 // セルの高さの推定値
-
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,14 +43,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    //セルがタップされた時に呼ばれる
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       let saveData = UserDefaults.standard
+        let saveData = UserDefaults.standard
         saveData.set(indexPath.row, forKey: "LEVEL")
-            
+        
+        let chapterVC = storyboard?.instantiateViewController(withIdentifier: "ChapterViewController") as! ChapterViewController
+        chapterVC.LEVEL = indexPath.row
+        navigationController?.pushViewController(chapterVC, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 0
+        }
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView()
+        footerView.backgroundColor = .clear
+        return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
     
     
-    
 }
-

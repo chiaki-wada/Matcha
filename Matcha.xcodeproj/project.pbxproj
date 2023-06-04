@@ -17,6 +17,8 @@
 		F477585B2A1A115100A06944 /* 获取商用授权.url in Resources */ = {isa = PBXBuildFile; fileRef = F47758592A1A115100A06944 /* 获取商用授权.url */; };
 		F477585C2A1A115100A06944 /* Kyokasho.ttc in Resources */ = {isa = PBXBuildFile; fileRef = F477585A2A1A115100A06944 /* Kyokasho.ttc */; };
 		F477585E2A1A117600A06944 /* kefa-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F477585D2A1A117600A06944 /* kefa-bold.ttf */; };
+		F48614F52A2C931800DDB6D5 /* ChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48614F32A2C931700DDB6D5 /* ChapterTableViewCell.swift */; };
+		F48614F62A2C931800DDB6D5 /* ChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48614F42A2C931700DDB6D5 /* ChapterTableViewCell.xib */; };
 		F490700C2A1D191000599340 /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490700B2A1D191000599340 /* ChapterViewController.swift */; };
 		F49070142A20C49100599340 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49070132A20C49000599340 /* Launch Screen.storyboard */; };
 		F490701B2A20F2E700599340 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070192A20F2E700599340 /* TableViewCell.swift */; };
@@ -41,6 +43,8 @@
 		F47758592A1A115100A06944 /* 获取商用授权.url */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "获取商用授权.url"; sourceTree = "<group>"; };
 		F477585A2A1A115100A06944 /* Kyokasho.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = Kyokasho.ttc; sourceTree = "<group>"; };
 		F477585D2A1A117600A06944 /* kefa-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "kefa-bold.ttf"; sourceTree = "<group>"; };
+		F48614F32A2C931700DDB6D5 /* ChapterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableViewCell.swift; sourceTree = "<group>"; };
+		F48614F42A2C931700DDB6D5 /* ChapterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChapterTableViewCell.xib; sourceTree = "<group>"; };
 		F490700B2A1D191000599340 /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
 		F49070132A20C49000599340 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F49070192A20F2E700599340 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -89,6 +93,8 @@
 				F49070192A20F2E700599340 /* TableViewCell.swift */,
 				F490701A2A20F2E700599340 /* TableViewCell.xib */,
 				F490700B2A1D191000599340 /* ChapterViewController.swift */,
+				F48614F32A2C931700DDB6D5 /* ChapterTableViewCell.swift */,
+				F48614F42A2C931700DDB6D5 /* ChapterTableViewCell.xib */,
 				F490701D2A2256A000599340 /* VocabInputViewController.swift */,
 				F490701F2A22617D00599340 /* QuizViewController.swift */,
 				F49070232A23641F00599340 /* FinishViewController.swift */,
@@ -191,6 +197,7 @@
 				F477585B2A1A115100A06944 /* 获取商用授权.url in Resources */,
 				F47758482A19F76E00A06944 /* Assets.xcassets in Resources */,
 				F49070142A20C49100599340 /* Launch Screen.storyboard in Resources */,
+				F48614F62A2C931800DDB6D5 /* ChapterTableViewCell.xib in Resources */,
 				F47758562A1A0B5C00A06944 /* OFL.txt in Resources */,
 				F490701C2A20F2E700599340 /* TableViewCell.xib in Resources */,
 				F47758462A19F76000A06944 /* Main.storyboard in Resources */,
@@ -217,6 +224,7 @@
 				F47758412A19F76000A06944 /* SceneDelegate.swift in Sources */,
 				F49070262A246DD800599340 /* PressableMaterialButton.swift in Sources */,
 				F49070282A246ED300599340 /* UIColor.swift in Sources */,
+				F48614F52A2C931800DDB6D5 /* ChapterTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

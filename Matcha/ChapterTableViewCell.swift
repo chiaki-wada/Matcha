@@ -1,19 +1,16 @@
 //
-//  TableViewCell.swift
+//  ChapterTableViewCell.swift
 //  Matcha
 //
-//  Created by Chiaki Wada on 2023/05/26.
+//  Created by Chiaki Wada on 2023/06/04.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class ChapterTableViewCell: UITableViewCell {
+    
+    @IBOutlet var chapterLabel: UILabel!
 
-    
-    @IBOutlet var levelLabel: UILabel!
-    @IBOutlet var wordsLabel: UILabel!
-    
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
