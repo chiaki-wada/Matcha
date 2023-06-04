@@ -10,17 +10,32 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var logoImageView: UIImageView!
-    var array = ["N1","N2","N3"]
+    var levelArray = ["N1","N2","N3"]
+    var wordsArray = ["100 words", "200 words","300 words"]
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+    @IBOutlet var tableView: UITableView!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "LevelCell")
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        tableView.rowHeight = UITableView.automaticDimension // セルの高さを自動調整する
+        tableView.estimatedRowHeight = 200 // セルの高さの推定値
+
     }
     
-    //TableViewのどのセルにarrayを表示させるか
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return levelArray.count
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "LevelCell", for: indexPath)
-        //セルに表示する値を設定する
-        cell.textLabel!.text = array[indexPath.row]
+        let cell: TableViewCell = tableView.dequeueReusableCell(withIdentifier: "LevelCell", for: indexPath) as! TableViewCell
+        cell.levelLabel.text = levelArray[indexPath.row]
+        cell.wordsLabel.text = wordsArray[indexPath.row]
         return cell
     }
     
@@ -29,15 +44,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
        let saveData = UserDefaults.standard
         saveData.set(indexPath.row, forKey: "LEVEL")
             
-    }
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
-        
     }
     
     

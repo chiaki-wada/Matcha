@@ -18,7 +18,7 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
     var LEVEL = saveData.object(forKey:"LEVEL")
     
     var n1array = ["Chapter 1","Chapter 2","Chapter 3"]
-    var n2array = ["Chapter 1","Chapter 2","Chapter ?"]
+    var n2array = ["Chapter 1","Chapter 2","Chapter 3"]
     var n3array = ["Chapter 1","Chapter 2"]
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

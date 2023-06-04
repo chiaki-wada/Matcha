@@ -160,6 +160,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
         let shuffledHiragana = currentQuestion["hiragana"]
         
         if answer == shuffledAnswer {
+            // 正解の場合の処理
             checkmarkImageView.isHidden = false
             goodjobLabel.isHidden = false
             
@@ -170,6 +171,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
                 
                 textField.text = ""
             } else {
+                // 不正解の場合の処理
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let finishViewController = storyboard.instantiateViewController(withIdentifier: "FinishViewController") as! FinishViewController
