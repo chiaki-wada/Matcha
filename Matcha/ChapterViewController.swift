@@ -18,8 +18,8 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var LEVEL = saveData.object(forKey:"LEVEL")
     
-    var n1array = ["Chapter 1","Chapter 2","Chapter 3"]
-    var n2array = ["Chapter 1","Chapter 2","Chapter 3"]
+    var n1array = ["Chapter 1","Chapter 2","Chapter 3","Chapter 4","Chapter 5","Chapter 6","Chapter 7","Chapter 8"]
+    var n2array = ["Chapter 1","Chapter 2","Chapter 3","Chapter 4","Chapter 5","Chapter 6"]
     var n3array = ["Chapter 1","Chapter 2"]
     
     
