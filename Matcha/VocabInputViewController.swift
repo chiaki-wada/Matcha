@@ -10,6 +10,7 @@ import UIKit
 class VocabInputViewController: UIViewController {
     
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
     
@@ -525,114 +526,133 @@ class VocabInputViewController: UIViewController {
         
         if LEVEL as! Int == 0 && CHAPTER as! Int == 0 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 1"
             totalLabel.text = "total 20 words"
             updateLabels(with: n1ch1array[0])
         }
         else if LEVEL as! Int == 0 && CHAPTER as! Int == 1 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 2"
             totalLabel.text = "total 20 words"
             updateLabels(with: n1ch2array[0])
         }
         else if LEVEL as! Int == 0 && CHAPTER as! Int == 2 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 3"
             totalLabel.text = "total 20 words"
             updateLabels(with: n1ch3array[0])
         }
         else if LEVEL as! Int == 0 && CHAPTER as! Int == 3 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 4"
             totalLabel.text = "total 20 words"
             updateLabels(with: n1ch4array[0])
         }
         else if LEVEL as! Int == 0 && CHAPTER as! Int == 4 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 5"
             totalLabel.text = "total 20 words"
             updateLabels(with: n1ch5array[0])
         }
         else if LEVEL as! Int == 0 && CHAPTER as! Int == 5 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 6"
             totalLabel.text = "total 20 words"
             updateLabels(with: n1ch6array[0])
         }
         else if LEVEL as! Int == 0 && CHAPTER as! Int == 6 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 7"
             totalLabel.text = "total 20 words"
             updateLabels(with: n1ch7array[0])
         }
         else if LEVEL as! Int == 0 && CHAPTER as! Int == 7 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 8"
             totalLabel.text = "total 20 words"
             updateLabels(with: n1ch8array[0])
         }
         else if LEVEL as! Int == 1 && CHAPTER as! Int == 1 {
             titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 1"
             totalLabel.text = "total 20 words"
             updateLabels(with: n2ch1array[0])
         }
         else if LEVEL as! Int == 1 && CHAPTER as! Int == 2 {
             titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
             chapterLabel.text = "Chapter 2"
             totalLabel.text = "total 20 words"
             updateLabels(with: n2ch2array[0])
         }
         else if LEVEL as! Int == 1 && CHAPTER as! Int == 3 {
             titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
             chapterLabel.text = "Chapter 3"
             totalLabel.text = "total 20 words"
             updateLabels(with: n2ch3array[0])
         }
         else if LEVEL as! Int == 1 && CHAPTER as! Int == 4 {
             titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
             chapterLabel.text = "Chapter 4"
             totalLabel.text = "total 20 words"
             updateLabels(with: n2ch4array[0])
         }
         else if LEVEL as! Int == 1 && CHAPTER as! Int == 5 {
             titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
             chapterLabel.text = "Chapter 5"
             totalLabel.text = "total 20 words"
             updateLabels(with: n2ch5array[0])
         }
         else if LEVEL as! Int == 1 && CHAPTER as! Int == 6 {
             titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
             chapterLabel.text = "Chapter 6"
             totalLabel.text = "total 20 words"
             updateLabels(with: n2ch6array[0])
         }
         else if LEVEL as! Int == 2 && CHAPTER as! Int == 0 {
             titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
             chapterLabel.text = "Chapter 1"
             totalLabel.text = "total 20 words"
             updateLabels(with: n3ch1array[0])
         }
         else if LEVEL as! Int == 2 && CHAPTER as! Int == 1 {
             titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
             chapterLabel.text = "Chapter 2"
             totalLabel.text = "total 20 words"
             updateLabels(with: n3ch2array[0])
         }
         else if LEVEL as! Int == 2 && CHAPTER as! Int == 2 {
             titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
             chapterLabel.text = "Chapter 3"
             totalLabel.text = "total 20 words"
             updateLabels(with: n3ch3array[0])
         }
         else if LEVEL as! Int == 2 && CHAPTER as! Int == 3 {
             titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
             chapterLabel.text = "Chapter 4"
             totalLabel.text = "total 20 words"
             updateLabels(with: n3ch4array[0])
         }
         else if LEVEL as! Int == 2 && CHAPTER as! Int == 4 {
             titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
             chapterLabel.text = "Chapter 5"
             totalLabel.text = "total 20 words"
             updateLabels(with: n3ch5array[0])

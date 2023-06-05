@@ -12,6 +12,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet var checkButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
     @IBOutlet var meaningLabel: UILabel!
@@ -487,51 +488,150 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
         
         if LEVEL == 0 && CHAPTER == 0 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 1"
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch1array)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 1 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 2"
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch2array)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 2 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 3"
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch3array)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 3 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 4"
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch4array)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 4 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 5"
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch5array)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 5 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 6"
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch6array)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 6 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 7"
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch7array)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 7 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             chapterLabel.text = "Chapter 8"
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch8array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 1 && CHAPTER == 0 {
+            titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
+            chapterLabel.text = "Chapter 1"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n2ch1array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 1 && CHAPTER == 0 {
+            titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
+            chapterLabel.text = "Chapter 2"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n2ch2array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 1 && CHAPTER == 1 {
+            titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
+            chapterLabel.text = "Chapter 3"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n2ch3array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 1 && CHAPTER == 0 {
+            titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
+            chapterLabel.text = "Chapter 2"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n2ch2array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 1 && CHAPTER == 1 {
+            titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
+            chapterLabel.text = "Chapter 3"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n2ch3array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 1 && CHAPTER == 2 {
+            titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
+            chapterLabel.text = "Chapter 4"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n2ch4array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 1 && CHAPTER == 3 {
+            titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
+            chapterLabel.text = "Chapter 5"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n2ch5array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 1 && CHAPTER == 4 {
+            titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
+            chapterLabel.text = "Chapter 6"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n2ch6array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 2 && CHAPTER == 0 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 1"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n3ch1array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 2 && CHAPTER == 1 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 1"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n3ch2array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 2 && CHAPTER == 2 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 2"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n3ch3array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 2 && CHAPTER == 3 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 3"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n3ch4array)
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
+        } else if LEVEL == 2 && CHAPTER == 4 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 4"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n3ch5array)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         }
     }
@@ -552,7 +652,50 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
         
         guard let answer = textField.text else { return }
         
-        let currentQuestionArray = (LEVEL == 0 && CHAPTER == 0) ? n1ch1array : ((LEVEL == 0 && CHAPTER == 1) ? n1ch2array : n1ch3array)
+        let currentQuestionArray: [Dictionary<String, String>]
+            
+            if LEVEL == 0 && CHAPTER == 0 {
+                currentQuestionArray = n1ch1array
+            } else if LEVEL == 0 && CHAPTER == 1 {
+                currentQuestionArray = n1ch2array
+            } else if LEVEL == 0 && CHAPTER == 2 {
+                currentQuestionArray = n1ch3array
+            } else if LEVEL == 0 && CHAPTER == 3 {
+                currentQuestionArray = n1ch4array
+            } else if LEVEL == 0 && CHAPTER == 4 {
+                currentQuestionArray = n1ch5array
+            } else if LEVEL == 0 && CHAPTER == 5 {
+                currentQuestionArray = n1ch6array
+            } else if LEVEL == 0 && CHAPTER == 6 {
+                currentQuestionArray = n1ch7array
+            } else if LEVEL == 0 && CHAPTER == 7 {
+                currentQuestionArray = n1ch8array
+            } else if LEVEL == 1 && CHAPTER == 0 {
+                currentQuestionArray = n2ch1array
+            } else if LEVEL == 1 && CHAPTER == 1 {
+                currentQuestionArray = n2ch2array
+            } else if LEVEL == 1 && CHAPTER == 2 {
+                currentQuestionArray = n2ch3array
+            } else if LEVEL == 1 && CHAPTER == 3 {
+                currentQuestionArray = n2ch4array
+            } else if LEVEL == 1 && CHAPTER == 4 {
+                currentQuestionArray = n2ch5array
+            } else if LEVEL == 1 && CHAPTER == 5 {
+                currentQuestionArray = n2ch6array
+            } else if LEVEL == 2 && CHAPTER == 0 {
+                currentQuestionArray = n3ch1array
+            } else if LEVEL == 2 && CHAPTER == 1 {
+                currentQuestionArray = n3ch2array
+            } else if LEVEL == 2 && CHAPTER == 2 {
+                currentQuestionArray = n3ch3array
+            } else if LEVEL == 2 && CHAPTER == 3 {
+                currentQuestionArray = n3ch4array
+            } else if LEVEL == 2 && CHAPTER == 4 {
+                currentQuestionArray = n3ch5array
+            } else {
+                // エラー処理
+                return
+            }
         let currentQuestion = shuffledQuestions[currentQuestionIndex]
         
         let shuffledAnswer = currentQuestion["kanji"]

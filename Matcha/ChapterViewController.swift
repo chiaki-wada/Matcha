@@ -12,6 +12,7 @@ let saveData = UserDefaults.standard
 class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var messageLabel: UILabel!
     @IBOutlet var chapterTableView: UITableView!
@@ -36,16 +37,19 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         //画面が読み込まれた時に表示するラベル
         if LEVEL as! Int == 0 {
             titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
             descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N1 exam."
             messageLabel.text = "If you’re discussing current issues, or topics that interest you, then you will likely end up using N1 vocabulary...👀"
         }
         else if LEVEL as! Int == 1 {
             titleLabel.text = "JLPT N2 Vocabulary"
+            titleShadowLabel.text = "JLPT N2 Vocabulary"
             descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N2 exam."
             messageLabel.text = "N2 is about the minimum level you should have if you will be using Japanese in your job 💼"
         }
         else if LEVEL as! Int == 2 {
             titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
             descriptionLabel.text = "Kanji Vocabulary words that appear in the JLPT N3 exam."
             messageLabel.text = "If you pass N3, you have met one of the requirements to be able to work or get a scholarship in Japan! 🎓"
         }
