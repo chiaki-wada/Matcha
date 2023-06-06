@@ -37,7 +37,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"いぜん","kanji":"依然","meaning":"still; as yet; as it has been"],
         ["hiragana":"じぞく","kanji":"持続","meaning":"continuation; persisting; lasting; sustaining; enduring"],
         ["hiragana":"かたむける","kanji":"傾ける","meaning":"to incline, to lean, to tilt"],
-        ["hiragana":"こうい","kanji":"厚意","meaning":"good will, favor, courtesy"],
+        ["hiragana":"こうい","kanji":"好意","meaning":"good will, favor, courtesy"],
         ["hiragana":"こうにゅう","kanji":"購入","meaning":"purchase, buy"],
         ["hiragana":"めいりょう","kanji":"明瞭","meaning":"clear; plain; distinct; obvious; evident; articulate"],
         ["hiragana":"りろん","kanji":"理論","meaning":"theory"],
