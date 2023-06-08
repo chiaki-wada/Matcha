@@ -72,7 +72,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"あやまち","kanji":"過ち","meaning":"fault, error, indiscretion"],
         ["hiragana":"どくさい","kanji":"独裁","meaning":"dictatorship, despotism"],
         ["hiragana":"じかく","kanji":"自覚","meaning":"self-consciousness; self-awareness"],
-        ["hiragana":"じぜん","kanji":"事前","meaning":"prior; beforehand; in advance; before the fact; ex ante"]
+        ["hiragana":"じぜん","kanji":"事前","meaning":"prior; beforehand; in advance"]
     ]
     
     var n1ch3array = [
