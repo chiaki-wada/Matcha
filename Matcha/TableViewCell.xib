@@ -27,33 +27,35 @@
                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3nF-Ux-CV5">
                         <rect key="frame" x="0.0" y="0.0" width="337" height="90"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="N1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6T-3o-i8M">
-                                <rect key="frame" x="236" y="31" width="79" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v6T-3o-i8M">
+                                <rect key="frame" x="213.33333333333334" y="19.000000000000004" width="63.333333333333343" height="52.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Kefa-Bold" family="Kefa" pointSize="45"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="160 words" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVv-PH-iMF">
-                                <rect key="frame" x="23" y="23" width="90" height="18"/>
-                                <fontDescription key="fontDescription" name="YuKyo_Yoko-Medium" family="YuKyokasho Yoko" pointSize="18"/>
+                                <rect key="frame" x="35" y="38" width="70" height="14"/>
+                                <fontDescription key="fontDescription" name="YuKyo_Yoko-Medium" family="YuKyokasho Yoko" pointSize="14"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JLPT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdr-u6-1CT">
-                                <rect key="frame" x="176" y="47" width="73" height="23"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Kefa-Bold" family="Kefa" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JLPT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdr-u6-1CT">
+                                <rect key="frame" x="166" y="35.333333333333336" width="38.333333333333343" height="19.666666666666664"/>
+                                <fontDescription key="fontDescription" name="Kefa-Bold" family="Kefa" pointSize="17"/>
                                 <color key="textColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PVv-PH-iMF" firstAttribute="leading" secondItem="3nF-Ux-CV5" secondAttribute="leading" constant="23" id="13e-1M-fNZ"/>
-                            <constraint firstItem="PVv-PH-iMF" firstAttribute="top" secondItem="3nF-Ux-CV5" secondAttribute="top" constant="23" id="kkV-UL-OPt"/>
+                            <constraint firstItem="v6T-3o-i8M" firstAttribute="centerX" secondItem="3nF-Ux-CV5" secondAttribute="centerX" constant="95" id="1rB-xl-9KZ"/>
+                            <constraint firstItem="tdr-u6-1CT" firstAttribute="centerY" secondItem="3nF-Ux-CV5" secondAttribute="centerY" id="A8d-Xs-emh"/>
+                            <constraint firstItem="PVv-PH-iMF" firstAttribute="centerX" secondItem="3nF-Ux-CV5" secondAttribute="centerX" constant="-80" id="JT6-l4-DDv"/>
+                            <constraint firstItem="v6T-3o-i8M" firstAttribute="centerY" secondItem="3nF-Ux-CV5" secondAttribute="centerY" id="K8D-xB-C8e"/>
+                            <constraint firstItem="tdr-u6-1CT" firstAttribute="centerX" secondItem="3nF-Ux-CV5" secondAttribute="centerX" constant="35" id="bUo-F3-zja"/>
                             <constraint firstAttribute="width" constant="300" id="o73-hu-JmQ"/>
                             <constraint firstAttribute="height" constant="90" id="sKm-xU-5np"/>
+                            <constraint firstItem="PVv-PH-iMF" firstAttribute="centerY" secondItem="3nF-Ux-CV5" secondAttribute="centerY" id="uTP-9p-eO9"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

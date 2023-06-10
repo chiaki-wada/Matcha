@@ -24,6 +24,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
     var CHAPTER: Int = 0
     var LEVEL: Int = 0
     
+    //JLPT N1
     var n1ch1array = [
         ["hiragana":"ぶんしょ","kanji":"文書","meaning":"document, writing, paperwork"],
         ["hiragana":"だげき","kanji":"打撃","meaning":"blow, shock, strike"],
@@ -208,6 +209,323 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"ゆうかん","kanji":"勇敢","meaning":"brave, heroic, gallant"]
     ]
     
+    var n1ch9array = [
+        ["hiragana":"ふどうさん","kanji":"不動産","meaning":"real estate"],
+        ["hiragana":"ふうさ","kanji":"封鎖","meaning":"blockade"],
+        ["hiragana":"はあく","kanji":"把握","meaning":"grasp, catch, understanding"],
+        ["hiragana":"ひめい","kanji":"悲鳴","meaning":"shriek, scream"],
+        ["hiragana":"ひさん","kanji":"悲惨","meaning":"disastrous, tragic"],
+        ["hiragana":"じっせん","kanji":"実践","meaning":"practice; putting into practice; implementation"],
+        ["hiragana":"かくしん","kanji":"確信","meaning":"conviction; belief; confidence"],
+        ["hiragana":"こうりつ","kanji":"効率","meaning":"efficiency"],
+        ["hiragana":"みかた","kanji":"見方","meaning":"viewpoint, point of view"],
+        ["hiragana":"せいぎ","kanji":"正義","meaning":"justice, right, righteousness"],
+        ["hiragana":"しんり","kanji":"真理","meaning":"truth"],
+        ["hiragana":"しんそう","kanji":"真相","meaning":"truth, real situation"],
+        ["hiragana":"しょくむ","kanji":"職務","meaning":"professional duties"],
+        ["hiragana":"そくしん","kanji":"促進","meaning":"promotion, acceleration"],
+        ["hiragana":"よわめる","kanji":"弱める","meaning":"to weaken"],
+        ["hiragana":"あくじ","kanji":"悪事","meaning":"evil deed, crime"],
+        ["hiragana":"あつかい","kanji":"扱い","meaning":"treatment, service"],
+        ["hiragana":"ぼうちょう","kanji":"膨張","meaning":"expansion, swelling, increase"],
+        ["hiragana":"ちせい","kanji":"知性","meaning":"intelligence"],
+        ["hiragana":"ちゅうじつ","kanji":"忠実","meaning":"faithful; devoted; loyal; honest; true"]
+    ]
+    
+    var n1ch10array = [
+        ["hiragana":"ふはい","kanji":"腐敗","meaning":"decomposition, corruption, decay"],
+        ["hiragana":"ふしょう","kanji":"負傷","meaning":"injury, wound"],
+        ["hiragana":"ふたん","kanji":"負担","meaning":"burden; load; responsibility; bearing"],
+        ["hiragana":"ほうてい","kanji":"法廷","meaning":"courtroom"],
+        ["hiragana":"じょうねつ","kanji":"情熱","meaning":"passion, enthusiasm"],
+        ["hiragana":"かける","kanji":"賭ける","meaning":"to wager, to bet, to gamble"],
+        ["hiragana":"こうぎ","kanji":"抗議","meaning":"protest, objection"],
+        ["hiragana":"めぐむ","kanji":"恵む","meaning":"to bless; to show mercy to; to give"],
+        ["hiragana":"めいよ","kanji":"名誉","meaning":"honor, credit, prestige"],
+        ["hiragana":"むじつ","kanji":"無実","meaning":"innocence, guiltlessness"],
+        ["hiragana":"りそく","kanji":"利息","meaning":"interest"],
+        ["hiragana":"さっち","kanji":"察知","meaning":"sense, infer"],
+        ["hiragana":"しょうどう","kanji":"衝動","meaning":"impulse, impetus, urge"],
+        ["hiragana":"しゅほう","kanji":"手法","meaning":"technique, method"],
+        ["hiragana":"そうさ","kanji":"捜査","meaning":"search, investigation"],
+        ["hiragana":"てんじ","kanji":"展示","meaning":"exhibition; display"],
+        ["hiragana":"つうじょう","kanji":"通常","meaning":"usual; ordinary; normal; regular; general; common"],
+        ["hiragana":"うんよう","kanji":"運用","meaning":"making use of, application"],
+        ["hiragana":"びんかん","kanji":"敏感","meaning":"sensitive; alert; aware; susceptible"],
+        ["hiragana":"ぶか","kanji":"部下","meaning":"subordinate person"]
+    ]
+    
+    var n1ch11array = [
+        ["hiragana":"ちかづく","kanji":"近づく","meaning":"to approach; to draw near; to get close; to get acquainted with; to get closer to; to get to know"],
+        ["hiragana":"どうき","kanji":"動機","meaning":"motive; incentive"],
+        ["hiragana":"どうめい","kanji":"同盟","meaning":"alliance, union, league"],
+        ["hiragana":"はいりょ","kanji":"配慮","meaning":"consideration, concern, attention"],
+        ["hiragana":"ほけん","kanji":"保険","meaning":"insurance, guarantee"],
+        ["hiragana":"いこう","kanji":"移行","meaning":"switching over to; migration; transition"],
+        ["hiragana":"じゅうなん","kanji":"柔軟","meaning":"flexible; lithe; soft; pliable"],
+        ["hiragana":"かいはつ","kanji":"開発","meaning":"development; exploitation"],
+        ["hiragana":"かくめい","kanji":"革命","meaning":"revolution"],
+        ["hiragana":"けいかい","kanji":"警戒","meaning":"vigilance, caution, alertness"],
+        ["hiragana":"こてい","kanji":"固定","meaning":"fixing"],
+        ["hiragana":"なやみ","kanji":"悩み","meaning":"trouble; troubles; worry; distress; sorrows; anguish; agony; problem"],
+        ["hiragana":"おそう","kanji":"襲う","meaning":"to attack, to assail"],
+        ["hiragana":"さいあく","kanji":"最悪","meaning":"worst; horrible; horrid; awful; terrible"],
+        ["hiragana":"せっとく","kanji":"説得","meaning":"persuasion"],
+        ["hiragana":"てんかん","kanji":"転換","meaning":"conversion; diversion; changeover; commutation; switchover"],
+        ["hiragana":"てんざい","kanji":"天才","meaning":"genius; prodigy; natural gift"],
+        ["hiragana":"ぜんてい","kanji":"前提","meaning":"condition; assumption; prerequisite; hypothesis"],
+        ["hiragana":"ばくだん","kanji":"爆弾","meaning":"bomb"],
+        ["hiragana":"ぶじょく","kanji":"侮辱","meaning":"insult, affront, slight"]
+
+    ]
+    
+    var n1ch12array = [
+        ["hiragana":"ちょっかん","kanji":"直感","meaning":"intuition, instinct, hunch"],
+        ["hiragana":"げんそく","kanji":"原則","meaning":"principle; general rule"],
+        ["hiragana":"くるしみ","kanji":"苦しみ","meaning":"pain, anguish, suffering"],
+        ["hiragana":"もらす","kanji":"漏らす","meaning":"to let leak, to reveal"],
+        ["hiragana":"ねんりょう","kanji":"燃料","meaning":"fuel"],
+        ["hiragana":"にくしみ","kanji":"憎しみ","meaning":"hatred"],
+        ["hiragana":"せってい","kanji":"設定","meaning":"establishment; creation; posing"],
+        ["hiragana":"しょうげん","kanji":"証言","meaning":"testimony"],
+        ["hiragana":"しょうこ","kanji":"証拠","meaning":"evidence, proof"],
+        ["hiragana":"しょうさい","kanji":"詳細","meaning":"details; particulars; specifics; detailed; specific; minute"],
+        ["hiragana":"とうたつ","kanji":"到達","meaning":"reaching; attaining; arrival"],
+        ["hiragana":"よくせい","kanji":"抑制","meaning":"control, restraint, suppression"],
+        ["hiragana":"あっとう","kanji":"圧倒","meaning":"overwhelm, overpower"],
+        ["hiragana":"べんご","kanji":"弁護","meaning":"defence, pleading, advocacy"],
+        ["hiragana":"ぶれい","kanji":"無礼","meaning":"impolite, rude"],
+        ["hiragana":"ちゅうこく","kanji":"忠告","meaning":"advice, warning"],
+        ["hiragana":"どうし","kanji":"同士","meaning":"fellow, companion, comrade"],
+        ["hiragana":"どうよう","kanji":"動揺","meaning":"shaking, trembling, disturbance"],
+        ["hiragana":"ごうせい","kanji":"合成","meaning":"composition, synthesis"],
+        ["hiragana":"ぎょうむ","kanji":"業務","meaning":"business, affairs, duties"]
+    ]
+    
+    var n1ch13array = [
+        ["hiragana":"はばむ","kanji":"阻む","meaning":"to keep someone from doing, to prevent"],
+        ["hiragana":"ひょう","kanji":"票","meaning":"vote, ballot"],
+        ["hiragana":"きょうさん","kanji":"共産","meaning":"communism"],
+        ["hiragana":"になう","kanji":"担う","meaning":"to carry on shoulder, to bear"],
+        ["hiragana":"ろうひ","kanji":"浪費","meaning":"waste, extravagance"],
+        ["hiragana":"してき","kanji":"指摘","meaning":"pointing out; identification"],
+        ["hiragana":"そし","kanji":"阻止","meaning":"obstruction, check, hindrance"],
+        ["hiragana":"すいたい","kanji":"衰退","meaning":"decline, degeneration, decay"],
+        ["hiragana":"すく","kanji":"好く","meaning":"to like, to love"],
+        ["hiragana":"てんけん","kanji":"点検","meaning":"inspection; examination; checking"],
+        ["hiragana":"とうごう","kanji":"統合","meaning":"integration, unification, synthesis"],
+        ["hiragana":"うながす","kanji":"促す","meaning":"to urge; to encourage; to press; to prompt; to draw"],
+        ["hiragana":"だっしゅつ","kanji":"脱出","meaning":"escape; break-out; prolapse; proptosis"],
+        ["hiragana":"どくせん","kanji":"独占","meaning":"monopoly; monopolization; exclusivity; keeping to oneself"],
+        ["hiragana":"どきょう","kanji":"度胸","meaning":"courage, bravery, nerve"],
+        ["hiragana":"ふかけつ","kanji":"不可欠","meaning":"indispensable; essential"],
+        ["hiragana":"はいじょ","kanji":"排除","meaning":"exclusion, removal, elimination"],
+        ["hiragana":"へいさ","kanji":"閉鎖","meaning":"closing, shutdown, lockout"],
+        ["hiragana":"いちぶ","kanji":"一部","meaning":"one part, one portion"],
+        ["hiragana":"けんい","kanji":"権威","meaning":"authority, power, influence"]
+    ]
+    
+    var n1ch14array = [
+        ["hiragana":"こばむ","kanji":"拒む","meaning":"to refuse, to reject, to decline"],
+        ["hiragana":"きょうい","kanji":"脅威","meaning":"threat, menace"],
+        ["hiragana":"みち","kanji":"未知","meaning":"not yet known, unknown"],
+        ["hiragana":"みたす","kanji":"満たす","meaning":"to satisfy"],
+        ["hiragana":"りくつ","kanji":"理屈","meaning":"theory, reason"],
+        ["hiragana":"しさん","kanji":"資産","meaning":"property, fortune, assets"],
+        ["hiragana":"そしょう","kanji":"訴訟","meaning":"liftigation, lawsuit"],
+        ["hiragana":"ようせい","kanji":"要請","meaning":"appeal, request, demand"],
+        ["hiragana":"ゆうする","kanji":"有する","meaning":"to own, to be endowed with"],
+        ["hiragana":"ちんぎん","kanji":"賃金","meaning":"wages"],
+        ["hiragana":"はけん","kanji":"派遣","meaning":"dispatch, despatch, deployment"],
+        ["hiragana":"はくじょう","kanji":"白状","meaning":"confession"],
+        ["hiragana":"ひんぱん","kanji":"頻繁","meaning":"frequent, incessant"],
+        ["hiragana":"きんきゅう","kanji":"緊急","meaning":"urgent, pressing, emergency"],
+        ["hiragana":"きずく","kanji":"築く","meaning":"to build, to construct"],
+        ["hiragana":"こよう","kanji":"雇用","meaning":"employment, hire"],
+        ["hiragana":"くちょう","kanji":"口調","meaning":"tone"],
+        ["hiragana":"きょひ","kanji":"拒否","meaning":"refusal; rejection; denial; veto"],
+        ["hiragana":"にくたい","kanji":"肉体","meaning":"the body, the flesh"],
+        ["hiragana":"さくせん","kanji":"作戦","meaning":"tactics, strategy"]
+    ]
+    
+    var n1ch15array = [
+        ["hiragana":"さとる","kanji":"悟る","meaning":"to perceive, to sense, to understand"],
+        ["hiragana":"しんぼう","kanji":"辛抱","meaning":"patience, endurance"],
+        ["hiragana":"しんじつ","kanji":"真実","meaning":"truth, reality"],
+        ["hiragana":"てじゅん","kanji":"手順","meaning":"process, procedure, sequence"],
+        ["hiragana":"よかん","kanji":"予感","meaning":"presentiment; premonition; hunch"],
+        ["hiragana":"ようする","kanji":"要する","meaning":"to need, to demand, to require"],
+        ["hiragana":"べんかい","kanji":"弁解","meaning":"justification, explanation"],
+        ["hiragana":"びしょう","kanji":"微笑","meaning":"smile"],
+        ["hiragana":"どだい","kanji":"土台","meaning":"foundation; base; basis"],
+        ["hiragana":"えんじる","kanji":"演じる","meaning":"to perform"],
+        ["hiragana":"はっせい","kanji":"発生","meaning":"outbreak, spring forth, occurrence"],
+        ["hiragana":"ほんのう","kanji":"本能","meaning":"instinct"],
+        ["hiragana":"ほんしん","kanji":"本心","meaning":"true feelings"],
+        ["hiragana":"かぶしき","kanji":"株式","meaning":"stock"],
+        ["hiragana":"かんしょう","kanji":"干渉","meaning":"interference, intervention, meddling"],
+        ["hiragana":"かんよ","kanji":"関与","meaning":"participation, taking part in"],
+        ["hiragana":"けいたい","kanji":"携帯","meaning":"something carried"],
+        ["hiragana":"こちょう","kanji":"誇張","meaning":"exaggeration"],
+        ["hiragana":"こうかい","kanji":"公開","meaning":"opening to the public; making available to the public; putting on display; exhibiting; showing"],
+        ["hiragana":"しょうたい","kanji":"正体","meaning":"true character, true form"]
+    ]
+    
+    var n1ch16array = [
+        ["hiragana":"しゅうえき","kanji":"収益","meaning":"earnings, proceeds, returns"],
+        ["hiragana":"たいけん","kanji":"体験","meaning":"personal experience; physical experience; one's own experience"],
+        ["hiragana":"つよまる","kanji":"強まる","meaning":"to get strong, to gain strength"],
+        ["hiragana":"ゆうわく","kanji":"誘惑","meaning":"temptation, allurement"],
+        ["hiragana":"えいぞう","kanji":"映像","meaning":"image"],
+        ["hiragana":"げんち","kanji":"現地","meaning":"actual place, local"],
+        ["hiragana":"ひなん","kanji":"避難","meaning":"taking refuge; finding shelter; evacuation; escape; seeking safe haven"],
+        ["hiragana":"ひつぜん","kanji":"必然","meaning":"inevitable, necessary"],
+        ["hiragana":"じもと","kanji":"地元","meaning":"home area; home town; local"],
+        ["hiragana":"かんりょう","kanji":"官僚","meaning":"bureaucrat, bureaucracy"],
+        ["hiragana":"けいろ","kanji":"経路","meaning":"course, route, means"],
+        ["hiragana":"けんげん","kanji":"権限","meaning":"power, authority, jurisdiction"],
+        ["hiragana":"けつだん","kanji":"決断","meaning":"decision; determination"],
+        ["hiragana":"きぜつ","kanji":"気絶","meaning":"faint, swoon"],
+        ["hiragana":"きずつける","kanji":"傷つける","meaning":"to wound, to injure"],
+        ["hiragana":"くつじょく","kanji":"屈辱","meaning":"disgrace, humiliation"],
+        ["hiragana":"きょうくん","kanji":"教訓","meaning":"lesson, precept"],
+        ["hiragana":"せいじゅく","kanji":"成熟","meaning":"maturity, ripeness"],
+        ["hiragana":"せんりゃく","kanji":"戦略","meaning":"strategy; tactics"],
+        ["hiragana":"しき","kanji":"指揮","meaning":"command, direction"]
+    ]
+    
+    var n1ch17array = [
+        ["hiragana":"しゅうしゅう","kanji":"収集","meaning":"collecting; accumulating; gathering; collection"],
+        ["hiragana":"てんじょう","kanji":"天井","meaning":"ceiling, ceiling price"],
+        ["hiragana":"とうにゅう","kanji":"投入","meaning":"throwing into, inserting"],
+        ["hiragana":"とうせい","kanji":"統制","meaning":"regulation, control"],
+        ["hiragana":"ついせき","kanji":"追跡","meaning":"chase, pursuit, tracing"],
+        ["hiragana":"ついやす","kanji":"費やす","meaning":"to spend, to consume"],
+        ["hiragana":"だいたん","kanji":"大胆","meaning":"bold, daring, audacious"],
+        ["hiragana":"どうじょう","kanji":"同情","meaning":"sympathy, compassion"],
+        ["hiragana":"はいち","kanji":"配置","meaning":"arrangement, deployment"],
+        ["hiragana":"ほうき","kanji":"放棄","meaning":"abandonment, renunciation"],
+        ["hiragana":"いちじるしい","kanji":"著しい","meaning":"striking; remarkable; considerable"],
+        ["hiragana":"じごく","kanji":"地獄","meaning":"hell"],
+        ["hiragana":"じっしつ","kanji":"実質","meaning":"substance; essence; real"],
+        ["hiragana":"かんよう","kanji":"寛容","meaning":"tolerance, generosity"],
+        ["hiragana":"けつい","kanji":"決意","meaning":"decision, determination"],
+        ["hiragana":"こうしょう","kanji":"交渉","meaning":"negotiations, discussions"],
+        ["hiragana":"おとずれる","kanji":"訪れる","meaning":"to visit; to call on; to arrive; to come; to appear"],
+        ["hiragana":"おう","kanji":"負う","meaning":"to bear, to take responsibility for"],
+        ["hiragana":"れんちゅう","kanji":"連中","meaning":"company, lot, bunch"],
+        ["hiragana":"さいぶ","kanji":"細部","meaning":"details"]
+    ]
+    
+    var n1ch18array = [
+        ["hiragana":"しいる","kanji":"強いる","meaning":"to force, to compel, to coerce"],
+        ["hiragana":"しょうがい","kanji":"生涯","meaning":"one's lifetime"],
+        ["hiragana":"しゅえい","kanji":"守衛","meaning":"security guard, doorkeeper"],
+        ["hiragana":"たもつ","kanji":"保つ","meaning":"to keep; to preserve; to hold; to retain; to maintain; to sustain; to last; to endure"],
+        ["hiragana":"とみ","kanji":"富","meaning":"riches, wealth, fortune"],
+        ["hiragana":"うちあける","kanji":"打ち明ける","meaning":"to confide; to reveal; to disclose; to lay bare; to speak frankly; to open"],
+        ["hiragana":"やしん","kanji":"野心","meaning":"ambition, aspiration"],
+        ["hiragana":"よういん","kanji":"要因","meaning":"main cause; primary factor"],
+        ["hiragana":"ぶんさん","kanji":"分散","meaning":"dispersion, breakup"],
+        ["hiragana":"ちんもく","kanji":"沈黙","meaning":"silence, being silent"],
+        ["hiragana":"げんみつ","kanji":"厳密","meaning":"strict, close, precise"],
+        ["hiragana":"へんかく","kanji":"変革","meaning":"change, transformation"],
+        ["hiragana":"へんけん","kanji":"偏見","meaning":"prejudice, narrow view"],
+        ["hiragana":"ほうかい","kanji":"崩壊","meaning":"collapse, crumbling"],
+        ["hiragana":"かわす","kanji":"交わす","meaning":"to exchange, to intersect, to cross"],
+        ["hiragana":"こせい","kanji":"個性","meaning":"individuality; personality; idiosyncrasy; character; individual characteristic"],
+        ["hiragana":"みなもと","kanji":"源","meaning":"source, origin, root"],
+        ["hiragana":"むこう","kanji":"無効","meaning":"invalid, no effect"],
+        ["hiragana":"さだめる","kanji":"定める","meaning":"to decide; to determine; to establish; to lay down; to prescribe"],
+        ["hiragana":"さいせい","kanji":"再生","meaning":"regeneration; restoration to life; reformation; rehabilitation; playback"]
+    ]
+    
+    var n1ch19array = [
+        ["hiragana":"せいじつ","kanji":"誠実","meaning":"sincere, honest, faithful"],
+        ["hiragana":"しじ","kanji":"支持","meaning":"support; backing; endorsement; approval"],
+        ["hiragana":"とうし","kanji":"投資","meaning":"investment"],
+        ["hiragana":"ばいしゅう","kanji":"買収","meaning":"acquisition, buy-out, takeover"],
+        ["hiragana":"ぼうりょく","kanji":"暴力","meaning":"violence, mayhem"],
+        ["hiragana":"ぶんぱい","kanji":"分配","meaning":"division; splitting; sharing; distribution; dissemination; allocation"],
+        ["hiragana":"どうるい","kanji":"同類","meaning":"the same kind"],
+        ["hiragana":"どうとう","kanji":"同等","meaning":"equality; equal; same rights; same rank; equivalence"],
+        ["hiragana":"へいし","kanji":"兵士","meaning":"soldier"],
+        ["hiragana":"ひってき","kanji":"匹敵","meaning":"to be a match for, to rival"],
+        ["hiragana":"いかり","kanji":"怒り","meaning":"anger; rage; fury; wrath; indignation"],
+        ["hiragana":"いっこく","kanji":"一刻","meaning":"minute, moment, an instant"],
+        ["hiragana":"じょげん","kanji":"助言","meaning":"advice, suggestion"],
+        ["hiragana":"こどく","kanji":"孤独","meaning":"solitude; loneliness; isolation"],
+        ["hiragana":"こうかい","kanji":"後悔","meaning":"regret, repentance, remorse"],
+        ["hiragana":"みぢか","kanji":"身近","meaning":"near oneself, close to one, familiar"],
+        ["hiragana":"にんしん","kanji":"妊娠","meaning":"conception, pregnancy"],
+        ["hiragana":"のうじょう","kanji":"農場","meaning":"farm"],
+        ["hiragana":"おかす","kanji":"犯す","meaning":"to commit"],
+        ["hiragana":"せいふく","kanji":"征服","meaning":"conquest, subjugation"]
+    ]
+    
+    var n1ch20array = [
+        ["hiragana":"たいせい","kanji":"態勢","meaning":"attitude, posture, preparedness"],
+        ["hiragana":"ていたい","kanji":"停滞","meaning":"stagnation, tie-up, congestion"],
+        ["hiragana":"ちくせき","kanji":"蓄積","meaning":"accumulation; accumulate; store"],
+        ["hiragana":"はい","kanji":"肺","meaning":"lung"],
+        ["hiragana":"ひなん","kanji":"非難","meaning":"criticism; blame; censure; attack; reproach"],
+        ["hiragana":"いとなむ","kanji":"営む","meaning":"to run"],
+        ["hiragana":"じょうせい","kanji":"情勢","meaning":"state of things, state of affairs"],
+        ["hiragana":"かいひ","kanji":"回避","meaning":"evasion, avoidance"],
+        ["hiragana":"かいじょ","kanji":"解除","meaning":"cancellation, release"],
+        ["hiragana":"かんぺき","kanji":"完璧","meaning":"perfect; complete; flawless"],
+        ["hiragana":"けいれき","kanji":"経歴","meaning":"personal history, career"],
+        ["hiragana":"きんべん","kanji":"勤勉","meaning":"diligent, industrious"],
+        ["hiragana":"こころみる","kanji":"試みる","meaning":"to try, to attempt"],
+        ["hiragana":"こんきょ","kanji":"根拠","meaning":"basis, foundation"],
+        ["hiragana":"きょうはく","kanji":"脅迫","meaning":"threat, menace, coercion"],
+        ["hiragana":"きょうじゅ","kanji":"享受","meaning":"reception, acceptance, enjoyment"],
+        ["hiragana":"きょうせい","kanji":"強制","meaning":"obligation, coercion, compulsion"],
+        ["hiragana":"むりょく","kanji":"無力","meaning":"powerlessness, incompetent"],
+        ["hiragana":"おそれ","kanji":"恐れ","meaning":"fear, horror, anxiety"],
+        ["hiragana":"さかえる","kanji":"栄える","meaning":"to prosper, to flourish"]
+    ]
+    
+    var n1ch21array = [
+        ["hiragana":"せいさく","kanji":"政策","meaning":"political measures; policy"],
+        ["hiragana":"しせん","kanji":"視線","meaning":"one’s line of sight, one’s gaze"],
+        ["hiragana":"しっと","kanji":"嫉妬","meaning":"jealousy, envy"],
+        ["hiragana":"そこなう","kanji":"損なう","meaning":"to harm, to hurt, to injure"],
+        ["hiragana":"すいこう","kanji":"遂行","meaning":"accomplishment, execution"],
+        ["hiragana":"とりひき","kanji":"取引","meaning":"transactions, dealings"],
+        ["hiragana":"ととのえる","kanji":"整える","meaning":"to put in order, to adjust"],
+        ["hiragana":"ちょくめん","kanji":"直面","meaning":"confrontation, to face"],
+        ["hiragana":"ふくしゅう","kanji":"復讐","meaning":"revenge"],
+        ["hiragana":"はんえい","kanji":"繁栄","meaning":"prosperity, thriving"],
+        ["hiragana":"へんどう","kanji":"変動","meaning":"change, fluctuation"],
+        ["hiragana":"いぞん","kanji":"依存","meaning":"dependence, reliance"],
+        ["hiragana":"じぎょう","kanji":"事業","meaning":"project; enterprise; business; industry; operations; venture; service"],
+        ["hiragana":"かいにゅう","kanji":"介入","meaning":"intervention"],
+        ["hiragana":"かけ","kanji":"賭け","meaning":"betting, gambling"],
+        ["hiragana":"かくほ","kanji":"確保","meaning":"securing; obtaining; ensuring; guarantee; maintaining"],
+        ["hiragana":"けいげん","kanji":"軽減","meaning":"abatement; reduction"],
+        ["hiragana":"きてい","kanji":"規定","meaning":"stipulation; prescription; provision; regulation; rule"],
+        ["hiragana":"おもに","kanji":"重荷","meaning":"load, heavy burden"],
+        ["hiragana":"おろか","kanji":"愚か","meaning":"foolish, stupid"]
+    ]
+    
+    var n1ch22array = [
+        ["hiragana":"ろんり","kanji":"論理","meaning":"logic, logical"],
+        ["hiragana":"さいよう","kanji":"採用","meaning":"use; adoption; acceptance; appointment; employment; engagement; recruitment"],
+        ["hiragana":"せいとう","kanji":"正当","meaning":"just, justifiable, right"],
+        ["hiragana":"しめい","kanji":"使命","meaning":"mission; errand; task; duty; obligation"],
+        ["hiragana":"しんか","kanji":"進化","meaning":"evolution; progress"],
+        ["hiragana":"しょうちょう","kanji":"象徴","meaning":"symbol"],
+        ["hiragana":"しょうめつ","kanji":"消滅","meaning":"extinction, extinguishment"],
+        ["hiragana":"そち","kanji":"措置","meaning":"measure, measures, step"],
+        ["hiragana":"そんしつ","kanji":"損失","meaning":"loss"],
+        ["hiragana":"たっせい","kanji":"達成","meaning":"achievement; attainment; accomplishment; realization"],
+        ["hiragana":"つげる","kanji":"告げる","meaning":"to tell, to inform"],
+        ["hiragana":"うんえい","kanji":"運営","meaning":"management; administration; operation"],
+        ["hiragana":"ようけん","kanji":"用件","meaning":"business; thing to be done; something that should be performed; information that should be conveyed"]
+    ]
+    
+    //JLPT N2
     var n2ch1array = [
         ["hiragana":"しょうすう","kanji":"少数","meaning":"minority; few"],
         ["hiragana":"あんか","kanji":"安価","meaning":"ow-priced; cheap; inexpensive"],
@@ -230,6 +548,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"へんきん","kanji":"返金","meaning":"repayment"],
         ["hiragana":"ひあたり","kanji":"日当たり","meaning":"exposure to the sun; sunny place"]
     ]
+    
     
     var n2ch2array = [
         ["hiragana":"いっぽうてき","kanji":"一方的","meaning":"one-sided; unilateral; arbitrary"],
@@ -346,6 +665,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"ねっこ","kanji":"根っこ","meaning":"root"]
     ]
     
+    //JLPT N3
     var n3ch1array = [
         ["hiragana":"ばか","kanji":"馬鹿","meaning":"fool, idiot"],
         ["hiragana":"ちか","kanji":"地下","meaning":"basement, cellar"],
@@ -540,6 +860,104 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch8array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 8 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 9"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch9array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 9 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 10"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch10array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 10 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 11"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch11array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 11 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 12"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch12array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 12 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 13"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch13array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 13 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 14"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch14array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 14 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 15"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch15array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 15 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 16"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch16array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 16 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 17"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch17array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 17 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 18"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch18array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 18 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 19"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch19array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 19 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 20"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch20array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 20 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 21"
+            totalLabel.text = "total 20 words"
+            shuffledQuestions = shuffleArray(n1ch21array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+        } else if LEVEL == 0 && CHAPTER == 21 {
+            titleLabel.text = "JLPT N1 Vocabulary"
+            titleShadowLabel.text = "JLPT N1 Vocabulary"
+            chapterLabel.text = "Chapter 22"
+            totalLabel.text = "total 13 words"
+            shuffledQuestions = shuffleArray(n1ch22array)
+            kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
         } else if LEVEL == 1 && CHAPTER == 0 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -668,6 +1086,34 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
                 currentQuestionArray = n1ch7array
             } else if LEVEL == 0 && CHAPTER == 7 {
                 currentQuestionArray = n1ch8array
+            } else if LEVEL == 0 && CHAPTER == 8 {
+                currentQuestionArray = n1ch9array
+            } else if LEVEL == 0 && CHAPTER == 9 {
+                currentQuestionArray = n1ch10array
+            } else if LEVEL == 0 && CHAPTER == 10 {
+                currentQuestionArray = n1ch11array
+            } else if LEVEL == 0 && CHAPTER == 11 {
+                currentQuestionArray = n1ch12array
+            } else if LEVEL == 0 && CHAPTER == 12 {
+                currentQuestionArray = n1ch13array
+            } else if LEVEL == 0 && CHAPTER == 13 {
+                currentQuestionArray = n1ch14array
+            } else if LEVEL == 0 && CHAPTER == 14 {
+                currentQuestionArray = n1ch15array
+            } else if LEVEL == 0 && CHAPTER == 15 {
+                currentQuestionArray = n1ch16array
+            } else if LEVEL == 0 && CHAPTER == 16 {
+                currentQuestionArray = n1ch17array
+            } else if LEVEL == 0 && CHAPTER == 17 {
+                currentQuestionArray = n1ch18array
+            } else if LEVEL == 0 && CHAPTER == 18 {
+                currentQuestionArray = n1ch19array
+            } else if LEVEL == 0 && CHAPTER == 19 {
+                currentQuestionArray = n1ch20array
+            } else if LEVEL == 0 && CHAPTER == 20 {
+                currentQuestionArray = n1ch21array
+            } else if LEVEL == 0 && CHAPTER == 21 {
+                currentQuestionArray = n1ch22array
             } else if LEVEL == 1 && CHAPTER == 0 {
                 currentQuestionArray = n2ch1array
             } else if LEVEL == 1 && CHAPTER == 1 {

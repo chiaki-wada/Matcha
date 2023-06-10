@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var logoImageView: UIImageView!
     var levelArray = ["N1","N2","N3"]
-    var wordsArray = ["160 words", "120 words","100 words"]
+    var wordsArray = ["433 words", "120 words","100 words"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
