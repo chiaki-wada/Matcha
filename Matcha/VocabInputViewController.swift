@@ -9,6 +9,7 @@ import UIKit
 
 class VocabInputViewController: UIViewController {
     
+    @IBOutlet var greenView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
@@ -36,11 +37,11 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"ほうしゅう","kanji":"報酬","meaning":"emuneration, recompense, reward"],
         ["hiragana":"いみん","kanji":"移民","meaning":"emigration, immigration"],
         ["hiragana":"いぜん","kanji":"依然","meaning":"still; as yet; as it has been"],
-        ["hiragana":"じぞく","kanji":"持続","meaning":"continuation; persisting; lasting; sustaining; enduring"],
+        ["hiragana":"じぞく","kanji":"持続","meaning":"continuation; persisting; lasting; sustaining"],
         ["hiragana":"かたむける","kanji":"傾ける","meaning":"to incline, to lean, to tilt"],
         ["hiragana":"こうい","kanji":"好意","meaning":"good will, favor, courtesy"],
         ["hiragana":"こうにゅう","kanji":"購入","meaning":"purchase, buy"],
-        ["hiragana":"めいりょう","kanji":"明瞭","meaning":"clear; plain; distinct; obvious; evident; articulate"],
+        ["hiragana":"めいりょう","kanji":"明瞭","meaning":"clear; distinct; obvious; evident; articulate"],
         ["hiragana":"りろん","kanji":"理論","meaning":"theory"],
         ["hiragana":"せつりつ","kanji":"設立","meaning":"establishment, founding"],
         ["hiragana":"しや","kanji":"視野","meaning":"field of vision; view; one’s outlook"],
@@ -55,12 +56,12 @@ class VocabInputViewController: UIViewController {
     ]
     var n1ch2array = [
         ["hiragana":"ぐんじ","kanji":"軍事","meaning":"military affairs"],
-        ["hiragana":"かだい","kanji":"課題","meaning":"subject; theme; issue; matter; homework; assignment; task; challenge; problem; question"],
+        ["hiragana":"かだい","kanji":"課題","meaning":"subject; issue; homework; assignment; challenge"],
         ["hiragana":"きこう","kanji":"機構","meaning":"mechanism, organization"],
         ["hiragana":"きそう","kanji":"競う","meaning":"to compete; to contend; to vie; to contest"],
         ["hiragana":"きょうれつ","kanji":"強烈","meaning":"strong, intense, severe"],
         ["hiragana":"りせい","kanji":"理性","meaning":"reason, reasoning power"],
-        ["hiragana":"りょういき","kanji":"領域","meaning":"area; domain; territory; field; range; region; regime"],
+        ["hiragana":"りょういき","kanji":"領域","meaning":"area; domain; territory; field; range; region"],
         ["hiragana":"せんとう","kanji":"戦闘","meaning":"battle, fight, combat"],
         ["hiragana":"しじ","kanji":"指示","meaning":"instructions, directions, indication"],
         ["hiragana":"しかく","kanji":"資格","meaning":"qualifications; requirements; capabilities"],
@@ -68,7 +69,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"しょうめい","kanji":"照明","meaning":"illumination; lighting"],
         ["hiragana":"しょうれい","kanji":"奨励","meaning":"encouragement, promotion"],
         ["hiragana":"しょうり","kanji":"勝利","meaning":"victory, triumph, win"],
-        ["hiragana":"とぼしい","kanji":"乏しい","meaning":"meager; scarce; limited; destitute; lacking; scanty"],
+        ["hiragana":"とぼしい","kanji":"乏しい","meaning":"meager; scarce; limited; destitute; lacking"],
         ["hiragana":"ぞうきょう","kanji":"増強","meaning":"augment, reinforce, increase"],
         ["hiragana":"あやまち","kanji":"過ち","meaning":"fault, error, indiscretion"],
         ["hiragana":"どくさい","kanji":"独裁","meaning":"dictatorship, despotism"],
@@ -83,7 +84,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"そまる","kanji":"染まる","meaning":"to be dyed; to be tainted; to be infected; to be stained; to be steeped"],
         ["hiragana":"そくざに","kanji":"即座に","meaning":"immediately; right away; on the spot"],
         ["hiragana":"たいしゅう","kanji":"大衆","meaning":"general public, the masses"],
-        ["hiragana":"うごき","kanji":"動き","meaning":"movement; move; motion; trend; development; change; fluctuation"],
+        ["hiragana":"うごき","kanji":"動き","meaning":"movement; move; motion; trend; fluctuation"],
         ["hiragana":"ゆうし","kanji":"融資","meaning":"financing, loan"],
         ["hiragana":"ぜつぼう","kanji":"絶望","meaning":"despair, hopelessness"],
         ["hiragana":"びんぼう","kanji":"貧乏","meaning":"poverty, destitute, poor"],
@@ -172,7 +173,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"とむ","kanji":"富む","meaning":"to be rich in, to abound in"],
         ["hiragana":"ついきゅう","kanji":"追求","meaning":"pursuit"],
         ["hiragana":"やみ","kanji":"闇","meaning":"darkness, the dark"],
-        ["hiragana":"やしなう","kanji":"養う","meaning":"to support; to provide for; to bring up, to raise; to feed"],
+        ["hiragana":"やしなう","kanji":"養う","meaning":"to support; to raise; to feed"],
         ["hiragana":"べんめい","kanji":"弁明","meaning":"explanation, excuse"],
         ["hiragana":"ぶそう","kanji":"武装","meaning":"arms, armament"],
         ["hiragana":"だきょう","kanji":"妥協","meaning":"compromise, giving in"],
@@ -187,7 +188,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"そうび","kanji":"装備","meaning":"equipment"],
         ["hiragana":"そうぞう","kanji":"創造","meaning":"creation"],
         ["hiragana":"たいおう","kanji":"対応","meaning":"correspondence"],
-        ["hiragana":"ていきょう","kanji":"提供","meaning":"offer; tender; providing; supplying; making available; donating"],
+        ["hiragana":"ていきょう","kanji":"提供","meaning":"offer; providing; supplying"],
         ["hiragana":"とっぱ","kanji":"突破","meaning":"breaking through, penetration"]
     ]
     
@@ -197,10 +198,10 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"ざんこく","kanji":"残酷","meaning":"cruelty, harshness"],
         ["hiragana":"ちゅうだん","kanji":"中断","meaning":"interruption; suspension; break"],
         ["hiragana":"はいし","kanji":"廃止","meaning":"abolition; repeal"],
-        ["hiragana":"はたす","kanji":"果たす","meaning":"to accomplish; to achieve; to carry out; to fulfill; to fulfil"],
+        ["hiragana":"はたす","kanji":"果たす","meaning":"to accomplish; to achieve; to carry out; to fulfill"],
         ["hiragana":"はつげん","kanji":"発言","meaning":"statement; remark; observation; utterance; speech"],
         ["hiragana":"ひろう","kanji":"疲労","meaning":"fatigue, weariness"],
-        ["hiragana":"いためる","kanji":"痛める","meaning":"to hurt; to injure; to cause pain; to harm; to damage"],
+        ["hiragana":"いためる","kanji":"痛める","meaning":"to hurt; to injure; to harm; to damage"],
         ["hiragana":"いと","kanji":"意図","meaning":"ntention; aim; design"],
         ["hiragana":"じゅうぎょういん","kanji":"従業員","meaning":"employee, worker"],
         ["hiragana":"けいか","kanji":"経過","meaning":"passage, expiration, progress"],
@@ -208,7 +209,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"きゅうきょく","kanji":"究極","meaning":"ultimate, extreme, final"],
         ["hiragana":"もさく","kanji":"模索","meaning":"groping"],
         ["hiragana":"し","kanji":"死","meaning":"death, decease"],
-        ["hiragana":"しくみ","kanji":"仕組み","meaning":"structure; construction; arrangement; contrivance; mechanism; workings; plan; plot"],
+        ["hiragana":"しくみ","kanji":"仕組み","meaning":"structure; construction; arrangement; mechanism"],
         ["hiragana":"そなわる","kanji":"備わる","meaning":"to be furnished with, to be equipped with"],
         ["hiragana":"たいしょく","kanji":"退職","meaning":"retirement; resignation"],
         ["hiragana":"ゆうかん","kanji":"勇敢","meaning":"brave, heroic, gallant"]
@@ -254,14 +255,14 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"しゅほう","kanji":"手法","meaning":"technique, method"],
         ["hiragana":"そうさ","kanji":"捜査","meaning":"search, investigation"],
         ["hiragana":"てんじ","kanji":"展示","meaning":"exhibition; display"],
-        ["hiragana":"つうじょう","kanji":"通常","meaning":"usual; ordinary; normal; regular; general; common"],
+        ["hiragana":"つうじょう","kanji":"通常","meaning":"usual; ordinary; normal; regular; general"],
         ["hiragana":"うんよう","kanji":"運用","meaning":"making use of, application"],
         ["hiragana":"びんかん","kanji":"敏感","meaning":"sensitive; alert; aware; susceptible"],
         ["hiragana":"ぶか","kanji":"部下","meaning":"subordinate person"]
     ]
     
     var n1ch11array = [
-        ["hiragana":"ちかづく","kanji":"近づく","meaning":"to approach; to draw near; to get close; to get acquainted with; to get closer to; to get to know"],
+        ["hiragana":"ちかづく","kanji":"近づく","meaning":"to approach; to get close; to get acquainted with"],
         ["hiragana":"どうき","kanji":"動機","meaning":"motive; incentive"],
         ["hiragana":"どうめい","kanji":"同盟","meaning":"alliance, union, league"],
         ["hiragana":"はいりょ","kanji":"配慮","meaning":"consideration, concern, attention"],
@@ -272,11 +273,11 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"かくめい","kanji":"革命","meaning":"revolution"],
         ["hiragana":"けいかい","kanji":"警戒","meaning":"vigilance, caution, alertness"],
         ["hiragana":"こてい","kanji":"固定","meaning":"fixing"],
-        ["hiragana":"なやみ","kanji":"悩み","meaning":"trouble; troubles; worry; distress; sorrows; anguish; agony; problem"],
+        ["hiragana":"なやみ","kanji":"悩み","meaning":"trouble; worry; distress; sorrows; problem"],
         ["hiragana":"おそう","kanji":"襲う","meaning":"to attack, to assail"],
         ["hiragana":"さいあく","kanji":"最悪","meaning":"worst; horrible; horrid; awful; terrible"],
         ["hiragana":"せっとく","kanji":"説得","meaning":"persuasion"],
-        ["hiragana":"てんかん","kanji":"転換","meaning":"conversion; diversion; changeover; commutation; switchover"],
+        ["hiragana":"てんかん","kanji":"転換","meaning":"conversion; diversion; changeover; switchover"],
         ["hiragana":"てんざい","kanji":"天才","meaning":"genius; prodigy; natural gift"],
         ["hiragana":"ぜんてい","kanji":"前提","meaning":"condition; assumption; prerequisite; hypothesis"],
         ["hiragana":"ばくだん","kanji":"爆弾","meaning":"bomb"],
@@ -294,7 +295,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"せってい","kanji":"設定","meaning":"establishment; creation; posing"],
         ["hiragana":"しょうげん","kanji":"証言","meaning":"testimony"],
         ["hiragana":"しょうこ","kanji":"証拠","meaning":"evidence, proof"],
-        ["hiragana":"しょうさい","kanji":"詳細","meaning":"details; particulars; specifics; detailed; specific; minute"],
+        ["hiragana":"しょうさい","kanji":"詳細","meaning":"details; particulars; specifics"],
         ["hiragana":"とうたつ","kanji":"到達","meaning":"reaching; attaining; arrival"],
         ["hiragana":"よくせい","kanji":"抑制","meaning":"control, restraint, suppression"],
         ["hiragana":"あっとう","kanji":"圧倒","meaning":"overwhelm, overpower"],
@@ -319,9 +320,9 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"すく","kanji":"好く","meaning":"to like, to love"],
         ["hiragana":"てんけん","kanji":"点検","meaning":"inspection; examination; checking"],
         ["hiragana":"とうごう","kanji":"統合","meaning":"integration, unification, synthesis"],
-        ["hiragana":"うながす","kanji":"促す","meaning":"to urge; to encourage; to press; to prompt; to draw"],
+        ["hiragana":"うながす","kanji":"促す","meaning":"to urge; to encourage; to press; to prompt"],
         ["hiragana":"だっしゅつ","kanji":"脱出","meaning":"escape; break-out; prolapse; proptosis"],
-        ["hiragana":"どくせん","kanji":"独占","meaning":"monopoly; monopolization; exclusivity; keeping to oneself"],
+        ["hiragana":"どくせん","kanji":"独占","meaning":"monopoly; exclusivity; keeping to oneself"],
         ["hiragana":"どきょう","kanji":"度胸","meaning":"courage, bravery, nerve"],
         ["hiragana":"ふかけつ","kanji":"不可欠","meaning":"indispensable; essential"],
         ["hiragana":"はいじょ","kanji":"排除","meaning":"exclusion, removal, elimination"],
@@ -372,18 +373,18 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"かんよ","kanji":"関与","meaning":"participation, taking part in"],
         ["hiragana":"けいたい","kanji":"携帯","meaning":"something carried"],
         ["hiragana":"こちょう","kanji":"誇張","meaning":"exaggeration"],
-        ["hiragana":"こうかい","kanji":"公開","meaning":"opening to the public; making available to the public; putting on display; exhibiting; showing"],
+        ["hiragana":"こうかい","kanji":"公開","meaning":"making available to the public; exhibiting; showing"],
         ["hiragana":"しょうたい","kanji":"正体","meaning":"true character, true form"]
     ]
     
     var n1ch16array = [
         ["hiragana":"しゅうえき","kanji":"収益","meaning":"earnings, proceeds, returns"],
-        ["hiragana":"たいけん","kanji":"体験","meaning":"personal experience; physical experience; one's own experience"],
+        ["hiragana":"たいけん","kanji":"体験","meaning":"personal experience; one's own experience"],
         ["hiragana":"つよまる","kanji":"強まる","meaning":"to get strong, to gain strength"],
         ["hiragana":"ゆうわく","kanji":"誘惑","meaning":"temptation, allurement"],
         ["hiragana":"えいぞう","kanji":"映像","meaning":"image"],
         ["hiragana":"げんち","kanji":"現地","meaning":"actual place, local"],
-        ["hiragana":"ひなん","kanji":"避難","meaning":"taking refuge; finding shelter; evacuation; escape; seeking safe haven"],
+        ["hiragana":"ひなん","kanji":"避難","meaning":"taking refuge; evacuation; escape"],
         ["hiragana":"ひつぜん","kanji":"必然","meaning":"inevitable, necessary"],
         ["hiragana":"じもと","kanji":"地元","meaning":"home area; home town; local"],
         ["hiragana":"かんりょう","kanji":"官僚","meaning":"bureaucrat, bureaucracy"],
@@ -400,7 +401,7 @@ class VocabInputViewController: UIViewController {
     ]
     
     var n1ch17array = [
-        ["hiragana":"しゅうしゅう","kanji":"収集","meaning":"collecting; accumulating; gathering; collection"],
+        ["hiragana":"しゅうしゅう","kanji":"収集","meaning":"collecting; accumulating; gathering"],
         ["hiragana":"てんじょう","kanji":"天井","meaning":"ceiling, ceiling price"],
         ["hiragana":"とうにゅう","kanji":"投入","meaning":"throwing into, inserting"],
         ["hiragana":"とうせい","kanji":"統制","meaning":"regulation, control"],
@@ -416,7 +417,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"かんよう","kanji":"寛容","meaning":"tolerance, generosity"],
         ["hiragana":"けつい","kanji":"決意","meaning":"decision, determination"],
         ["hiragana":"こうしょう","kanji":"交渉","meaning":"negotiations, discussions"],
-        ["hiragana":"おとずれる","kanji":"訪れる","meaning":"to visit; to call on; to arrive; to come; to appear"],
+        ["hiragana":"おとずれる","kanji":"訪れる","meaning":"to visit; to call on; to arrive; to come"],
         ["hiragana":"おう","kanji":"負う","meaning":"to bear, to take responsibility for"],
         ["hiragana":"れんちゅう","kanji":"連中","meaning":"company, lot, bunch"],
         ["hiragana":"さいぶ","kanji":"細部","meaning":"details"]
@@ -428,7 +429,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"しゅえい","kanji":"守衛","meaning":"security guard, doorkeeper"],
         ["hiragana":"たもつ","kanji":"保つ","meaning":"to keep; to preserve; to hold; to retain; to maintain; to sustain; to last; to endure"],
         ["hiragana":"とみ","kanji":"富","meaning":"riches, wealth, fortune"],
-        ["hiragana":"うちあける","kanji":"打ち明ける","meaning":"to confide; to reveal; to disclose; to lay bare; to speak frankly; to open"],
+        ["hiragana":"うちあける","kanji":"打ち明ける","meaning":"to confide; to reveal; to disclose; to speak frankly"],
         ["hiragana":"やしん","kanji":"野心","meaning":"ambition, aspiration"],
         ["hiragana":"よういん","kanji":"要因","meaning":"main cause; primary factor"],
         ["hiragana":"ぶんさん","kanji":"分散","meaning":"dispersion, breakup"],
@@ -438,11 +439,11 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"へんけん","kanji":"偏見","meaning":"prejudice, narrow view"],
         ["hiragana":"ほうかい","kanji":"崩壊","meaning":"collapse, crumbling"],
         ["hiragana":"かわす","kanji":"交わす","meaning":"to exchange, to intersect, to cross"],
-        ["hiragana":"こせい","kanji":"個性","meaning":"individuality; personality; idiosyncrasy; character; individual characteristic"],
+        ["hiragana":"こせい","kanji":"個性","meaning":"individuality; personality; character"],
         ["hiragana":"みなもと","kanji":"源","meaning":"source, origin, root"],
         ["hiragana":"むこう","kanji":"無効","meaning":"invalid, no effect"],
-        ["hiragana":"さだめる","kanji":"定める","meaning":"to decide; to determine; to establish; to lay down; to prescribe"],
-        ["hiragana":"さいせい","kanji":"再生","meaning":"regeneration; restoration to life; reformation; rehabilitation; playback"]
+        ["hiragana":"さだめる","kanji":"定める","meaning":"to decide; to determine; to prescribe"],
+        ["hiragana":"さいせい","kanji":"再生","meaning":"regeneration; reformation; playback"]
     ]
     
     var n1ch19array = [
@@ -453,7 +454,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"ぼうりょく","kanji":"暴力","meaning":"violence, mayhem"],
         ["hiragana":"ぶんぱい","kanji":"分配","meaning":"division; splitting; sharing; distribution; dissemination; allocation"],
         ["hiragana":"どうるい","kanji":"同類","meaning":"the same kind"],
-        ["hiragana":"どうとう","kanji":"同等","meaning":"equality; equal; same rights; same rank; equivalence"],
+        ["hiragana":"どうとう","kanji":"同等","meaning":"equality; equal; same rank; equivalence"],
         ["hiragana":"へいし","kanji":"兵士","meaning":"soldier"],
         ["hiragana":"ひってき","kanji":"匹敵","meaning":"to be a match for, to rival"],
         ["hiragana":"いかり","kanji":"怒り","meaning":"anger; rage; fury; wrath; indignation"],
@@ -504,19 +505,19 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"はんえい","kanji":"繁栄","meaning":"prosperity, thriving"],
         ["hiragana":"へんどう","kanji":"変動","meaning":"change, fluctuation"],
         ["hiragana":"いぞん","kanji":"依存","meaning":"dependence, reliance"],
-        ["hiragana":"じぎょう","kanji":"事業","meaning":"project; enterprise; business; industry; operations; venture; service"],
+        ["hiragana":"じぎょう","kanji":"事業","meaning":"project; business; industry; operations; service"],
         ["hiragana":"かいにゅう","kanji":"介入","meaning":"intervention"],
         ["hiragana":"かけ","kanji":"賭け","meaning":"betting, gambling"],
-        ["hiragana":"かくほ","kanji":"確保","meaning":"securing; obtaining; ensuring; guarantee; maintaining"],
+        ["hiragana":"かくほ","kanji":"確保","meaning":"securing; obtaining; ensuring; guarantee"],
         ["hiragana":"けいげん","kanji":"軽減","meaning":"abatement; reduction"],
-        ["hiragana":"きてい","kanji":"規定","meaning":"stipulation; prescription; provision; regulation; rule"],
+        ["hiragana":"きてい","kanji":"規定","meaning":"stipulation; provision; regulation; rule"],
         ["hiragana":"おもに","kanji":"重荷","meaning":"load, heavy burden"],
         ["hiragana":"おろか","kanji":"愚か","meaning":"foolish, stupid"]
     ]
     
     var n1ch22array = [
         ["hiragana":"ろんり","kanji":"論理","meaning":"logic, logical"],
-        ["hiragana":"さいよう","kanji":"採用","meaning":"use; adoption; acceptance; appointment; employment; engagement; recruitment"],
+        ["hiragana":"さいよう","kanji":"採用","meaning":"adoption; appointment; employment; recruitment"],
         ["hiragana":"せいとう","kanji":"正当","meaning":"just, justifiable, right"],
         ["hiragana":"しめい","kanji":"使命","meaning":"mission; errand; task; duty; obligation"],
         ["hiragana":"しんか","kanji":"進化","meaning":"evolution; progress"],
@@ -524,10 +525,10 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"しょうめつ","kanji":"消滅","meaning":"extinction, extinguishment"],
         ["hiragana":"そち","kanji":"措置","meaning":"measure, measures, step"],
         ["hiragana":"そんしつ","kanji":"損失","meaning":"loss"],
-        ["hiragana":"たっせい","kanji":"達成","meaning":"achievement; attainment; accomplishment; realization"],
+        ["hiragana":"たっせい","kanji":"達成","meaning":"achievement; accomplishment; realization"],
         ["hiragana":"つげる","kanji":"告げる","meaning":"to tell, to inform"],
         ["hiragana":"うんえい","kanji":"運営","meaning":"management; administration; operation"],
-        ["hiragana":"ようけん","kanji":"用件","meaning":"business; thing to be done; something that should be performed; information that should be conveyed"]
+        ["hiragana":"ようけん","kanji":"用件","meaning":"thing to be done; information that should be conveyed"]
     ]
     
     //JLPT N2
@@ -546,7 +547,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"がくねん","kanji":"学年","meaning":"academic year; school year"],
         ["hiragana":"がんじょう","kanji":"頑丈","meaning":"solid; firm; stout; burly; strong; sturdy"],
         ["hiragana":"はく","kanji":"泊","meaning":"counter for nights of a stay"],
-        ["hiragana":"はんかん","kanji":"反感","meaning":"antipathy; antagonism; animosity; revulsion; ill feeling"],
+        ["hiragana":"はんかん","kanji":"反感","meaning":"antipathy; antagonism; animosity; ill feeling"],
         ["hiragana":"はっそう","kanji":"発送","meaning":"sending; forwarding; shipping"],
         ["hiragana":"はたらきて","kanji":"働き手","meaning":"worker; breadwinner; supporter"],
         ["hiragana":"はつげん","kanji":"発言","meaning":"statement; remark; observation; utterance; speech"],
@@ -558,23 +559,23 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"いっぽうてき","kanji":"一方的","meaning":"one-sided; unilateral; arbitrary"],
         ["hiragana":"じれい","kanji":"事例","meaning":"example; precedent; case"],
         ["hiragana":"じゅみょう","kanji":"寿命","meaning":"life span"],
-        ["hiragana":"じゅうじつ","kanji":"充実","meaning":"fullness; completion; perfection; enhancement; enrichment"],
-        ["hiragana":"かがやき","kanji":"輝き","meaning":"brightness; brilliance; brilliancy; radiance; glitter"],
+        ["hiragana":"じゅうじつ","kanji":"充実","meaning":"fullness; completion; enhancement; enrichment"],
+        ["hiragana":"かがやき","kanji":"輝き","meaning":"brightness; brilliance; radiance; glitter"],
         ["hiragana":"かいさい","kanji":"開催","meaning":"holding"],
         ["hiragana":"かくじ","kanji":"各自","meaning":"each"],
         ["hiragana":"かくやす","kanji":"格安","meaning":"cheap; reasonable"],
         ["hiragana":"かつじ","kanji":"活字","meaning":"printing type; movable type; printed text; print"],
         ["hiragana":"かつやく","kanji":"活躍","meaning":"activity"],
         ["hiragana":"きをおとす","kanji":"気を落とす","meaning":"to be discouraged; to be disheartened"],
-        ["hiragana":"きんちょうかん","kanji":"緊張感","meaning":"feeling of tension; air of tension; tension; nervousness"],
-        ["hiragana":"こんき","kanji":"根気","meaning":"patience; perseverance; persistence; tenacity; energy"],
+        ["hiragana":"きんちょうかん","kanji":"緊張感","meaning":"feeling of tension; tension; nervousness"],
+        ["hiragana":"こんき","kanji":"根気","meaning":"patience; perseverance; persistence; tenacity"],
         ["hiragana":"こうひんしつ","kanji":"高品質","meaning":"high quality"],
-        ["hiragana":"こうじょう","kanji":"向上","meaning":"elevation; rise; improvement; advancement; progress"],
+        ["hiragana":"こうじょう","kanji":"向上","meaning":"rise; improvement; advancement; progress"],
         ["hiragana":"こうり","kanji":"小売","meaning":"retail"],
         ["hiragana":"こうざ","kanji":"講座","meaning":"course"],
-        ["hiragana":"くりかえし","kanji":"繰り返し","meaning":"repetition; repeat; reiteration; iteration; refrain"],
+        ["hiragana":"くりかえし","kanji":"繰り返し","meaning":"repetition; repeat; reiteration; refrain"],
         ["hiragana":"きゅうびょう","kanji":"急病","meaning":"sudden illness"],
-        ["hiragana":"もちだす","kanji":"持ち出す","meaning":"to take out; to carry out; to bring out from where it belongs; to mention something; to broach a topic"]
+        ["hiragana":"もちだす","kanji":"持ち出す","meaning":"to bring out from where it belongs; to mention something; to broach a topic"]
     ]
     
     var n2ch3array = [
@@ -593,32 +594,32 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"しゅりょく","kanji":"主力","meaning":"main force; chief object; mainline"],
         ["hiragana":"そうしん","kanji":"送信","meaning":"transmission; sending"],
         ["hiragana":"たい","kanji":"対","meaning":"opposite; opposition; versus; vs.; v."],
-        ["hiragana":"たいさく","kanji":"対策","meaning":"measure; provision; step; countermeasure; counterplan"],
-        ["hiragana":"たんしゅく","kanji":"短縮","meaning":"shortening; contraction; reduction; curtailment; abbreviation"],
+        ["hiragana":"たいさく","kanji":"対策","meaning":"measure; provision; countermeasure; counterplan"],
+        ["hiragana":"たんしゅく","kanji":"短縮","meaning":"shortening; reduction; curtailment; abbreviation"],
         ["hiragana":"ていいん","kanji":"定員","meaning":"fixed number"],
         ["hiragana":"ていれ","kanji":"手入れ","meaning":"care; looking after; repair; maintenance"],
-        ["hiragana":"ていし","kanji":"停止","meaning":"stoppage; coming to a stop; halt; standstill; ceasing"]
+        ["hiragana":"ていし","kanji":"停止","meaning":"stoppage; halt; standstill; ceasing"]
     ]
     
     var n2ch4array = [
         ["hiragana":"てもと","kanji":"手元","meaning":"at hand; on hand; nearby; close at hand"],
         ["hiragana":"てんきん","kanji":"転勤","meaning":"job transfer; job relocation; intra-company transfer"],
-        ["hiragana":"とりつく","kanji":"取り付く","meaning":"to cling to; to hold on to; to hold fast to; to set about doing; to begin"],
+        ["hiragana":"とりつく","kanji":"取り付く","meaning":"to cling to; to hold on to; to set about doing"],
         ["hiragana":"とりあげる","kanji":"取り上げる","meaning":"to pick up; to adopt"],
         ["hiragana":"とざんか","kanji":"登山家","meaning":"mountain climber; mountaineer"],
         ["hiragana":"つけくわえる","kanji":"付け加える","meaning":"to add"],
         ["hiragana":"つみかさなる","kanji":"積み重なる","meaning":"to pile up; to stack up; to accumulate"],
         ["hiragana":"わかわかしい","kanji":"若々しい","meaning":"youthful; young; young-looking"],
-        ["hiragana":"やくそくごと","kanji":"約束事","meaning":"promise; vow; engagement; convention; rule; resolution"],
+        ["hiragana":"やくそくごと","kanji":"約束事","meaning":"promise; vow; engagement; rule; resolution"],
         ["hiragana":"よろおそく","kanji":"夜遅く","meaning":"late at night; at a late hour"],
-        ["hiragana":"ゆうりょく","kanji":"有力","meaning":"influential; prominent; strong; likely; plausible; potent"],
+        ["hiragana":"ゆうりょく","kanji":"有力","meaning":"influential; prominent; strong; likely; plausible"],
         ["hiragana":"ざつだん","kanji":"雑談","meaning":"chatting; idle talk"],
         ["hiragana":"ぜんはん","kanji":"前半","meaning":"first half"],
-        ["hiragana":"ぞくしゅつ","kanji":"続出","meaning":"appearing one after another; cropping up one after another"],
+        ["hiragana":"ぞくしゅつ","kanji":"続出","meaning":"appearing one after another"],
         ["hiragana":"ぞうげん","kanji":"増減","meaning":"increase and decrease; fluctuation"],
         ["hiragana":"あまやかす","kanji":"甘やかす","meaning":"to pamper; to spoil"],
-        ["hiragana":"あともどり","kanji":"後戻り","meaning":"going backward; turning back; backtracking; doubling back; retrogression"],
-        ["hiragana":"ちかづく","kanji":"近づく","meaning":"to approach; to draw near; to get close; to get acquainted with"],
+        ["hiragana":"あともどり","kanji":"後戻り","meaning":"going backward; turning back; retrogression"],
+        ["hiragana":"ちかづく","kanji":"近づく","meaning":"to approach; to get close; to get acquainted with"],
         ["hiragana":"ちゅうじつ","kanji":"忠実","meaning":"faithful; devoted; loyal; honest; true"],
         ["hiragana":"ふかまる","kanji":"深まる","meaning":"to deepen; to heighten; to intensify"]
     ]
@@ -628,19 +629,19 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"げんさん","kanji":"原産","meaning":"place of origin; habitat"],
         ["hiragana":"はかまいり","kanji":"墓参り","meaning":"visit to a grave"],
         ["hiragana":"はじ","kanji":"恥","meaning":"shame; embarrassment; disgrace"],
-        ["hiragana":"はりがみ","kanji":"張り紙","meaning":"paper patch; paper backing; poster; sticker; label"],
-        ["hiragana":"ひろげる","kanji":"広げる","meaning":"to spread; to extend; to expand; to enlarge; to widen; to broaden"],
+        ["hiragana":"はりがみ","kanji":"張り紙","meaning":"paper patch; poster; sticker; label"],
+        ["hiragana":"ひろげる","kanji":"広げる","meaning":"to spread; to expand; to enlarge; to widen; to broaden"],
         ["hiragana":"じっち","kanji":"実地","meaning":"practice"],
         ["hiragana":"じかく","kanji":"自覚","meaning":"self-consciousness; self-awareness"],
         ["hiragana":"じもと","kanji":"地元","meaning":"home area; home town; local"],
-        ["hiragana":"じっせき","kanji":"実績","meaning":"achievements; actual results; accomplishments; past results"],
-        ["hiragana":"じっし","kanji":"実施","meaning":"enforcement; implementation; putting into practice; carrying out"],
+        ["hiragana":"じっせき","kanji":"実績","meaning":"achievements; accomplishments; past results"],
+        ["hiragana":"じっし","kanji":"実施","meaning":"enforcement; implementation; putting into practice"],
         ["hiragana":"じゅどうてき","kanji":"受動的","meaning":"passive"],
         ["hiragana":"じゅこう","kanji":"受講","meaning":"attend a lecture"],
         ["hiragana":"じゅうまん","kanji":"充満","meaning":"being filled with; being full of; permeation"],
         ["hiragana":"かげき","kanji":"過激","meaning":"extreme; radical"],
         ["hiragana":"かいてん","kanji":"回転","meaning":"rotation"],
-        ["hiragana":"かっこうつける","kanji":"格好つける","meaning":"to affect a stylish air; to try to look good; to show off"],
+        ["hiragana":"かっこうつける","kanji":"格好つける","meaning":"to affect a stylish air; to try to look good"],
         ["hiragana":"かくい","kanji":"各位","meaning":"everyone; each and every one"],
         ["hiragana":"かくとく","kanji":"獲得","meaning":"acquisition; possession"],
         ["hiragana":"かんげいかい","kanji":"歓迎会","meaning":"welcome party"]
@@ -654,17 +655,17 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"けんそん","kanji":"謙遜","meaning":"modesty; humility; being humble"],
         ["hiragana":"けっしょう","kanji":"決勝","meaning":"decision of a contest; finals"],
         ["hiragana":"きがる","kanji":"気軽","meaning":"carefree; buoyant; lighthearted; sprightly"],
-        ["hiragana":"ききて","kanji":"聞き手","meaning":"hearer; listener; audience; interviewer; questioner"],
+        ["hiragana":"ききて","kanji":"聞き手","meaning":"hearer; listener; audience; interviewer"],
         ["hiragana":"きせい","kanji":"帰省","meaning":"homecoming; returning home"],
         ["hiragana":"こべつ","kanji":"個別","meaning":"particular case; discrete; individual; separate"],
-        ["hiragana":"こまやか","kanji":"細やか","meaning":"tender; warm; caring; thoughtful; meticulous; detailed; attentive"],
+        ["hiragana":"こまやか","kanji":"細やか","meaning":"tender; caring; thoughtful; detailed; attentive"],
         ["hiragana":"こんじょう","kanji":"根性","meaning":"willpower; guts; determination; grit; spirit"],
         ["hiragana":"こうせん","kanji":"光線","meaning":"beam; light ray"],
         ["hiragana":"くうかん","kanji":"空間","meaning":"space; room; airspace"],
         ["hiragana":"くうそう","kanji":"空想","meaning":"daydream; fantasy; fancy; vision"],
-        ["hiragana":"きょうかい","kanji":"協会","meaning":"association; society; organization; organisation"],
+        ["hiragana":"きょうかい","kanji":"協会","meaning":"association; society; organization"],
         ["hiragana":"めいもん","kanji":"名門","meaning":"noted family; noble family; prestigious school"],
-        ["hiragana":"もりあがる","kanji":"盛り上がる","meaning":"to swell; to rise; to bulge; to be piled up; to rouse; to get excited"],
+        ["hiragana":"もりあがる","kanji":"盛り上がる","meaning":"to swell; to rise; to bulge; to get excited"],
         ["hiragana":"むじょうけん","kanji":"無条件","meaning":"unconditional"],
         ["hiragana":"ねっこ","kanji":"根っこ","meaning":"root"]
     ]
@@ -672,24 +673,24 @@ class VocabInputViewController: UIViewController {
     var n2ch7array = [
         ["hiragana":"ねずよい","kanji":"根強い","meaning":"firmly rooted; deep-seated"],
         ["hiragana":"のうこう","kanji":"濃厚","meaning":"rich"],
-        ["hiragana":"おもいつく","kanji":"思いつく","meaning":"to think of; to hit upon; to come into one's mind; to be struck with an idea; to remember; to recall"],
+        ["hiragana":"おもいつく","kanji":"思いつく","meaning":"to come into one's mind; to be struck with an idea"],
         ["hiragana":"らいねんど","kanji":"来年度","meaning":"next year; next fiscal year"],
-        ["hiragana":"りんじ","kanji":"臨時","meaning":"temporary; provisional; interim; special; extraordinary; extra"],
+        ["hiragana":"りんじ","kanji":"臨時","meaning":"temporary; provisional; interim; special"],
         ["hiragana":"りてん","kanji":"利点","meaning":"advantage; point in favor"],
         ["hiragana":"ろんせん","kanji":"論戦","meaning":"verbal dispute"],
-        ["hiragana":"りょうしょう","kanji":"了承","meaning":"acknowledgement; acknowledgment; understanding"],
+        ["hiragana":"りょうしょう","kanji":"了承","meaning":"acknowledgement; understanding"],
         ["hiragana":"さいしょうげん","kanji":"最小限","meaning":"minimum; lowest"],
         ["hiragana":"さいていげん","kanji":"最低限","meaning":"minimum; at the very least"],
         ["hiragana":"さきざき","kanji":"先々","meaning":"distant future; inevitable future; places one goes to"],
-        ["hiragana":"さっそく","kanji":"早速","meaning":"at once; immediately; without delay; promptly"],
-        ["hiragana":"せいそう","kanji":"清掃","meaning":"cleaning; clean-up; garbage collection; scavenging"],
+        ["hiragana":"さっそく","kanji":"早速","meaning":"at once; immediately; promptly"],
+        ["hiragana":"せいそう","kanji":"清掃","meaning":"cleaning; garbage collection"],
         ["hiragana":"せんしゅつ","kanji":"選出","meaning":"election; selection; choice"],
-        ["hiragana":"せおう","kanji":"背負う","meaning":"to carry on one's back; to be burdened with; to take responsibility for"],
-        ["hiragana":"しんらいせい","kanji":"信頼性","meaning":"credibility; authenticity; confidence; reliability"],
-        ["hiragana":"しゅっぱんしゃ","kanji":"出版社","meaning":"publisher; publishing house; publishing company"],
+        ["hiragana":"せおう","kanji":"背負う","meaning":"to carry on one's back; to be burdened with"],
+        ["hiragana":"しんらいせい","kanji":"信頼性","meaning":"credibility; confidence; reliability"],
+        ["hiragana":"しゅっぱんしゃ","kanji":"出版社","meaning":"publisher; publishing company"],
         ["hiragana":"しゅっぱつてん","kanji":"出発点","meaning":"starting point; point of departure"],
         ["hiragana":"しゅっしゃ","kanji":"出社","meaning":"going to work"],
-        ["hiragana":"そうおう","kanji":"相応","meaning":"suitable; appropriate; befitting; becoming; adequate; reasonable; proper"]
+        ["hiragana":"そうおう","kanji":"相応","meaning":"suitable; appropriate; befitting; proper"]
     ]
     
     var n2ch8array = [
@@ -698,27 +699,27 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"すいとる","kanji":"吸い取る","meaning":"to absorb; to squeeze"],
         ["hiragana":"たいせん","kanji":"対戦","meaning":"waging war; competition"],
         ["hiragana":"たりょう","kanji":"多量","meaning":"large quantity; large amount"],
-        ["hiragana":"たてかえる","kanji":"立て替える","meaning":"to pay for another; to pay someone else's debt as a loan to him; to make temporary payment on a person's behalf"],
+        ["hiragana":"たてかえる","kanji":"立て替える","meaning":"o pay someone else's debt as a loan"],
         ["hiragana":"とうけい","kanji":"統計","meaning":"statistics"],
         ["hiragana":"とうたつ","kanji":"到達","meaning":"reaching; attaining; arrival"],
         ["hiragana":"つぶす","kanji":"潰す","meaning":"to smash; to crush; to flatten; to kill"],
         ["hiragana":"つうち","kanji":"通知","meaning":"notice; notification; report; posting"],
         ["hiragana":"うちがわ","kanji":"内側","meaning":"inside; interior; inner part"],
-        ["hiragana":"わしょく","kanji":"和食","meaning":"Japanese food; Japanese-style meal; Japanese cuisine"],
-        ["hiragana":"ざんぎょうだい","kanji":"残業代","meaning":"overtime pay; overtime money; overtime payment"],
+        ["hiragana":"わしょく","kanji":"和食","meaning":"Japanese food; Japanese cuisine"],
+        ["hiragana":"ざんぎょうだい","kanji":"残業代","meaning":"overtime pay; overtime payment"],
         ["hiragana":"ぜいかん","kanji":"税関","meaning":"customs; customs house"],
         ["hiragana":"ぞくぞく","kanji":"続々","meaning":"successively; one after another"],
         ["hiragana":"あわただしい","kanji":"慌ただしい","meaning":"busy; hurried; confused; flurried"],
         ["hiragana":"どうちゅう","kanji":"道中","meaning":"during the journey; on the way; while travelling"],
         ["hiragana":"ふく","kanji":"副","meaning":"assistant; associate; vice-; sub-; deputy"],
-        ["hiragana":"がい","kanji":"街","meaning":"... street; ... quarter; ... district"],
+        ["hiragana":"がい","kanji":"街","meaning":"...street; ...quarter; ...district"],
         ["hiragana":"がくれき","kanji":"学歴","meaning":"academic background"]
     ]
     
     var n2ch9array = [
-        ["hiragana":"はっさん","kanji":"発散","meaning":"emission; emanation; radiation; diffusion; dispersion; letting out"],
-        ["hiragana":"へいぼん","kanji":"平凡","meaning":"ordinary; common; commonplace; mediocre; unremarkable; undistinguished; uneventful"],
-        ["hiragana":"ほじょ","kanji":"補助","meaning":"assistance; support; aid; help; subsidy; supplement; subvention; grant-in-aid"],
+        ["hiragana":"はっさん","kanji":"発散","meaning":"emission; radiation; diffusion; letting out"],
+        ["hiragana":"へいぼん","kanji":"平凡","meaning":"ordinary; common; mediocre; undistinguished"],
+        ["hiragana":"ほじょ","kanji":"補助","meaning":"assistance; support; aid; help; subsidy; supplement"],
         ["hiragana":"じこ","kanji":"自己","meaning":"self; oneself"],
         ["hiragana":"じょれつ","kanji":"序列","meaning":"rank; ranking order; hierarchy"],
         ["hiragana":"じょうはんしん","kanji":"上半身","meaning":"upper half of"],
@@ -729,19 +730,19 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"こだわる","kanji":"拘る","meaning":"to fuss over; to be particular about"],
         ["hiragana":"こうはん","kanji":"後半","meaning":"second half; latter half"],
         ["hiragana":"こうお","kanji":"好悪","meaning":"likes and dislikes"],
-        ["hiragana":"こずかい","kanji":"小遣い","meaning":"pocket money; spending money; pin money; allowance"],
+        ["hiragana":"こづかい","kanji":"小遣い","meaning":"pocket money; spending money; pin money"],
         ["hiragana":"きょひ","kanji":"拒否","meaning":"refusal; rejection; denial; veto"],
         ["hiragana":"きょうゆう","kanji":"共有","meaning":"joint ownership; co-ownership; sharing"],
         ["hiragana":"きゅう","kanji":"旧","meaning":"ex-; former; old"],
         ["hiragana":"めぐむ","kanji":"恵む","meaning":"to bless; to show mercy to; to give"],
-        ["hiragana":"めいぶつ","kanji":"名物","meaning":"famous product; special product; speciality; specialty"]
+        ["hiragana":"めいぶつ","kanji":"名物","meaning":"famous product; special product; specialty"]
     ]
     
     var n2ch10array = [
         ["hiragana":"みたす","kanji":"満たす","meaning":"to satisfy"],
         ["hiragana":"もはん","kanji":"模範","meaning":"exemplar; model; example; pattern"],
         ["hiragana":"なだらか","kanji":"傾らか","meaning":"gently sloping; gentle; easy; smooth"],
-        ["hiragana":"にんしき","kanji":"認識","meaning":"recognition; awareness; perception; understanding; knowledge; cognition; cognizance; cognisance"],
+        ["hiragana":"にんしき","kanji":"認識","meaning":"recognition; awareness; perception; understanding"],
         ["hiragana":"おどろき","kanji":"驚き","meaning":"surprise; astonishment; wonder; amazement"],
         ["hiragana":"おとく","kanji":"お得","meaning":"economical; bargain; good value; good-value"],
         ["hiragana":"らいにち","kanji":"来日","meaning":"arrival in Japan; coming to Japan; visit to Japan"],
@@ -751,13 +752,13 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"さまたげる","kanji":"妨げる","meaning":"to disturb; to prevent; to obstruct; to hinder"],
         ["hiragana":"さつえい","kanji":"撮影","meaning":"photography"],
         ["hiragana":"せっけいず","kanji":"設計図","meaning":"plan; blueprint"],
-        ["hiragana":"せんざい","kanji":"洗剤","meaning":"detergent; cleanser; cleaning agent; washing material"],
+        ["hiragana":"せんざい","kanji":"洗剤","meaning":"detergent; cleanser; washing material"],
         ["hiragana":"せってい","kanji":"設定","meaning":"establishment; creation; posing"],
         ["hiragana":"しがんしゃ","kanji":"志願者","meaning":"applicant; candidate"],
         ["hiragana":"しょ","kanji":"諸","meaning":"various; many; several"],
         ["hiragana":"しょくひ","kanji":"食費","meaning":"food expense"],
         ["hiragana":"しょくせいかつ","kanji":"食生活","meaning":"eating habits"],
-        ["hiragana":"しゅうへん","kanji":"周辺","meaning":"circumference; outskirts; environs; around; in the area of; in the vicinity of"]
+        ["hiragana":"しゅうへん","kanji":"周辺","meaning":"circumference; environs; around; in the vicinity of"]
     ]
     
     var n2ch11array = [
@@ -766,20 +767,20 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"たいてき","kanji":"大敵","meaning":"great rival; powerful enemy; archenemy"],
         ["hiragana":"ためる","kanji":"溜める","meaning":"to amass; to accumulate; to store; to leave unpaid"],
         ["hiragana":"とくしょく","kanji":"特色","meaning":"characteristic; feature; idiosyncrasy; personal color"],
-        ["hiragana":"とりのぞく","kanji":"取り除く","meaning":"to remove; to deinstall; to take away; to set apart"],
+        ["hiragana":"とりのぞく","kanji":"取り除く","meaning":"to remove; to deinstall; to take away"],
         ["hiragana":"としん","kanji":"都心","meaning":"city centre"],
         ["hiragana":"よくばる","kanji":"欲張る","meaning":"to covet; to lust for"],
         ["hiragana":"ゆるやか","kanji":"緩やか","meaning":"loose; slack; gentle"],
         ["hiragana":"ざいがく","kanji":"在学","meaning":"attending"],
         ["hiragana":"ぞうだい","kanji":"増大","meaning":"enlargement; increase"],
         ["hiragana":"あきらめ","kanji":"諦め","meaning":"resignation; acceptance; consolation"],
-        ["hiragana":"あこがれ","kanji":"憧れ","meaning":"yearning; longing; aspiration; adoration; admiration"],
+        ["hiragana":"あこがれ","kanji":"憧れ","meaning":"yearning; longing; aspiration; admiration"],
         ["hiragana":"べっそう","kanji":"別荘","meaning":"holiday house; vacation home; villa; prison; jail"],
         ["hiragana":"ぼくじょう","kanji":"牧場","meaning":"farm"],
         ["hiragana":"ぶっし","kanji":"物資","meaning":"goods; materials; commodities; resources; supplies"],
         ["hiragana":"えほん","kanji":"絵本","meaning":"picture book"],
         ["hiragana":"ふどうさん","kanji":"不動産","meaning":"real estate"],
-        ["hiragana":"ふくし","kanji":"福祉","meaning":"welfare; well-being; social welfare; social security; social service"],
+        ["hiragana":"ふくし","kanji":"福祉","meaning":"welfare; well-being; social welfare; social service"],
         ["hiragana":"げんこう","kanji":"原稿","meaning":"manuscript; copy; draft; notes; contribution"]
     ]
     
@@ -789,7 +790,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"ぎょうれつ","kanji":"行列","meaning":"line; queue; procession; parade"],
         ["hiragana":"ひきょう","kanji":"卑怯","meaning":"cowardice; meanness; unfairness"],
         ["hiragana":"ひろびろ","kanji":"広々","meaning":"extensive; spacious"],
-        ["hiragana":"いりかえる","kanji":"入り替える","meaning":"to replace; to substitute; to shift; to change places"],
+        ["hiragana":"いりかえる","kanji":"入り替える","meaning":"to replace; to substitute; to shift"],
         ["hiragana":"じょうい","kanji":"上位","meaning":"superior"],
         ["hiragana":"じょうおん","kanji":"常温","meaning":"normal temperature; room temperature"],
         ["hiragana":"じゅんじょ","kanji":"順序","meaning":"order; sequence; procedure"],
@@ -798,10 +799,10 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"かんちがい","kanji":"勘違い","meaning":"misunderstanding; mistaken idea; wrong guess"],
         ["hiragana":"かねつ","kanji":"加熱","meaning":"heating; application of heat"],
         ["hiragana":"かんそく","kanji":"観測","meaning":"observation; survey; measurement"],
-        ["hiragana":"きりとる","kanji":"切り取る","meaning":"to cut off; to excise; to tear off; to cut out; to whittle down; to tear out; to cut down; to amputate"],
+        ["hiragana":"きりとる","kanji":"切り取る","meaning":"to cut off; to tear off; to tear out"],
         ["hiragana":"こうれいしゃ","kanji":"高齢者","meaning":"old person; old people"],
         ["hiragana":"こうりつ","kanji":"効率","meaning":"efficiency"],
-        ["hiragana":"こうさつ","kanji":"考察","meaning":"consideration; inquiry; enquiry; investigation; study"],
+        ["hiragana":"こうさつ","kanji":"考察","meaning":"consideration; inquiry; enquiry; investigation"],
         ["hiragana":"こうざ","kanji":"口座","meaning":"account"],
         ["hiragana":"きゃっかんてき","kanji":"客観的","meaning":"objective"]
     ]
@@ -809,14 +810,14 @@ class VocabInputViewController: UIViewController {
     var n2ch13array = [
         ["hiragana":"きょうふう","kanji":"強風","meaning":"strong wind; high wind; moderate gale"],
         ["hiragana":"きょうよう","kanji":"教養","meaning":"cultivation; refinement; culture; education"],
-        ["hiragana":"まんいん","kanji":"満員","meaning":"full house; no vacancy; sold out; standing room only; full"],
+        ["hiragana":"まんいん","kanji":"満員","meaning":"full house; no vacancy; full"],
         ["hiragana":"めぐみ","kanji":"恵み","meaning":"blessing; grace"],
         ["hiragana":"みぶりてぶり","kanji":"身振り手振り","meaning":"gestures; gesturing"],
         ["hiragana":"もより","kanji":"最寄り","meaning":"nearest; neighboring; nearby"],
         ["hiragana":"むすびつく","kanji":"結びつく","meaning":"to be related; to be connected; to be joined together; to result in; to lead to; to bring about"],
         ["hiragana":"むすう","kanji":"無数","meaning":"innumerable; countless; numberless"],
         ["hiragana":"なんじゃく","kanji":"軟弱","meaning":"weakness"],
-        ["hiragana":"なりたつ","kanji":"成り立つ","meaning":"to consist of; to be made up of; to be composed of; to be concluded"],
+        ["hiragana":"なりたつ","kanji":"成り立つ","meaning":"to consist of; to be made up of"],
         ["hiragana":"ねんきん","kanji":"年金","meaning":"annuity; pension"],
         ["hiragana":"にくい","kanji":"憎い","meaning":"hateful; abominable; poor-looking; detestable"],
         ["hiragana":"おおめに","kanji":"多目に","meaning":"plenty; lots"],
@@ -824,7 +825,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"らんぼう","kanji":"乱暴","meaning":"violence; assault; running riot; rough"],
         ["hiragana":"うらめん","kanji":"裏面","meaning":"back; reverse; other side; inside; tails"],
         ["hiragana":"さいしゅうび","kanji":"最終日","meaning":"last day; final day"],
-        ["hiragana":"せっする","kanji":"接する","meaning":"to touch; to come in contact with; to border on; to adjoin; to be adjacent; to be close; to receive"],
+        ["hiragana":"せっする","kanji":"接する","meaning":"to touch; to come in contact with"],
         ["hiragana":"しめる","kanji":"湿る","meaning":"to become damp; to become moist; to become wet"],
         ["hiragana":"しんや","kanji":"深夜","meaning":"late at night"]
     ]
@@ -839,17 +840,17 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"てさぎょう","kanji":"手作業","meaning":"manual labor; manual procedures"],
         ["hiragana":"てんさい","kanji":"天才","meaning":"genius; prodigy; natural gift"],
         ["hiragana":"とじこもる","kanji":"閉じこもる","meaning":"to seclude oneself; to shut oneself away"],
-        ["hiragana":"ととのう","kanji":"整う","meaning":"to be ready; to be prepared; to be arranged; to be in order; to be put in order; to be well-ordered; to be well-proportioned; to be harmonious; to be adjusted; to be regulated; to be refined"],
+        ["hiragana":"ととのう","kanji":"整う","meaning":"to be ready; to be in order; to be well-ordered"],
         ["hiragana":"とうろん","kanji":"討論","meaning":"debate; discussion"],
         ["hiragana":"うんがよい","kanji":"運が良い","meaning":"lucky"],
         ["hiragana":"うんそう","kanji":"運送","meaning":"transport; freight; shipping"],
-        ["hiragana":"よびかける","kanji":"呼びかける","meaning":"to call out to; to hail; to address; to appeal"],
+        ["hiragana":"よびかける","kanji":"呼びかける","meaning":"to call out to; to hail; to appeal"],
         ["hiragana":"よていひょう","kanji":"予定表","meaning":"schedule; program; programme; itinerary"],
         ["hiragana":"あとまわし","kanji":"後回し","meaning":"putting off; postponing"],
         ["hiragana":"ばいぞう","kanji":"倍増","meaning":"double"],
         ["hiragana":"ふあんてい","kanji":"不安定","meaning":"instability; insecurity; crankiness"],
         ["hiragana":"ふきそく","kanji":"不規則","meaning":"irregularity; unsteadiness; disorderly"],
-        ["hiragana":"ふめいりょう","kanji":"不明瞭","meaning":"dimness; obscurity; indistinctness; unclear; unintelligible"]
+        ["hiragana":"ふめいりょう","kanji":"不明瞭","meaning":"dimness; obscurity; indistinctness; unclear"]
     ]
     
     var n2ch15array = [
@@ -866,17 +867,17 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"じどう","kanji":"児童","meaning":"children; juvenile"],
         ["hiragana":"じょうぶ","kanji":"上部","meaning":"top part; surface"],
         ["hiragana":"じょうしょう","kanji":"上昇","meaning":"rising; ascending; climbing"],
-        ["hiragana":"じゅんのう","kanji":"順応","meaning":"adaptation; accommodation; conforming; adjustment; acclimatization"],
-        ["hiragana":"かたむく","kanji":"傾く","meaning":"to incline toward; to slant; to lurch; to heel over; to be disposed to; to trend toward; to be prone to"],
-        ["hiragana":"かたづく","kanji":"片付く","meaning":"to be put in order; to be put to rights; to be disposed of; to be solved"],
+        ["hiragana":"じゅんのう","kanji":"順応","meaning":"adaptation; accommodation; adjustment"],
+        ["hiragana":"かたむく","kanji":"傾く","meaning":"to incline toward; to slant; to be prone to"],
+        ["hiragana":"かたづく","kanji":"片付く","meaning":"to be put in order; to be solved"],
         ["hiragana":"かつりょく","kanji":"活力","meaning":"vitality; energy; dynamism"],
         ["hiragana":"けっちゃく","kanji":"決着","meaning":"conclusion; decision; end; settlement"],
         ["hiragana":"けんきょ","kanji":"謙虚","meaning":"modest; humble"],
-        ["hiragana":"きたえる","kanji":"鍛える","meaning":"to forge; to temper; to drill; to train; to discipline"]
+        ["hiragana":"きたえる","kanji":"鍛える","meaning":"to forge; to temper; to drill; to train"]
     ]
     
     var n2ch16array = [
-        ["hiragana":"きょうしゅく","kanji":"恐縮","meaning":"feeling obliged; being grateful; being thankful; being sorry; being ashamed"],
+        ["hiragana":"きょうしゅく","kanji":"恐縮","meaning":"being thankful; being sorry"],
         ["hiragana":"きゅうじん","kanji":"求人","meaning":"recruiting; job offer; job vacancy"],
         ["hiragana":"まねる","kanji":"真似る","meaning":"to mimic; to imitate"],
         ["hiragana":"みなれる","kanji":"見慣れる","meaning":"to become used to seeing; to be familiar with"],
@@ -884,35 +885,35 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"おんけい","kanji":"恩恵","meaning":"grace; favor; favour; blessing; benefit"],
         ["hiragana":"らいてん","kanji":"来店","meaning":"coming to a store"],
         ["hiragana":"さかのぼる","kanji":"遡る","meaning":"to go upstream; to go back"],
-        ["hiragana":"さしひく","kanji":"差し引く","meaning":"to deduct; to take away; to dock; to make allowances for something; to bear something in mind"],
-        ["hiragana":"せいりつ","kanji":"成立","meaning":"formation; establishment; materialization; coming into existence; conclusion"],
+        ["hiragana":"さしひく","kanji":"差し引く","meaning":"to deduct; to make allowances for something"],
+        ["hiragana":"せいりつ","kanji":"成立","meaning":"formation; materialization; coming into existence"],
         ["hiragana":"せいさんしゃ","kanji":"生産者","meaning":"manufacturer; producer"],
-        ["hiragana":"せんもんてん","kanji":"専門店","meaning":"specialist shop; shop specializing in a few types of product"],
+        ["hiragana":"せんもんてん","kanji":"専門店","meaning":"shop specializing in a few types of product"],
         ["hiragana":"しひょう","kanji":"指標","meaning":"index; indices; indicator"],
         ["hiragana":"しりょく","kanji":"視力","meaning":"eyesight"],
         ["hiragana":"しょかい","kanji":"初回","meaning":"first time; first innings; initial attempt"],
         ["hiragana":"しょき","kanji":"初期","meaning":"early"],
         ["hiragana":"しょうひしゃ","kanji":"消費者","meaning":"consumer"],
-        ["hiragana":"しょうりゃく","kanji":"省略","meaning":"omission; abbreviation; abridgment; abridgement"],
-        ["hiragana":"そろえる","kanji":"揃える","meaning":"to collect; to gather; to get together; to complete"],
+        ["hiragana":"しょうりゃく","kanji":"省略","meaning":"omission; abbreviation; abridgement"],
+        ["hiragana":"そろえる","kanji":"揃える","meaning":"to collect; to get together; to complete"],
         ["hiragana":"たいしゃ","kanji":"退社","meaning":"resignation; leaving office; leaving work"]
     ]
     
     var n2ch17array = [
         ["hiragana":"ていか","kanji":"定価","meaning":"list price; regular price; established price"],
         ["hiragana":"ていこうかん","kanji":"抵抗感","meaning":"antipathy; reluctance; resistance"],
-        ["hiragana":"といかける","kanji":"問いかける","meaning":"to ask a question; to begin to ask a question"],
-        ["hiragana":"うむ","kanji":"有無","meaning":"existence or nonexistence; presence or absence; consent or refusal; yes or no"],
+        ["hiragana":"といかける","kanji":"問いかける","meaning":"to ask a question"],
+        ["hiragana":"うむ","kanji":"有無","meaning":"existence or nonexistence; presence or absence"],
         ["hiragana":"うつる","kanji":"映る","meaning":"to be reflected; to harmonize with"],
         ["hiragana":"わりこむ","kanji":"割り込む","meaning":"to cut into"],
-        ["hiragana":"やぶれる","kanji":"破れる","meaning":"to get torn; to tear; to rip; to break; to wear out; to collapse; to fall into ruin"],
-        ["hiragana":"ゆううつ","kanji":"憂鬱","meaning":"depression; melancholy; dejection; gloom; despondency"],
+        ["hiragana":"やぶれる","kanji":"破れる","meaning":"to get torn; to tear; to rip; to wear out"],
+        ["hiragana":"ゆううつ","kanji":"憂鬱","meaning":"depression; melancholy; dejection; gloom"],
         ["hiragana":"じょうりく","kanji":"上陸","meaning":"landing; disembarkation; landfall"],
         ["hiragana":"あいま","kanji":"合間","meaning":"interval; break; pause; spare moment"],
         ["hiragana":"あやしい","kanji":"怪しい","meaning":"suspicious; dubious; doubtful; dodgy; suspicious"],
-        ["hiragana":"あざやか","kanji":"鮮やか","meaning":"vivid; bright; brilliant; clear; fresh; vibrant; skillful; brilliant; beautiful; fine; excellent"],
+        ["hiragana":"あざやか","kanji":"鮮やか","meaning":"vivid; bright; brilliant; vibrant; skillful"],
         ["hiragana":"びよういん","kanji":"美容院","meaning":"beauty parlor; beauty salon; hairdressing salon"],
-        ["hiragana":"ぼうだい","kanji":"膨大","meaning":"huge; vast; enormous; colossal; extensive; large; swelling; expansion"],
+        ["hiragana":"ぼうだい","kanji":"膨大","meaning":"huge; vast; enormous; large; swelling; expansion"],
         ["hiragana":"ちきゅうおんだんか","kanji":"地球温暖化","meaning":"global warming"],
         ["hiragana":"ちょうこくか","kanji":"彫刻家","meaning":"engraver; carver; sculptor"],
         ["hiragana":"ふさぐ","kanji":"塞ぐ","meaning":"to stop up; to close up; to block"],
@@ -924,7 +925,7 @@ class VocabInputViewController: UIViewController {
     var n2ch18array = [
         ["hiragana":"ほいくしょ","kanji":"保育所","meaning":"nursery school; nursery"],
         ["hiragana":"ほんかく","kanji":"本格","meaning":"original method or procedure; serious; orthodox; classical; genuine"],
-        ["hiragana":"いいかげん","kanji":"いい加減","meaning":"irresponsible; perfunctory; careless; lukewarm; half-baked; halfhearted; vague; reasonable; moderate"],
+        ["hiragana":"いいかげん","kanji":"いい加減","meaning":"irresponsible; careless; vague"],
         ["hiragana":"いきぬき","kanji":"息抜き","meaning":"taking a breather; relaxation; vent hole"],
         ["hiragana":"じかい","kanji":"次回","meaning":"next time"],
         ["hiragana":"じぎょう","kanji":"事業","meaning":"project; enterprise; business; industry; operations; venture; service"],
@@ -936,30 +937,30 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"かいせつ","kanji":"解説","meaning":"explanation; commentary; exposition; elucidation"],
         ["hiragana":"かいやく","kanji":"解約","meaning":"cancellation of contract"],
         ["hiragana":"かくじゅう","kanji":"拡充","meaning":"expansion"],
-        ["hiragana":"かんじとる","kanji":"感じ取る","meaning":"to perceive; to sense; to take in; to grasp; to feel"],
+        ["hiragana":"かんじとる","kanji":"感じ取る","meaning":"to perceive; to sense; to take in; to feel"],
         ["hiragana":"かそく","kanji":"加速","meaning":"acceleration; speeding up"],
         ["hiragana":"けいさい","kanji":"掲載","meaning":"publication"],
         ["hiragana":"けいとう","kanji":"系統","meaning":"system; lineage; ancestry; family line; group"],
         ["hiragana":"けずる","kanji":"削る","meaning":"to shave"],
-        ["hiragana":"きがおもい","kanji":"気が重い","meaning":"depressed; bummed out; down; heavy-hearted; heavy-spirited; feeling reluctant"]
+        ["hiragana":"きがおもい","kanji":"気が重い","meaning":"depressed; heavy-hearted; feeling reluctant"]
     ]
     
     var n2ch19array = [
         ["hiragana":"こがね","kanji":"小金","meaning":"small sum of money"],
         ["hiragana":"こうちょう","kanji":"好調","meaning":"favorable; promising; satisfactory; in good shape"],
-        ["hiragana":"こうさく","kanji":"工作","meaning":"handicraft; work; construction; manufacturing; maneuvering; manoeuvering"],
+        ["hiragana":"こうさく","kanji":"工作","meaning":"handicraft; manufacturing; maneuvering"],
         ["hiragana":"めだつ","kanji":"目立つ","meaning":"to be conspicuous; to stand out"],
         ["hiragana":"みだし","kanji":"見出し","meaning":"heading; headline; title; caption"],
         ["hiragana":"みつもりしょ","kanji":"見積書","meaning":"written estimate; quotation; quote"],
         ["hiragana":"もくざい","kanji":"木材","meaning":"lumber; timber; wood"],
-        ["hiragana":"なごやか","kanji":"和やか","meaning":"mild; calm; gentle; quiet; congenial; amicable; amiable; friendly; genial; harmonious; peaceful"],
+        ["hiragana":"なごやか","kanji":"和やか","meaning":"mild; congenial; amicable; harmonious; peaceful"],
         ["hiragana":"なかにわ","kanji":"中庭","meaning":"courtyard; quadrangle; middle court"],
         ["hiragana":"なれ","kanji":"慣れ","meaning":"practice; practising; experience"],
         ["hiragana":"にゅうきん","kanji":"入金","meaning":"deposit; payment; money received; money due"],
         ["hiragana":"にゅうせいひん","kanji":"乳製品","meaning":"dairy products"],
         ["hiragana":"おいかえす","kanji":"追い返す","meaning":"to drive away; to turn away; to send away; to repel; to repulse"],
         ["hiragana":"おおごえ","kanji":"大声","meaning":"loud voice"],
-        ["hiragana":"りょうたん","kanji":"両端","meaning":"both ends; either end; both edges; double-mindedness; sitting on the fence"],
+        ["hiragana":"りょうたん","kanji":"両端","meaning":"both ends; either end; sitting on the fence"],
         ["hiragana":"さっきゅう","kanji":"早急","meaning":"immediate; prompt; quick; rapid; urgent; pressing"],
         ["hiragana":"せいしつ","kanji":"性質","meaning":"nature; property; disposition"],
         ["hiragana":"せんせんしゅう","kanji":"先先週","meaning":"week before last"],
@@ -974,7 +975,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"たいじょう","kanji":"退場","meaning":"exit"],
         ["hiragana":"たいおう","kanji":"対応","meaning":"correspondence"],
         ["hiragana":"たっせい","kanji":"達成","meaning":"achievement; attainment; accomplishment; realization"],
-        ["hiragana":"とういつ","kanji":"統一","meaning":"unity; consolidation; uniformity; unification; compatible"],
+        ["hiragana":"とういつ","kanji":"統一","meaning":"unity; consolidation; uniformity; unification"],
         ["hiragana":"つぶやく","kanji":"呟く","meaning":"to mutter; to murmur; to grumble"],
         ["hiragana":"つかいわける","kanji":"使い分ける","meaning":"to use properly; to use"],
         ["hiragana":"つみかさねる","kanji":"積み重ねる","meaning":"to pile up; to accumulate"],
@@ -984,16 +985,16 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"ようしき","kanji":"様式","meaning":"style; form; pattern"],
         ["hiragana":"ゆうひ","kanji":"夕日","meaning":"evening sun; setting sun"],
         ["hiragana":"すべらす","kanji":"滑らす","meaning":"to shift; to slide"],
-        ["hiragana":"ずずうしい","kanji":"図々しい","meaning":"impudent; shameless; brazen; forward; audacious; cheeky"],
+        ["hiragana":"ずずうしい","kanji":"図々しい","meaning":"impudent; shameless; brazen; audacious; cheeky"],
         ["hiragana":"あいまい","kanji":"曖昧","meaning":"vague; ambiguous; unclear"],
         ["hiragana":"あいしゃ","kanji":"愛社","meaning":"devotion to one’s company"],
-        ["hiragana":"あんがい","kanji":"案外","meaning":"unexpectedly; surprisingly; unexpected; unanticipated; unforeseen; surprising"]
+        ["hiragana":"あんがい","kanji":"案外","meaning":"unexpectedly; surprisingly; unanticipated; unforeseen"]
     ]
     
     var n2ch21array = [
         ["hiragana":"ぶんたん","kanji":"分担","meaning":"taking on one’s share"],
-        ["hiragana":"だんかい","kanji":"段階","meaning":"grade; level; stage; class; phase; steps; order; gradation"],
-        ["hiragana":"ふきげん","kanji":"不機嫌","meaning":"pout; displeasure; ill humor; ill humour; sullenness"],
+        ["hiragana":"だんかい","kanji":"段階","meaning":"grade; level; stage; class; phase; steps; order"],
+        ["hiragana":"ふきげん","kanji":"不機嫌","meaning":"pout; displeasure; ill humor; sullenness"],
         ["hiragana":"ふくめる","kanji":"含める","meaning":"to include"],
         ["hiragana":"ふれあい","kanji":"触れ合い","meaning":"contact; connectedness; rapport; mutual touching"],
         ["hiragana":"がようし","kanji":"画用紙","meaning":"drawing paper"],
@@ -1003,13 +1004,13 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"ひび","kanji":"日々","meaning":"every day; daily; day after day; days"],
         ["hiragana":"ひそか","kanji":"密か","meaning":"secret; private; surreptitious"],
         ["hiragana":"ほっする","kanji":"欲する","meaning":"to want; to desire"],
-        ["hiragana":"いちめん","kanji":"一面","meaning":"one face; one surface; the whole surface; one aspect; one side"],
-        ["hiragana":"いちらん","kanji":"一覧","meaning":"look; glance; sight; inspection; summary; list; table; catalog; catalogue"],
+        ["hiragana":"いちめん","kanji":"一面","meaning":"one face; the whole surface; one aspect; one side"],
+        ["hiragana":"いちらん","kanji":"一覧","meaning":"glance; summary; list; table; catalog; catalogue"],
         ["hiragana":"いいわけ","kanji":"言い訳","meaning":"excuse; explanation"],
         ["hiragana":"いんかん","kanji":"印鑑","meaning":"stamp; seal"],
         ["hiragana":"いぜん","kanji":"依然","meaning":"still; as yet; as it has been"],
-        ["hiragana":"じょうきゅうしゃ","kanji":"上級者","meaning":"advanced student; advanced learner; advanced practitioner; experienced person"],
-        ["hiragana":"かがやかしい","kanji":"輝かしい","meaning":"brilliant; glorious; glittering; bright; splendid"],
+        ["hiragana":"じょうきゅうしゃ","kanji":"上級者","meaning":"advanced learner; experienced person"],
+        ["hiragana":"かがやかしい","kanji":"輝かしい","meaning":"brilliant; glorious; glittering; splendid"],
         ["hiragana":"かんりゃく","kanji":"簡略","meaning":"simple; simplicity; brief; brevity"]
     ]
     
@@ -1017,18 +1018,18 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"けんしゅうかい","kanji":"研修会","meaning":"workshop; training course"],
         ["hiragana":"こころみ","kanji":"試み","meaning":"attempt; trial; experiment; endeavor"],
         ["hiragana":"ことばづかい","kanji":"言葉遣い","meaning":"speech; expression; wording; language"],
-        ["hiragana":"こうりゅうかい","kanji":"交流会","meaning":"gathering; mixer; meetup; assembly; social; exchange meeting"],
+        ["hiragana":"こうりゅうかい","kanji":"交流会","meaning":"gathering; meetup; assembly; exchange meeting"],
         ["hiragana":"こうてい","kanji":"肯定","meaning":"affirmation"],
         ["hiragana":"こうよう","kanji":"紅葉","meaning":"autumn colors; fall colors; leaves changing color"],
         ["hiragana":"くうせき","kanji":"空席","meaning":"empty seat; unoccupied seat; vacancy; vacant post"],
         ["hiragana":"きゅうぎょう","kanji":"休業","meaning":"closed"],
-        ["hiragana":"まどぐち","kanji":"窓口","meaning":"ticket window; teller window; counter; contact person; point of contact"],
-        ["hiragana":"みわける","kanji":"見分ける","meaning":"to distinguish; to recognize; to tell apart; to differentiate"],
+        ["hiragana":"まどぐち","kanji":"窓口","meaning":"ticket window; teller window; counter"],
+        ["hiragana":"みわける","kanji":"見分ける","meaning":"to distinguish; to tell apart; to differentiate"],
         ["hiragana":"むかんけい","kanji":"無関係","meaning":"unrelated"],
         ["hiragana":"むかしばなし","kanji":"昔話","meaning":"old tale; folk tale; legend; reminiscence"],
         ["hiragana":"おすすめ","kanji":"お勧め","meaning":"recommendation; advice; suggestion; encouragement"],
         ["hiragana":"りゃくす","kanji":"略す","meaning":"to abbreviate; to omit"],
-        ["hiragana":"さいせい","kanji":"再生","meaning":"resuscitation; regeneration; restoration to life; reformation; rehabilitation; playback; regeneration"],
+        ["hiragana":"さいせい","kanji":"再生","meaning":"regeneration; reformation; playback"],
         ["hiragana":"せいしんりょく","kanji":"精神力","meaning":"emotional strength; force of will"],
         ["hiragana":"せんぎょうしゅふ","kanji":"専業主婦","meaning":"housewife"],
         ["hiragana":"しびれる","kanji":"痺れる","meaning":"to become numb; to go to sleep"],
@@ -1039,7 +1040,7 @@ class VocabInputViewController: UIViewController {
     var n2ch23array = [
         ["hiragana":"しろうと","kanji":"素人","meaning":"amateur; layman; ordinary person; novice"],
         ["hiragana":"しや","kanji":"視野","meaning":"field of vision; view; one's outlook"],
-        ["hiragana":"そまる","kanji":"染まる","meaning":"to be dyed; to be tainted; to be infected; to be stained; to be steeped"],
+        ["hiragana":"そまる","kanji":"染まる","meaning":"to be dyed; to be infected; to be stained"],
         ["hiragana":"そうさく","kanji":"創作","meaning":"creation; production; creative work"],
         ["hiragana":"たいこう","kanji":"対抗","meaning":"opposition; antagonism"],
         ["hiragana":"たいしゅつ","kanji":"退出","meaning":"leaving"],
@@ -1055,13 +1056,13 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"ずひょう","kanji":"図表","meaning":"chart; diagram; graph; figure"],
         ["hiragana":"あいちゃく","kanji":"愛着","meaning":"attachment; love; covetous affection"],
         ["hiragana":"あいらしい","kanji":"愛らしい","meaning":"pretty; charming; lovely; adorable"],
-        ["hiragana":"あくじょうけん","kanji":"悪条件","meaning":"unfavorable conditions; unfavourable conditions"],
-        ["hiragana":"あせる","kanji":"焦る","meaning":"to be in a hurry; to be impatient; to be flustered; to lose one's presence of mind; to be surprised"]
+        ["hiragana":"あくじょうけん","kanji":"悪条件","meaning":"unfavorable conditions"],
+        ["hiragana":"あせる","kanji":"焦る","meaning":"to be in a hurry; to be impatient; to be flustered"]
     ]
     
     var n2ch24array = [
         ["hiragana":"ぶんけい","kanji":"文系","meaning":"humanities, social sciences, and fine arts; liberal arts"],
-        ["hiragana":"ちゅうじゅん","kanji":"中旬","meaning":"middle of a month; second third of a month; 11th to 20th day of a month"],
+        ["hiragana":"ちゅうじゅん","kanji":"中旬","meaning":"middle of a month; second third of a month"],
         ["hiragana":"ちゅうりんじょ","kanji":"駐輪所","meaning":"bicycle parking place"],
         ["hiragana":"だらしない","kanji":"だらし無い","meaning":"slovenly"],
         ["hiragana":"ふじゅうぶん","kanji":"不十分","meaning":"insufficient; inadequate; imperfect; shortage"],
@@ -1071,9 +1072,9 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"ほいくえん","kanji":"保育園","meaning":"nursery school; day nursery; preschool"],
         ["hiragana":"ほこう","kanji":"歩行","meaning":"walk"],
         ["hiragana":"いてん","kanji":"移転","meaning":"moving; relocation; change of address; transfer"],
-        ["hiragana":"じんざい","kanji":"人材","meaning":"capable person; talented person; human resources; personnel"],
+        ["hiragana":"じんざい","kanji":"人材","meaning":"capable person; human resources; personnel"],
         ["hiragana":"じっしつ","kanji":"実質","meaning":"substance; essence; real"],
-        ["hiragana":"じたい","kanji":"辞退","meaning":"declining; refusal; nonacceptance; turning down; withdrawal"],
+        ["hiragana":"じたい","kanji":"辞退","meaning":"declining; refusal; nonacceptance; withdrawal"],
         ["hiragana":"かいほうかん","kanji":"開放感","meaning":"sense of space; spaciousness"],
         ["hiragana":"かくべつ","kanji":"格別","meaning":"particular; special; exceptional; especial"],
         ["hiragana":"けいと","kanji":"毛糸","meaning":"knitting wool; woollen yarn"],
@@ -1083,14 +1084,14 @@ class VocabInputViewController: UIViewController {
     ]
     
     var n2ch25array = [
-        ["hiragana":"こそだて","kanji":"子育て","meaning":"child rearing; child raising; raising children; parenting"],
+        ["hiragana":"こそだて","kanji":"子育て","meaning":"child rearing; child raising; parenting"],
         ["hiragana":"ことがら","kanji":"事柄","meaning":"matter; thing; affair; circumstance"],
         ["hiragana":"こうえん","kanji":"公演","meaning":"public performance"],
-        ["hiragana":"こうかん","kanji":"好感","meaning":"good feeling; good will; favourable impression; favorable impression"],
+        ["hiragana":"こうかん","kanji":"好感","meaning":"good feeling; good will; favorable impression"],
         ["hiragana":"きょくせん","kanji":"曲線","meaning":"curve"],
         ["hiragana":"まちなみ","kanji":"町並み","meaning":"townscape; street"],
-        ["hiragana":"まきこむ","kanji":"巻き込む","meaning":"to roll up; to enfold; to swallow up; to involve; to drag into"],
-        ["hiragana":"みちあんない","kanji":"道案内","meaning":"guidance; showing the way; guide; guidepost; signpost; waymark"],
+        ["hiragana":"まきこむ","kanji":"巻き込む","meaning":"to roll up; to enfold; to swallow up; to involve"],
+        ["hiragana":"みちあんない","kanji":"道案内","meaning":"guidance; showing the way; guide; guidepost"],
         ["hiragana":"もぐる","kanji":"潜る","meaning":"to dive"],
         ["hiragana":"もけい","kanji":"模型","meaning":"model; dummy; maquette"],
         ["hiragana":"ねびき","kanji":"値引き","meaning":"price reduction; discount"],
@@ -1100,7 +1101,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"らっかん","kanji":"楽観","meaning":"optimism; taking an optimistic view"],
         ["hiragana":"らん","kanji":"欄","meaning":"section"],
         ["hiragana":"ろうどうりょく","kanji":"労働力","meaning":"labor; manpower; working force"],
-        ["hiragana":"さす","kanji":"刺す","meaning":"to pierce; to stab; to prick; to stick; to thrust; to sting; to bite"],
+        ["hiragana":"さす","kanji":"刺す","meaning":"to pierce; to prick; to stick; to thrust; to sting"],
         ["hiragana":"せばめる","kanji":"狭める","meaning":"to narrow; to reduce; to contract"],
         ["hiragana":"せいぶん","kanji":"成分","meaning":"ingredient; component; composition"]
     ]
@@ -1378,7 +1379,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"こや","kanji":"小屋","meaning":"hut, cabin, shed"],
         ["hiragana":"くさる","kanji":"腐る","meaning":"to rot, to go bad"],
         ["hiragana":"くわえる","kanji":"加える","meaning":"to add, to sum up"],
-        ["hiragana":"まどぐち","kanji":"窓口","meaning":"ticket window; teller window; counter; contact person; point of contact"],
+        ["hiragana":"まどぐち","kanji":"窓口","meaning":"ticket window; teller window; counter"],
         ["hiragana":"まず","kanji":"先ず","meaning":"first of all, to start with"],
         ["hiragana":"まずしい","kanji":"貧しい","meaning":"poor"]
     ]
@@ -1584,7 +1585,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"けつあつ","kanji":"血圧","meaning":"blood pressure"],
         ["hiragana":"きまり","kanji":"決まり","meaning":"rule, settlement"],
         ["hiragana":"きにゅう","kanji":"記入","meaning":"entry, filling in forms"],
-        ["hiragana":"きんゆう","kanji":"金融","meaning":"finance; financing; credit transacting; loaning of money; circulation of money"],
+        ["hiragana":"きんゆう","kanji":"金融","meaning":"finance; credit transacting; loaning of money"],
         ["hiragana":"きわ","kanji":"際","meaning":"edge, brink, verge"],
         ["hiragana":"こい","kanji":"濃い","meaning":"thick, dense, strong"],
         ["hiragana":"こいびと","kanji":"恋人","meaning":"lover, sweetheart"]
@@ -1699,7 +1700,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"しきゅう","kanji":"支給","meaning":"provision, supply"],
         ["hiragana":"しんらい","kanji":"信頼","meaning":"reliance, trust"],
         ["hiragana":"しょくよく","kanji":"食欲","meaning":"appetite"],
-        ["hiragana":"しょうじる","kanji":"生じる","meaning":"to produce; to yield; to cause; to result from; to arise; to be generated"],
+        ["hiragana":"しょうじる","kanji":"生じる","meaning":"to produce; to yield; to result from; to arise"],
         ["hiragana":"しゅふ","kanji":"主婦","meaning":"housewife, mistress"],
         ["hiragana":"そうぞく","kanji":"相続","meaning":"succession, inheritance"],
         ["hiragana":"ていりゅうじょ","kanji":"停留所","meaning":"bus stop, tram stop"]
@@ -2032,6 +2033,11 @@ class VocabInputViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        // 下側の二つの角を角丸にする
+        greenView.layer.cornerRadius = 25
+        greenView.clipsToBounds = true
+        greenView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
         backButton.isHidden = true
         

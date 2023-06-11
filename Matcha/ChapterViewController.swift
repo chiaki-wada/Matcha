@@ -11,6 +11,7 @@ let saveData = UserDefaults.standard
 
 class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var greenView: UIView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -34,6 +35,11 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         chapterTableView.separatorStyle = .none
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        // 下側の二つの角を角丸にする
+        greenView.layer.cornerRadius = 25
+        greenView.clipsToBounds = true
+        greenView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         
         //画面が読み込まれた時に表示するラベル
         if LEVEL as! Int == 0 {
