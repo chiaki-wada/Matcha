@@ -1222,11 +1222,588 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"おうえん","kanji":"応援","meaning":"aid, assistance, help"]
     ]
     
+    var n3ch6array = [
+        ["hiragana":"おわり","kanji":"終","meaning":"the end"],
+        ["hiragana":"りょう","kanji":"量","meaning":"quantity, amount"],
+        ["hiragana":"りゅうこう","kanji":"流行","meaning":"fashion, vogue"],
+        ["hiragana":"さいてい","kanji":"最低","meaning":"least, lowest, worst"],
+        ["hiragana":"さくもつ","kanji":"作物","meaning":"produce, crops"],
+        ["hiragana":"さまざま","kanji":"様々","meaning":"varied, various"],
+        ["hiragana":"せきゆ","kanji":"石油","meaning":"oil, petroleum"],
+        ["hiragana":"しばはつ","kanji":"始発","meaning":"first train, first bus"],
+        ["hiragana":"しらせ","kanji":"知らせ","meaning":"news, notice"],
+        ["hiragana":"しつぎょう","kanji":"失業","meaning":"unemployment"],
+        ["hiragana":"しょくりょう","kanji":"食糧","meaning":"provisions, food supply"],
+        ["hiragana":"しょうち","kanji":"承知","meaning":"knowledge, awareness"],
+        ["hiragana":"しゅじゅつ","kanji":"手術","meaning":"surgical operation"],
+        ["hiragana":"しゅうきょう","kanji":"宗教","meaning":"religion"],
+        ["hiragana":"たいど","kanji":"態度","meaning":"attitude, manner"],
+        ["hiragana":"たいほ","kanji":"逮捕","meaning":"arrest, apprehension"],
+        ["hiragana":"たいりょう","kanji":"大量","meaning":"large quantity, mass"],
+        ["hiragana":"たいざい","kanji":"滞在","meaning":"staying, sojourn"],
+        ["hiragana":"たね","kanji":"種","meaning":"seed, kind, variety"],
+        ["hiragana":"たたく","kanji":"叩く","meaning":"to strike, to beat"]
+    ]
+    
+    var n3ch7array = [
+        ["hiragana":"ていこう","kanji":"抵抗","meaning":"resistance, opposition"],
+        ["hiragana":"てきする","kanji":"適する","meaning":"to fit, to suit"],
+        ["hiragana":"つきあい","kanji":"付合い","meaning":"association, socializing"],
+        ["hiragana":"つめる","kanji":"詰める","meaning":"to stuff into, to jam"],
+        ["hiragana":"うばう","kanji":"奪う","meaning":"to snatch away"],
+        ["hiragana":"うまれ","kanji":"生まれ","meaning":"birth, birthplace"],
+        ["hiragana":"うったえる","kanji":"訴える","meaning":"to appeal, to sue"],
+        ["hiragana":"わ","kanji":"輪","meaning":"ring, circle, loop"],
+        ["hiragana":"やまのぼり","kanji":"山登り","meaning":"mountain climbing"],
+        ["hiragana":"よみ","kanji":"読み","meaning":"reading"],
+        ["hiragana":"ば","kanji":"場","meaning":"place, spot, scene"],
+        ["hiragana":"びん","kanji":"便","meaning":"mail, post, flight"],
+        ["hiragana":"ぶっしつ","kanji":"物質","meaning":"material, substance"],
+        ["hiragana":"びょうどう","kanji":"平等","meaning":"equality, evenness"],
+        ["hiragana":"ちく","kanji":"地区","meaning":"district, section, sector"],
+        ["hiragana":"えいよう","kanji":"栄養","meaning":"nutrition, nourishment"],
+        ["hiragana":"ふだん","kanji":"普段","meaning":"usual, habitual"],
+        ["hiragana":"ふじゆう","kanji":"不自由","meaning":"discomfort, inconvenience"],
+        ["hiragana":"ふしぎ","kanji":"不思議","meaning":"wonder, miracle, strange"],
+        ["hiragana":"がくもん","kanji":"学問","meaning":"learning, study"]
+    ]
+    
+    var n3ch8array = [
+        ["hiragana":"はだか","kanji":"裸","meaning":"naked, nude"],
+        ["hiragana":"はで","kanji":"派手","meaning":"showy, flashy"],
+        ["hiragana":"はく","kanji":"掃く","meaning":"to sweep, to brush"],
+        ["hiragana":"ひ","kanji":"費","meaning":"cost, expense"],
+        ["hiragana":"ほしょう","kanji":"保証","meaning":"guarantee, security"],
+        ["hiragana":"いねむり","kanji":"居眠り","meaning":"nodding off, dozing"],
+        ["hiragana":"いんしょく","kanji":"飲食","meaning":"food and drink, eating and drinking"],
+        ["hiragana":"じんしゅ","kanji":"人種","meaning":"race"],
+        ["hiragana":"じたい","kanji":"事態","meaning":"situation"],
+        ["hiragana":"じたく","kanji":"自宅","meaning":"one’s home, one’s house"],
+        ["hiragana":"じょうきょう","kanji":"状況","meaning":"state of affairs"],
+        ["hiragana":"かいごう","kanji":"会合","meaning":"meeting, assembly"],
+        ["hiragana":"かいてき","kanji":"快適","meaning":"pleasant, comfortable"],
+        ["hiragana":"かげん","kanji":"加減","meaning":"adjustment, degree, extent"],
+        ["hiragana":"かぎる","kanji":"限る","meaning":"to restrict, to limit"],
+        ["hiragana":"かんじょう","kanji":"感情","meaning":"emotion, feeling"],
+        ["hiragana":"かれら","kanji":"彼ら","meaning":"they"],
+        ["hiragana":"けいじ","kanji":"刑事","meaning":"police detective, criminal matter"],
+        ["hiragana":"きそ","kanji":"基礎","meaning":"foundation, basis"],
+        ["hiragana":"こくふく","kanji":"克服","meaning":"conquest, overcoming"]
+    ]
+    
+    var n3ch9array = [
+        ["hiragana":"くむ","kanji":"組む","meaning":"to link, to put together"],
+        ["hiragana":"きょうじゅ","kanji":"教授","meaning":"professor"],
+        ["hiragana":"きゅうか","kanji":"休暇","meaning":"holiday, day off"],
+        ["hiragana":"まわり","kanji":"回り","meaning":"rotation"],
+        ["hiragana":"めいじる","kanji":"命じる","meaning":"to order, to command"],
+        ["hiragana":"み","kanji":"実","meaning":"fruit, nut"],
+        ["hiragana":"なお","kanji":"直","meaning":"straight, ordinary, common"],
+        ["hiragana":"にちじょう","kanji":"日常","meaning":"ordinary, everyday"],
+        ["hiragana":"にゅうりょく","kanji":"入力","meaning":"input"],
+        ["hiragana":"おび","kanji":"帯","meaning":"obi, kimono sash"],
+        ["hiragana":"おだやか","kanji":"穏やか","meaning":"calm, gentle, quiet"],
+        ["hiragana":"おおいに","kanji":"大いに","meaning":"very, much, greatly"],
+        ["hiragana":"おとる","kanji":"劣る","meaning":"to be inferior to"],
+        ["hiragana":"おたがい","kanji":"お互い","meaning":"mutual"],
+        ["hiragana":"りっぱ","kanji":"立派","meaning":"splendid, fine"],
+        ["hiragana":"ろんぶん","kanji":"論文","meaning":"thesis, essay"],
+        ["hiragana":"さほう","kanji":"作法","meaning":"manners, etiquette"],
+        ["hiragana":"さっきょく","kanji":"作曲","meaning":"composition"],
+        ["hiragana":"さめる","kanji":"覚める","meaning":"to wake up"],
+        ["hiragana":"さっぱり","kanji":"さっぱり","meaning":"feeling refreshed"]
+    ]
+    
+    var n3ch10array = [
+        ["hiragana":"さらに","kanji":"更に","meaning":"furthermore, again"],
+        ["hiragana":"さる","kanji":"猿","meaning":"monkey"],
+        ["hiragana":"せい","kanji":"正","meaning":"true, regular"],
+        ["hiragana":"せい","kanji":"所為","meaning":"consequence, result, blame"],
+        ["hiragana":"せいかく","kanji":"性格","meaning":"character, personality"],
+        ["hiragana":"しんちょう","kanji":"慎重","meaning":"careful, cautious, prudent"],
+        ["hiragana":"しんにゅうせい","kanji":"新入生","meaning":"new student, freshman"],
+        ["hiragana":"してん","kanji":"支店","meaning":"branch office"],
+        ["hiragana":"しやくしょ","kanji":"市役所","meaning":"municipal office, city hall"],
+        ["hiragana":"しゅうりょう","kanji":"終了","meaning":"end, close, termination"],
+        ["hiragana":"すすめる","kanji":"勧める","meaning":"to recommend"],
+        ["hiragana":"たびたび","kanji":"度々","meaning":"often, again and again"],
+        ["hiragana":"とおり","kanji":"通り","meaning":"avenue, street"],
+        ["hiragana":"とれる","kanji":"取れる","meaning":"to come off, to be removed"],
+        ["hiragana":"とうちゃく","kanji":"到着","meaning":"arrival"],
+        ["hiragana":"つかれ","kanji":"疲れ","meaning":"tiredness, fatigue"],
+        ["hiragana":"うなる","kanji":"唸る","meaning":"to groan, to moan"],
+        ["hiragana":"うつ","kanji":"撃つ","meaning":"to shoot, to attack"],
+        ["hiragana":"よぶん","kanji":"余分","meaning":"extra, excess"],
+        ["hiragana":"ゆうびん","kanji":"郵便","meaning":"mail service"]
+    ]
+    
+    var n3ch11array = [
+        ["hiragana":"ゆうじょう","kanji":"友情","meaning":"friendship, fellowship"],
+        ["hiragana":"ぜんこく","kanji":"全国","meaning":"countrywide, nationwide"],
+        ["hiragana":"あかり","kanji":"明かり","meaning":"light, illumination, glow"],
+        ["hiragana":"あずける","kanji":"預ける","meaning":"to give into custody"],
+        ["hiragana":"ちいき","kanji":"地域","meaning":"area, region"],
+        ["hiragana":"だいとかい","kanji":"大都会","meaning":"metropolis, big city"],
+        ["hiragana":"だんじょ","kanji":"男女","meaning":"men and women, both genders"],
+        ["hiragana":"どうじ","kanji":"同時","meaning":"simultaneous, concurrent"],
+        ["hiragana":"どうし","kanji":"動詞","meaning":"verb"],
+        ["hiragana":"えいきょう","kanji":"影響","meaning":"influence, effect"],
+        ["hiragana":"ふで","kanji":"筆","meaning":"writing brush"],
+        ["hiragana":"ふんいき","kanji":"雰囲気","meaning":"atmosphere"],
+        ["hiragana":"がいしょく","kanji":"外食","meaning":"eating out, dining out"],
+        ["hiragana":"がっかり","kanji":"がっかり","meaning":"feel disappointed"],
+        ["hiragana":"ごみ","kanji":"塵","meaning":"rubbish, trash"],
+        ["hiragana":"はなす","kanji":"離す","meaning":"to separate, to part"],
+        ["hiragana":"へんか","kanji":"変化","meaning":"change, alteration"],
+        ["hiragana":"ほね","kanji":"骨","meaning":"bone"],
+        ["hiragana":"ほうこく","kanji":"報告","meaning":"report, information"],
+        ["hiragana":"いまにも","kanji":"今にも","meaning":"at any time, soon"]
+    ]
+    
+    var n3ch12array = [
+        ["hiragana":"いたむ","kanji":"痛む","meaning":"to hurt, to ache, to feel a pain"],
+        ["hiragana":"いたずら","kanji":"悪戯","meaning":"mischief, prank"],
+        ["hiragana":"じつは","kanji":"実は","meaning":"as a matter of fact"],
+        ["hiragana":"かいしゅう","kanji":"回収","meaning":"collection, retrieval"],
+        ["hiragana":"かんりょう","kanji":"完了","meaning":"completion, conclusion"],
+        ["hiragana":"かた","kanji":"肩","meaning":"shoulder"],
+        ["hiragana":"けいき","kanji":"景気","meaning":"business condition"],
+        ["hiragana":"けっしん","kanji":"決心","meaning":"determination, resolution"],
+        ["hiragana":"けってん","kanji":"欠点","meaning":"weak point, weakness"],
+        ["hiragana":"きちょう","kanji":"貴重","meaning":"precious, valuable"],
+        ["hiragana":"きこう","kanji":"気候","meaning":"climate"],
+        ["hiragana":"きろく","kanji":"記録","meaning":"record, document"],
+        ["hiragana":"こっかい","kanji":"国会","meaning":"National Diet, parliament"],
+        ["hiragana":"こうそく","kanji":"高速","meaning":"high speed"],
+        ["hiragana":"こや","kanji":"小屋","meaning":"hut, cabin, shed"],
+        ["hiragana":"くさる","kanji":"腐る","meaning":"to rot, to go bad"],
+        ["hiragana":"くわえる","kanji":"加える","meaning":"to add, to sum up"],
+        ["hiragana":"まどぐち","kanji":"窓口","meaning":"ticket window; teller window; counter; contact person; point of contact"],
+        ["hiragana":"まず","kanji":"先ず","meaning":"first of all, to start with"],
+        ["hiragana":"まずしい","kanji":"貧しい","meaning":"poor"]
+    ]
+    
+    var n3ch13array = [
+        ["hiragana":"もちはこび","kanji":"持ち運び","meaning":"carrying"],
+        ["hiragana":"もうふ","kanji":"毛布","meaning":"blanket"],
+        ["hiragana":"なべ","kanji":"鍋","meaning":"saucepan, pot"],
+        ["hiragana":"なかなおり","kanji":"仲直り","meaning":"reconciliation, make peace with"],
+        ["hiragana":"にちじ","kanji":"日時","meaning":"date and time"],
+        ["hiragana":"のき","kanji":"軒","meaning":"eaves"],
+        ["hiragana":"らく","kanji":"楽","meaning":"comfort, ease"],
+        ["hiragana":"りかい","kanji":"理解","meaning":"understanding, comprehension"],
+        ["hiragana":"ろんじる","kanji":"論じる","meaning":"to argue, to debate"],
+        ["hiragana":"さいわい","kanji":"幸い","meaning":"happiness, luckily"],
+        ["hiragana":"さんそ","kanji":"酸素","meaning":"oxygen"],
+        ["hiragana":"せいじか","kanji":"政治家","meaning":"politician, statesman"],
+        ["hiragana":"しどう","kanji":"指導","meaning":"leadership, guidance"],
+        ["hiragana":"しどうしゃ","kanji":"指導者","meaning":"leader, guide"],
+        ["hiragana":"しほん","kanji":"資本","meaning":"funds, capital"],
+        ["hiragana":"しかも","kanji":"然も","meaning":"moreover, furthermore"],
+        ["hiragana":"しんせん","kanji":"新鮮","meaning":"fresh"],
+        ["hiragana":"しるし","kanji":"印","meaning":"seal, stamp, mark"],
+        ["hiragana":"したがう","kanji":"従う","meaning":"to abide"],
+        ["hiragana":"しつど","kanji":"湿度","meaning":"level of humidity"]
+    ]
+    
+    var n3ch14array = [
+        ["hiragana":"しょくもつ","kanji":"食物","meaning":"food, foodstuff"],
+        ["hiragana":"しょうじょう","kanji":"症状","meaning":"symptoms, condition"],
+        ["hiragana":"しゅうしょく","kanji":"就職","meaning":"finding employment"],
+        ["hiragana":"すいせん","kanji":"推薦","meaning":"recommendation, referral"],
+        ["hiragana":"とばす","kanji":"飛ばす","meaning":"to fly, to skip over"],
+        ["hiragana":"とくちょう","kanji":"特徴","meaning":"feature, trait"],
+        ["hiragana":"つかまる","kanji":"捕まる","meaning":"to be caught"],
+        ["hiragana":"つもる","kanji":"積もる","meaning":"to pile up, to accumulate"],
+        ["hiragana":"うけとる","kanji":"受け取る","meaning":"to receive, to get"],
+        ["hiragana":"わり","kanji":"割","meaning":"rate, ratio, proportion"],
+        ["hiragana":"よぼう","kanji":"予防","meaning":"prevention, precaution"],
+        ["hiragana":"よこ","kanji":"横","meaning":"horizontal, beside"],
+        ["hiragana":"ゆき","kanji":"行き","meaning":"bound for, going to"],
+        ["hiragana":"あきらか","kanji":"明らか","meaning":"obvious, evident, clear"],
+        ["hiragana":"あたり","kanji":"辺り","meaning":"neighborhood, nearby"],
+        ["hiragana":"ちょうし","kanji":"調子","meaning":"tone, condition, health"],
+        ["hiragana":"だいきん","kanji":"代金","meaning":"price, payment, cost"],
+        ["hiragana":"であう","kanji":"出会う","meaning":"to meet"],
+        ["hiragana":"ふよう","kanji":"不用","meaning":"disused, unused"],
+        ["hiragana":"がいこくさん","kanji":"外国産","meaning":"of foreign manufacture"]
+    ]
+    
+    var n3ch15array = [
+        ["hiragana":"がいこう","kanji":"外交","meaning":"diplomacy"],
+        ["hiragana":"げか","kanji":"外科","meaning":"surgery, department of surgery"],
+        ["hiragana":"ぎいん","kanji":"議員","meaning":"member of the Diet"],
+        ["hiragana":"はみがき","kanji":"歯磨き","meaning":"brushing one's teeth"],
+        ["hiragana":"はいたつ","kanji":"配達","meaning":"delivery, distribution"],
+        ["hiragana":"はなしかける","kanji":"話しかける","meaning":"to start a conversation"],
+        ["hiragana":"ほこり","kanji":"埃","meaning":"dust"],
+        ["hiragana":"いっぱん","kanji":"一般","meaning":"general, universal"],
+        ["hiragana":"いし","kanji":"意思","meaning":"intention, purpose"],
+        ["hiragana":"じしん","kanji":"自信","meaning":"self-confidence"],
+        ["hiragana":"かんぜん","kanji":"完全","meaning":"perfection, completeness"],
+        ["hiragana":"けいい","kanji":"敬意","meaning":"respect, honor"],
+        ["hiragana":"きぼう","kanji":"希望","meaning":"hope, wish"],
+        ["hiragana":"きんえん","kanji":"禁煙","meaning":"no smoking"],
+        ["hiragana":"きんぞく","kanji":"金属","meaning":"metal"],
+        ["hiragana":"きたい","kanji":"期待","meaning":"expectation, hope"],
+        ["hiragana":"こじん","kanji":"個人","meaning":"individual, personal"],
+        ["hiragana":"こうふく","kanji":"幸福","meaning":"happiness"],
+        ["hiragana":"こづつみ","kanji":"小包","meaning":"parcel, package"],
+        ["hiragana":"きゅうじょ","kanji":"救助","meaning":"relief, aid"]
+    ]
+    
+    var n3ch16array = [
+        ["hiragana":"まもる","kanji":"守る","meaning":"to protect, to guard"],
+        ["hiragana":"みまい","kanji":"見舞い","meaning":"visiting ill or distressed people"],
+        ["hiragana":"もどす","kanji":"戻す","meaning":"to put back, to give back"],
+        ["hiragana":"むだ","kanji":"無駄","meaning":"futility, uselessness"],
+        ["hiragana":"むく","kanji":"向く","meaning":"to face, to turn toward"],
+        ["hiragana":"にっこり","kanji":"にっこり","meaning":"smile, grin"],
+        ["hiragana":"おおゆき","kanji":"大雪","meaning":"heavy snow"],
+        ["hiragana":"おさない","kanji":"幼い","meaning":"very young, childish"],
+        ["hiragana":"おせん","kanji":"汚染","meaning":"pollution, contamination"],
+        ["hiragana":"れつ","kanji":"列","meaning":"queue, line"],
+        ["hiragana":"せいじん","kanji":"成人","meaning":"adult"],
+        ["hiragana":"せいかく","kanji":"正確","meaning":"accurate, punctual"],
+        ["hiragana":"せいせき","kanji":"成績","meaning":"results, grade"],
+        ["hiragana":"しめる","kanji":"締める","meaning":"to tie, to fasten, to tighten"],
+        ["hiragana":"しんぽ","kanji":"進歩","meaning":"progress, advance"],
+        ["hiragana":"しんせき","kanji":"親戚","meaning":"relative, relation"],
+        ["hiragana":"しゅうかく","kanji":"収穫","meaning":"harvest, crop"],
+        ["hiragana":"するどい","kanji":"鋭い","meaning":"sharp, pointed"],
+        ["hiragana":"たてなおす","kanji":"立て直す","meaning":"to restore, to revive"],
+        ["hiragana":"てじな","kanji":"手品","meaning":"sleight of hand, magic"]
+    ]
+    
+    var n3ch17array = [
+        ["hiragana":"てき","kanji":"敵","meaning":"opponent, rival"],
+        ["hiragana":"つつみ","kanji":"包み","meaning":"bundle, package, parcel"],
+        ["hiragana":"つうじる","kanji":"通じる","meaning":"to lead to, to be understood"],
+        ["hiragana":"やぶる","kanji":"破る","meaning":"to tear, to break"],
+        ["hiragana":"ゆうこう","kanji":"友好","meaning":"friendship"],
+        ["hiragana":"ゆうしゅう","kanji":"優秀","meaning":"superiority, excellence"],
+        ["hiragana":"ぜひ","kanji":"是非","meaning":"certainly, without fail"],
+        ["hiragana":"ぜんしゃ","kanji":"前者","meaning":"the former"],
+        ["hiragana":"あらわす","kanji":"表す","meaning":"to represent, to show, to display"],
+        ["hiragana":"ばくだい","kanji":"莫大","meaning":"enormous, vast"],
+        ["hiragana":"ちちおや","kanji":"父親","meaning":"father"],
+        ["hiragana":"ちゅうがく","kanji":"中学","meaning":"middle school"],
+        ["hiragana":"どうとく","kanji":"道徳","meaning":"morals"],
+        ["hiragana":"ふうふ","kanji":"夫婦","meaning":"married couple, spouses"],
+        ["hiragana":"ぐん","kanji":"軍","meaning":"army, troop"],
+        ["hiragana":"はったつ","kanji":"発達","meaning":"development, growth"],
+        ["hiragana":"ひえる","kanji":"冷える","meaning":"to grow cold, to get chilly"],
+        ["hiragana":"ひげき","kanji":"悲劇","meaning":"tragedy"],
+        ["hiragana":"ひるね","kanji":"昼寝","meaning":"nap"],
+        ["hiragana":"ほお","kanji":"頬","meaning":"cheek"]
+    ]
+    
+    var n3ch18array = [
+        ["hiragana":"ほうほう","kanji":"方法","meaning":"method, way, manner"],
+        ["hiragana":"ほうせき","kanji":"宝石","meaning":"gem, jewel"],
+        ["hiragana":"いったい","kanji":"一体","meaning":"what on earth…"],
+        ["hiragana":"じんこう","kanji":"人工","meaning":"artificial, man-made"],
+        ["hiragana":"かみ","kanji":"上","meaning":"person of high rank, government"],
+        ["hiragana":"かんじ","kanji":"感じ","meaning":"feeling, sense"],
+        ["hiragana":"かんしん","kanji":"感心","meaning":"admiration"],
+        ["hiragana":"かんり","kanji":"管理","meaning":"control, management"],
+        ["hiragana":"けんちく","kanji":"建築","meaning":"construction, architecture"],
+        ["hiragana":"けんとう","kanji":"検討","meaning":"consideration, examination"],
+        ["hiragana":"きほん","kanji":"基本","meaning":"foundation, basis"],
+        ["hiragana":"きり","kanji":"霧","meaning":"fog, mist"],
+        ["hiragana":"こくみん","kanji":"国民","meaning":"national, citizen"],
+        ["hiragana":"こんかい","kanji":"今回","meaning":"now, this time"],
+        ["hiragana":"こうぶつ","kanji":"好物","meaning":"favourite food"],
+        ["hiragana":"こうへい","kanji":"公平","meaning":"fairness, justice"],
+        ["hiragana":"こうじ","kanji":"工事","meaning":"construction work"],
+        ["hiragana":"こうくう","kanji":"航空","meaning":"aviation, flying"],
+        ["hiragana":"くみたてる","kanji":"組み立てる","meaning":"to assemble, to set up"],
+        ["hiragana":"きゅうそく","kanji":"急速","meaning":"rapid"]
+    ]
+    
+    var n3ch19array = [
+        ["hiragana":"まご","kanji":"孫","meaning":"grandchild"],
+        ["hiragana":"みかた","kanji":"味方","meaning":"friend, ally"],
+        ["hiragana":"もえる","kanji":"燃える","meaning":"to burn, to get fired up"],
+        ["hiragana":"ものがたり","kanji":"物語","meaning":"tale, story"],
+        ["hiragana":"ながめ","kanji":"眺め","meaning":"view, scene, prospect"],
+        ["hiragana":"ねだん","kanji":"値段","meaning":"price, cost"],
+        ["hiragana":"ねんじゅう","kanji":"年中","meaning":"whole year, all year round"],
+        ["hiragana":"のびる","kanji":"伸びる","meaning":"to stretch, to extend"],
+        ["hiragana":"のう","kanji":"能","meaning":"talent, gift, function"],
+        ["hiragana":"おちつく","kanji":"落ち着く","meaning":"to calm down, to compose oneself"],
+        ["hiragana":"おもわず","kanji":"思わず","meaning":"unintentionally"],
+        ["hiragana":"およぼす","kanji":"及ぼす","meaning":"to exert, to cause"],
+        ["hiragana":"れい","kanji":"例","meaning":"example, case"],
+        ["hiragana":"せい","kanji":"性","meaning":"gender"],
+        ["hiragana":"せいど","kanji":"制度","meaning":"system, institution"],
+        ["hiragana":"せいしき","kanji":"正式","meaning":"official, formality"],
+        ["hiragana":"せめる","kanji":"責める","meaning":"to blame, to condemn"],
+        ["hiragana":"せつやく","kanji":"節約","meaning":"economizing, saving"],
+        ["hiragana":"しじん","kanji":"詩人","meaning":"poet"],
+        ["hiragana":"しょっき","kanji":"食器","meaning":"tableware"]
+    ]
+    
+    var n3ch20array = [
+        ["hiragana":"しょくりょう","kanji":"食料","meaning":"food"],
+        ["hiragana":"そで","kanji":"袖","meaning":"sleeve"],
+        ["hiragana":"すべて","kanji":"全て","meaning":"everything, all"],
+        ["hiragana":"たま","kanji":"弾","meaning":"ball, sphere, globe, bullet"],
+        ["hiragana":"たにん","kanji":"他人","meaning":"another person, others"],
+        ["hiragana":"たんじょう","kanji":"誕生","meaning":"birth, creation"],
+        ["hiragana":"とら","kanji":"虎","meaning":"tiger"],
+        ["hiragana":"とうじつ","kanji":"当日","meaning":"appointed day, very day"],
+        ["hiragana":"つうがく","kanji":"通学","meaning":"commuting to school"],
+        ["hiragana":"うりきれる","kanji":"売り切れる","meaning":"to be sold out"],
+        ["hiragana":"わき","kanji":"脇","meaning":"beside, close to, nearby"],
+        ["hiragana":"わる","kanji":"割る","meaning":"to divide, to cut"],
+        ["hiragana":"よろこび","kanji":"喜び","meaning":"joy, delight"],
+        ["hiragana":"ようそ","kanji":"要素","meaning":"element, factor, component"],
+        ["hiragana":"やや","kanji":"稍","meaning":"a little, partially"],
+        ["hiragana":"あたためる","kanji":"温める","meaning":"to warm, to heat"],
+        ["hiragana":"びみょう","kanji":"微妙","meaning":"delicate, subtle"],
+        ["hiragana":"ぶん","kanji":"文","meaning":"sentence"],
+        ["hiragana":"ぶんせき","kanji":"分析","meaning":"analysis"],
+        ["hiragana":"ちゅうかん","kanji":"中間","meaning":"middle, midway, center"]
+    ]
+    
+    var n3ch21array = [
+        ["hiragana":"がか","kanji":"画家","meaning":"painter, artist"],
+        ["hiragana":"げんご","kanji":"言語","meaning":"language"],
+        ["hiragana":"はなす","kanji":"放す","meaning":"to release, to let go"],
+        ["hiragana":"へいじつ","kanji":"平日","meaning":"weekday, ordinary days"],
+        ["hiragana":"ひょうじょう","kanji":"表情","meaning":"facial expression"],
+        ["hiragana":"いはん","kanji":"違反","meaning":"violence, offense"],
+        ["hiragana":"いるい","kanji":"衣類","meaning":"clothes, garments"],
+        ["hiragana":"じけん","kanji":"事件","meaning":"event, affair, accident"],
+        ["hiragana":"じゅうだい","kanji":"重大","meaning":"serious, important"],
+        ["hiragana":"がまん","kanji":"我慢","meaning":"patience, endurance"],
+        ["hiragana":"かなり","kanji":"可也","meaning":"considerably, fairly"],
+        ["hiragana":"かたがた","kanji":"方々","meaning":"they"],
+        ["hiragana":"けっせき","kanji":"欠席","meaning":"absence"],
+        ["hiragana":"けつあつ","kanji":"血圧","meaning":"blood pressure"],
+        ["hiragana":"きまり","kanji":"決まり","meaning":"rule, settlement"],
+        ["hiragana":"きにゅう","kanji":"記入","meaning":"entry, filling in forms"],
+        ["hiragana":"きんゆう","kanji":"金融","meaning":"finance; financing; credit transacting; loaning of money; circulation of money"],
+        ["hiragana":"きわ","kanji":"際","meaning":"edge, brink, verge"],
+        ["hiragana":"こい","kanji":"濃い","meaning":"thick, dense, strong"],
+        ["hiragana":"こいびと","kanji":"恋人","meaning":"lover, sweetheart"]
+    ]
+    
+    var n3ch22array = [
+        ["hiragana":"このむ","kanji":"好む","meaning":"to like, to prefer"],
+        ["hiragana":"こし","kanji":"腰","meaning":"lower back, waist"],
+        ["hiragana":"ことなる","kanji":"異なる","meaning":"to differ, to vary"],
+        ["hiragana":"こうさい","kanji":"交際","meaning":"association, friendship"],
+        ["hiragana":"くもり","kanji":"曇","meaning":"cloudiness, cloudy weather"],
+        ["hiragana":"くらし","kanji":"暮らし","meaning":"life, living"],
+        ["hiragana":"くせ","kanji":"癖","meaning":"habit"],
+        ["hiragana":"くう","kanji":"食う","meaning":"to eat"],
+        ["hiragana":"めいかく","kanji":"明確","meaning":"clear; precise; definite; distinct"],
+        ["hiragana":"めん","kanji":"面","meaning":"face, mask"],
+        ["hiragana":"みにつける","kanji":"身につける","meaning":"to learn; to acquire knowledge"],
+        ["hiragana":"むし","kanji":"無視","meaning":"disregarding, ignoring"],
+        ["hiragana":"な","kanji":"名","meaning":"name, given name"],
+        ["hiragana":"なか","kanji":"仲","meaning":"relation, relationship"],
+        ["hiragana":"なみ","kanji":"波","meaning":"wave"],
+        ["hiragana":"にってい","kanji":"日程","meaning":"schedule, program"],
+        ["hiragana":"おおあめ","kanji":"大雨","meaning":"heavy rain"],
+        ["hiragana":"れんしゅう","kanji":"練習","meaning":"practice, practicing"],
+        ["hiragana":"さす","kanji":"指す","meaning":"to point, to indicate"],
+        ["hiragana":"せいかい","kanji":"正解","meaning":"correct, right"]
+    ]
+    
+    var n3ch23array = [
+        ["hiragana":"せいき","kanji":"世紀","meaning":"century, era"],
+        ["hiragana":"し","kanji":"詩","meaning":"poem"],
+        ["hiragana":"しな","kanji":"品","meaning":"article, item, goods"],
+        ["hiragana":"しんぞう","kanji":"心臓","meaning":"heart, guts, nerve"],
+        ["hiragana":"しょうぼう","kanji":"消防","meaning":"fire fighting"],
+        ["hiragana":"たば","kanji":"束","meaning":"bundle, bunch"],
+        ["hiragana":"たちば","kanji":"立場","meaning":"standpoint, position"],
+        ["hiragana":"たいりょく","kanji":"体力","meaning":"physical strength, stamina"],
+        ["hiragana":"たて","kanji":"縦","meaning":"the vertical, height"],
+        ["hiragana":"たつ","kanji":"経つ","meaning":"to pass, to lapse"],
+        ["hiragana":"てんない","kanji":"店内","meaning":"store interior"],
+        ["hiragana":"とち","kanji":"土地","meaning":"plot of land, soil"],
+        ["hiragana":"とく","kanji":"解く","meaning":"to untie, to solve"],
+        ["hiragana":"とおりすぎる","kanji":"通り過ぎる","meaning":"to pass through"],
+        ["hiragana":"とう","kanji":"塔","meaning":"tower, pagoda"],
+        ["hiragana":"つれ","kanji":"連れ","meaning":"companion, company"],
+        ["hiragana":"わりびき","kanji":"割引","meaning":"discount, reduction"],
+        ["hiragana":"ゆうき","kanji":"勇気","meaning":"courage, bravery"],
+        ["hiragana":"ぞう","kanji":"象","meaning":"elephant"],
+        ["hiragana":"ず","kanji":"図","meaning":"drawing, picture, diagram"]
+    ]
+    
+    var n3ch24array = [
+        ["hiragana":"あしもと","kanji":"足元","meaning":"at one’s feet, under foot"],
+        ["hiragana":"ばくはつ","kanji":"爆発","meaning":"explosion, detonation"],
+        ["hiragana":"ぼうけん","kanji":"冒険","meaning":"adventure, risk"],
+        ["hiragana":"ぶつり","kanji":"物理","meaning":"physics"],
+        ["hiragana":"だまる","kanji":"黙る","meaning":"to be silent"],
+        ["hiragana":"でんごん","kanji":"伝言","meaning":"verbal message"],
+        ["hiragana":"どうきゅうせい","kanji":"同級生","meaning":"classmate"],
+        ["hiragana":"えんぎ","kanji":"演技","meaning":"acting, performance"],
+        ["hiragana":"ふくろ","kanji":"袋","meaning":"bag, sack"],
+        ["hiragana":"ふれる","kanji":"触れる","meaning":"to touch, to feel"],
+        ["hiragana":"がくぶ","kanji":"学部","meaning":"department of a university"],
+        ["hiragana":"ごく","kanji":"極","meaning":"quite, very"],
+        ["hiragana":"ぎょうぎ","kanji":"行儀","meaning":"manners, behavior"],
+        ["hiragana":"はば","kanji":"幅","meaning":"width, breadth"],
+        ["hiragana":"はんとし","kanji":"半年","meaning":"half year"],
+        ["hiragana":"はってん","kanji":"発展","meaning":"development, growth"],
+        ["hiragana":"はやめに","kanji":"早めに","meaning":"ahead of time"],
+        ["hiragana":"ひきうける","kanji":"引き受ける","meaning":"to undertake, to accept"],
+        ["hiragana":"ひとびと","kanji":"人々","meaning":"people; men and women"],
+        ["hiragana":"ほんや","kanji":"本屋","meaning":"bookstore, bookshop"]
+    ]
+    
+    var n3ch25array = [
+        ["hiragana":"ひょうげん","kanji":"表現","meaning":"expression, representation"],
+        ["hiragana":"いちりゅう","kanji":"一流","meaning":"first-class, top grade"],
+        ["hiragana":"いんしょう","kanji":"印象","meaning":"impression"],
+        ["hiragana":"いし","kanji":"医師","meaning":"doctor, physician"],
+        ["hiragana":"いずみ","kanji":"泉","meaning":"spring, fountain"],
+        ["hiragana":"じゅんちょう","kanji":"順調","meaning":"favorable, doing well"],
+        ["hiragana":"かいさつ","kanji":"改札","meaning":"ticket gate, ticket barrier"],
+        ["hiragana":"かぎ","kanji":"鍵","meaning":"key"],
+        ["hiragana":"かじ","kanji":"家事","meaning":"housework"],
+        ["hiragana":"かくす","kanji":"隠す","meaning":"to hide, to conceal"],
+        ["hiragana":"かんこうきゃく","kanji":"観光客","meaning":"tourist"],
+        ["hiragana":"かさねる","kanji":"重ねる","meaning":"to pile up, to heap up"],
+        ["hiragana":"かたる","kanji":"語る","meaning":"to talk about"],
+        ["hiragana":"けんこう","kanji":"健康","meaning":"health"],
+        ["hiragana":"きにする","kanji":"気にする","meaning":"to mind, to care about"],
+        ["hiragana":"きらう","kanji":"嫌う","meaning":"to hate, to dislike"],
+        ["hiragana":"きよう","kanji":"器用","meaning":"dexterous, skillful"],
+        ["hiragana":"こっきょう","kanji":"国境","meaning":"national border"],
+        ["hiragana":"きょうつうてん","kanji":"共通点","meaning":"point in common, common feature"],
+        ["hiragana":"きゅうけい","kanji":"休憩","meaning":"rest, break, recess"]
+    ]
+    
+    var n3ch26array = [
+        ["hiragana":"まちがい","kanji":"間違い","meaning":"mistake, error, blunder"],
+        ["hiragana":"み","kanji":"身","meaning":"body, oneself"],
+        ["hiragana":"みまん","kanji":"未満","meaning":"less than, insufficient"],
+        ["hiragana":"むける","kanji":"向ける","meaning":"to turn toward, to point"],
+        ["hiragana":"ながめる","kanji":"眺める","meaning":"to view, to gaze at"],
+        ["hiragana":"ないよう","kanji":"内容","meaning":"contents, matter"],
+        ["hiragana":"のうりょく","kanji":"能力","meaning":"ability"],
+        ["hiragana":"さ","kanji":"差","meaning":"difference, variation"],
+        ["hiragana":"せいぶつ","kanji":"生物","meaning":"living things"],
+        ["hiragana":"せいちょう","kanji":"成長","meaning":"growth, grow to adulthood"],
+        ["hiragana":"せいさん","kanji":"生産","meaning":"production, manufacture"],
+        ["hiragana":"せけん","kanji":"世間","meaning":"world, society"],
+        ["hiragana":"せつび","kanji":"設備","meaning":"equipment, device"],
+        ["hiragana":"しきゅう","kanji":"支給","meaning":"provision, supply"],
+        ["hiragana":"しんらい","kanji":"信頼","meaning":"reliance, trust"],
+        ["hiragana":"しょくよく","kanji":"食欲","meaning":"appetite"],
+        ["hiragana":"しょうじる","kanji":"生じる","meaning":"to produce; to yield; to cause; to result from; to arise; to be generated"],
+        ["hiragana":"しゅふ","kanji":"主婦","meaning":"housewife, mistress"],
+        ["hiragana":"そうぞく","kanji":"相続","meaning":"succession, inheritance"],
+        ["hiragana":"ていりゅうじょ","kanji":"停留所","meaning":"bus stop, tram stop"]
+    ]
+    
+    var n3ch27array = [
+        ["hiragana":"とざん","kanji":"登山","meaning":"mountain climbing"],
+        ["hiragana":"つうしん","kanji":"通信","meaning":"correspondence, communication"],
+        ["hiragana":"うつす","kanji":"移す","meaning":"to transfer, to move"],
+        ["hiragana":"わだい","kanji":"話題","meaning":"topic, subject"],
+        ["hiragana":"わかれ","kanji":"別れ","meaning":"parting, separation"],
+        ["hiragana":"よくあさ","kanji":"翌朝","meaning":"next morning"],
+        ["hiragana":"あい","kanji":"愛","meaning":"love, affection, care"],
+        ["hiragana":"あくしゅ","kanji":"握手","meaning":"handshake"],
+        ["hiragana":"あたえる","kanji":"与える","meaning":"to give, to bestow"],
+        ["hiragana":"あつかう","kanji":"扱う","meaning":"to deal with, to treat"],
+        ["hiragana":"あわ","kanji":"泡","meaning":"bubble, foam"],
+        ["hiragana":"ぶんめい","kanji":"文明","meaning":"civilization"],
+        ["hiragana":"ぶんるい","kanji":"分類","meaning":"categorization, sorting"],
+        ["hiragana":"びょう","kanji":"秒","meaning":"second"],
+        ["hiragana":"ちゅうこ","kanji":"中古","meaning":"used, second-hand"],
+        ["hiragana":"ちゅうもく","kanji":"注目","meaning":"notice, attention"],
+        ["hiragana":"ちゅうもん","kanji":"注文","meaning":"order, request"],
+        ["hiragana":"だいじん","kanji":"大臣","meaning":"cabinet minister"],
+        ["hiragana":"ど","kanji":"度","meaning":"degree, counter for occurrences"],
+        ["hiragana":"とうじ","kanji":"当時","meaning":"at that time, in those days"]
+    ]
+    
+    var n3ch28array = [
+        ["hiragana":"えさ","kanji":"餌","meaning":"feed, bait"],
+        ["hiragana":"げんじつ","kanji":"現実","meaning":"reality, actuality"],
+        ["hiragana":"ぎむ","kanji":"義務","meaning":"duty, obligation"],
+        ["hiragana":"ご","kanji":"語","meaning":"language"],
+        ["hiragana":"ごかい","kanji":"誤解","meaning":"misunderstanding"],
+        ["hiragana":"はい","kanji":"灰","meaning":"ashes"],
+        ["hiragana":"はいそう","kanji":"配送","meaning":"delivery"],
+        ["hiragana":"はかせ","kanji":"博士","meaning":"doctorate"],
+        ["hiragana":"ほんもの","kanji":"本物","meaning":"genuine article"],
+        ["hiragana":"ほうそう","kanji":"放送","meaning":"broadcast, broadcasting"],
+        ["hiragana":"いち","kanji":"位置","meaning":"place, position"],
+        ["hiragana":"いちどに","kanji":"一度に","meaning":"all at once"],
+        ["hiragana":"いちじ","kanji":"一時","meaning":"time, moment"],
+        ["hiragana":"いっか","kanji":"一家","meaning":"a house, a home"],
+        ["hiragana":"いわう","kanji":"祝う","meaning":"to congratulate, to celebrate"],
+        ["hiragana":"じじょう","kanji":"事情","meaning":"circumstances"],
+        ["hiragana":"じむしつ","kanji":"事務室","meaning":"office"],
+        ["hiragana":"じんぶつ","kanji":"人物","meaning":"person, character, figure"],
+        ["hiragana":"じょうきょう","kanji":"上京","meaning":"proceeding to the capital"],
+        ["hiragana":"じょゆう","kanji":"女優","meaning":"actress"]
+    ]
+    
+    var n3ch29array = [
+        ["hiragana":"じゅんばん","kanji":"順番","meaning":"turn, order of things"],
+        ["hiragana":"かんさつ","kanji":"観察","meaning":"observation"],
+        ["hiragana":"かんせい","kanji":"完成","meaning":"complete, completion"],
+        ["hiragana":"かしゅ","kanji":"歌手","meaning":"singer"],
+        ["hiragana":"かず","kanji":"数","meaning":"number"],
+        ["hiragana":"けいこく","kanji":"警告","meaning":"warning, advice"],
+        ["hiragana":"けっかん","kanji":"欠陥","meaning":"defect, fault"],
+        ["hiragana":"きぼうしゃ","kanji":"希望者","meaning":"applicant, candidate"],
+        ["hiragana":"きねんひん","kanji":"記念品","meaning":"souvenir, memento"],
+        ["hiragana":"きんがく","kanji":"金額","meaning":"amount of money"],
+        ["hiragana":"きんにく","kanji":"筋肉","meaning":"muscle"],
+        ["hiragana":"きんし","kanji":"禁止","meaning":"prohibition, ban"],
+        ["hiragana":"こっか","kanji":"国家","meaning":"state, country, nation"],
+        ["hiragana":"こくばん","kanji":"黒板","meaning":"blackboard"],
+        ["hiragana":"こんざつ","kanji":"混雑","meaning":"congestion, jam"],
+        ["hiragana":"ころす","kanji":"殺す","meaning":"to kill"],
+        ["hiragana":"こううん","kanji":"幸運","meaning":"good luck, fortune"],
+        ["hiragana":"く","kanji":"句","meaning":"sentence, passage"],
+        ["hiragana":"くやしい","kanji":"悔しい","meaning":"annoying, frustrating"],
+        ["hiragana":"きゅうしゅう","kanji":"吸収","meaning":"absorption"]
+    ]
+    
+    var n3ch30array = [
+        ["hiragana":"めんきょしょう","kanji":"免許証","meaning":"license, permit"],
+        ["hiragana":"みとめる","kanji":"認める","meaning":"to accept, to admit"],
+        ["hiragana":"なまける","kanji":"怠ける","meaning":"to be idle"],
+        ["hiragana":"ねんれい","kanji":"年齢","meaning":"age, years"],
+        ["hiragana":"にぎる","kanji":"握る","meaning":"to grip, to grasp"],
+        ["hiragana":"のばす","kanji":"伸ばす","meaning":"to grow long"],
+        ["hiragana":"のうみん","kanji":"農民","meaning":"farmers, peasants"],
+        ["hiragana":"おく","kanji":"奥","meaning":"inner part"],
+        ["hiragana":"おもいで","kanji":"思い出","meaning":"memories"],
+        ["hiragana":"おいつく","kanji":"追い付く","meaning":"to catch up with"],
+        ["hiragana":"おそろしい","kanji":"恐ろしい","meaning":"terrible, dreadful"],
+        ["hiragana":"おうじる","kanji":"応じる","meaning":"to respond, to comply"],
+        ["hiragana":"ぴったり","kanji":"ぴったり","meaning":"exactly, tightly"],
+        ["hiragana":"りそう","kanji":"理想","meaning":"ideal"],
+        ["hiragana":"さます","kanji":"覚ます","meaning":"to awaken"],
+        ["hiragana":"さゆう","kanji":"左右","meaning":"left and right, control"],
+        ["hiragana":"せい","kanji":"製","meaning":"-made, make"],
+        ["hiragana":"せきたん","kanji":"石炭","meaning":"coal"],
+        ["hiragana":"せんしゅ","kanji":"選手","meaning":"player, team member"],
+        ["hiragana":"しめきり","kanji":"締め切り","meaning":"deadline, closing"]
+    ]
+    
     
     var isShowingMeaning = false
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        // JLPT N1
         if LEVEL as! Int == 0 && CHAPTER as! Int == 0 {
             return n1ch1array.count
         }
@@ -1294,6 +1871,7 @@ class VocabInputViewController: UIViewController {
             return n1ch22array.count
         }
         
+        // JLPT N2
         if LEVEL as! Int == 1 && CHAPTER as! Int == 0 {
             return n2ch1array.count
         }
@@ -1370,20 +1948,81 @@ class VocabInputViewController: UIViewController {
             return n2ch25array.count
         }
         
-        if LEVEL as! Int == 1 && CHAPTER as! Int == 0 {
+        // JLPT N3
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 0 {
             return n3ch1array.count
         }
-        if LEVEL as! Int == 1 && CHAPTER as! Int == 1 {
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 1 {
             return n3ch2array.count
         }
-        if LEVEL as! Int == 1 && CHAPTER as! Int == 2 {
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 2 {
             return n3ch3array.count
         }
-        if LEVEL as! Int == 1 && CHAPTER as! Int == 3 {
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 3 {
             return n3ch4array.count
         }
-        if LEVEL as! Int == 1 && CHAPTER as! Int == 4 {
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 4 {
             return n3ch5array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 5 {
+            return n3ch6array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 6 {
+            return n3ch7array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 7 {
+            return n3ch8array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 8 {
+            return n3ch9array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 9 {
+            return n3ch10array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 10 {
+            return n3ch11array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 11 {
+            return n3ch12array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 12 {
+            return n3ch13array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 13 {
+            return n3ch14array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 14 {
+            return n3ch15array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 15 {
+            return n3ch16array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 16 {
+            return n3ch17array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 17 {
+            return n3ch18array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 18 {
+            return n3ch19array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 19 {
+            return n3ch20array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 20 {
+            return n3ch21array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 21 {
+            return n3ch22array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 22 {
+            return n3ch23array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 23 {
+            return n3ch24array.count
+        }
+        if LEVEL as! Int == 2 && CHAPTER as! Int == 24 {
+            return n3ch25array.count
         }
         return 0
         
@@ -1765,6 +2404,181 @@ class VocabInputViewController: UIViewController {
             totalLabel.text = "total 20 words"
             updateLabels(with: n3ch5array[0])
         }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 5 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 6"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch6array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 6 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 7"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch7array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 7 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 8"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch8array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 8 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 9"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch9array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 9 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 10"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch10array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 10 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 11"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch11array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 11 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 12"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch12array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 12 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 13"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch13array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 13 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 14"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch14array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 14 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 15"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch15array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 15 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 16"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch16array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 16 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 17"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch17array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 17 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 18"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch18array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 18 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 19"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch19array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 19 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 20"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch20array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 20 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 21"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch21array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 21 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 22"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch22array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 22 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 23"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch23array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 23 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 24"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch24array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 24 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 25"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch25array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 25 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 26"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch26array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 26 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 27"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch27array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 27 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 28"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch28array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 28 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 29"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch29array[0])
+        }
+        else if LEVEL as! Int == 2 && CHAPTER as! Int == 29 {
+            titleLabel.text = "JLPT N3 Vocabulary"
+            titleShadowLabel.text = "JLPT N3 Vocabulary"
+            chapterLabel.text = "Chapter 30"
+            totalLabel.text = "total 20 words"
+            updateLabels(with: n3ch30array[0])
+        }
         
         updateCurrentArray()
         updateCard()
@@ -1878,6 +2692,56 @@ class VocabInputViewController: UIViewController {
                 currentArray = n3ch4array
             } else if level == 2 && chapter == 4 {
                 currentArray = n3ch5array
+            } else if level == 2 && chapter == 5 {
+                currentArray = n3ch6array
+            } else if level == 2 && chapter == 6 {
+                currentArray = n3ch7array
+            } else if level == 2 && chapter == 7 {
+                currentArray = n3ch8array
+            } else if level == 2 && chapter == 8 {
+                currentArray = n3ch9array
+            } else if level == 2 && chapter == 9 {
+                currentArray = n3ch10array
+            } else if level == 2 && chapter == 10 {
+                currentArray = n3ch11array
+            } else if level == 2 && chapter == 11 {
+                currentArray = n3ch12array
+            } else if level == 2 && chapter == 12 {
+                currentArray = n3ch13array
+            } else if level == 2 && chapter == 13 {
+                currentArray = n3ch14array
+            } else if level == 2 && chapter == 14 {
+                currentArray = n3ch15array
+            } else if level == 2 && chapter == 15 {
+                currentArray = n3ch16array
+            } else if level == 2 && chapter == 16 {
+                currentArray = n3ch17array
+            } else if level == 2 && chapter == 17 {
+                currentArray = n3ch18array
+            } else if level == 2 && chapter == 18 {
+                currentArray = n3ch19array
+            } else if level == 2 && chapter == 19 {
+                currentArray = n3ch20array
+            } else if level == 2 && chapter == 20 {
+                currentArray = n3ch21array
+            } else if level == 2 && chapter == 21 {
+                currentArray = n3ch22array
+            } else if level == 2 && chapter == 22 {
+                currentArray = n3ch23array
+            } else if level == 2 && chapter == 23 {
+                currentArray = n3ch24array
+            } else if level == 2 && chapter == 24 {
+                currentArray = n3ch25array
+            } else if level == 2 && chapter == 25 {
+                currentArray = n3ch26array
+            } else if level == 2 && chapter == 26 {
+                currentArray = n3ch27array
+            } else if level == 2 && chapter == 27 {
+                currentArray = n3ch28array
+            } else if level == 2 && chapter == 28 {
+                currentArray = n3ch29array
+            } else if level == 2 && chapter == 29 {
+                currentArray = n3ch30array
             }
             
         }
@@ -2059,6 +2923,56 @@ class VocabInputViewController: UIViewController {
             return n3ch4array[index]
         } else if LEVEL as! Int == 2 && CHAPTER as! Int == 4 {
             return n3ch5array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 5 {
+            return n3ch6array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 6 {
+            return n3ch7array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 7 {
+            return n3ch8array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 8 {
+            return n3ch9array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 9 {
+            return n3ch10array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 10 {
+            return n3ch11array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 11 {
+            return n3ch12array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 12 {
+            return n3ch13array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 13 {
+            return n3ch14array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 14 {
+            return n3ch15array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 15 {
+            return n3ch16array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 16 {
+            return n3ch17array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 17 {
+            return n3ch18array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 18 {
+            return n3ch19array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 19 {
+            return n3ch20array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 20 {
+            return n3ch21array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 21 {
+            return n3ch22array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 22 {
+            return n3ch23array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 23 {
+            return n3ch24array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 24 {
+            return n3ch25array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 25 {
+            return n3ch26array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 26 {
+            return n3ch27array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 27 {
+            return n3ch28array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 28 {
+            return n3ch29array[index]
+        } else if LEVEL as! Int == 2 && CHAPTER as! Int == 29 {
+            return n3ch30array[index]
         }
         return [:]
     }
