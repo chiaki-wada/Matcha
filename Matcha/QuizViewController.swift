@@ -1796,6 +1796,10 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
     var currentQuestionIndex: Int = 0
     var shuffledQuestions: [[String:String]] = []
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
