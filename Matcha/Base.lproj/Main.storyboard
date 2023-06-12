@@ -229,7 +229,7 @@ what I have words for.</string>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Nq-1O-kjx">
-                                <rect key="frame" x="42" y="234" width="288" height="295"/>
+                                <rect key="frame" x="42" y="234" width="288" height="288"/>
                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain"/>
@@ -250,7 +250,7 @@ what I have words for.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="document, writing, paperwork" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="En5-Gr-9tP">
-                                <rect key="frame" x="55" y="234" width="262" height="295"/>
+                                <rect key="frame" x="55" y="234" width="262" height="288"/>
                                 <fontDescription key="fontDescription" name="YuKyo_Yoko-Medium" family="YuKyokasho Yoko" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -890,7 +890,7 @@ paperwork</string>
                             <constraint firstItem="VkA-4l-FR5" firstAttribute="leading" secondItem="NR4-mF-1mg" secondAttribute="trailing" constant="10" id="urz-Ni-UDj"/>
                             <constraint firstItem="VkA-4l-FR5" firstAttribute="top" secondItem="R9i-R1-Dmc" secondAttribute="bottom" constant="17" id="xdY-V3-YZ3"/>
                             <constraint firstItem="8iQ-fd-xEm" firstAttribute="top" secondItem="VVt-mS-a6c" secondAttribute="bottom" constant="17" id="yhd-3V-6a9"/>
-                            <constraint firstItem="NR4-mF-1mg" firstAttribute="centerY" secondItem="fLo-c7-SU4" secondAttribute="centerY" constant="-15" id="zLr-sS-N2A"/>
+                            <constraint firstItem="NR4-mF-1mg" firstAttribute="centerY" secondItem="fLo-c7-SU4" secondAttribute="centerY" constant="-13" id="zLr-sS-N2A"/>
                             <constraint firstItem="6nF-Qv-aYY" firstAttribute="centerX" secondItem="fLo-c7-SU4" secondAttribute="centerX" id="zWH-UN-Is6"/>
                         </constraints>
                     </view>

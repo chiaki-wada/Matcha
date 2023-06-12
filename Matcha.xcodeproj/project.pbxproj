@@ -20,9 +20,7 @@
 		F48614F52A2C931800DDB6D5 /* ChapterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48614F32A2C931700DDB6D5 /* ChapterTableViewCell.swift */; };
 		F48614F62A2C931800DDB6D5 /* ChapterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F48614F42A2C931700DDB6D5 /* ChapterTableViewCell.xib */; };
 		F48614F82A2EB13100DDB6D5 /* YomiQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48614F72A2EB13100DDB6D5 /* YomiQuizViewController.swift */; };
-		F48614FA2A2EC91C00DDB6D5 /* matchaicon.png in Resources */ = {isa = PBXBuildFile; fileRef = F48614F92A2EC91B00DDB6D5 /* matchaicon.png */; };
 		F490700C2A1D191000599340 /* ChapterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490700B2A1D191000599340 /* ChapterViewController.swift */; };
-		F49070142A20C49100599340 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F49070132A20C49000599340 /* Launch Screen.storyboard */; };
 		F490701B2A20F2E700599340 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070192A20F2E700599340 /* TableViewCell.swift */; };
 		F490701C2A20F2E700599340 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F490701A2A20F2E700599340 /* TableViewCell.xib */; };
 		F490701E2A2256A000599340 /* VocabInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F490701D2A2256A000599340 /* VocabInputViewController.swift */; };
@@ -30,6 +28,7 @@
 		F49070242A23641F00599340 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070232A23641F00599340 /* FinishViewController.swift */; };
 		F49070262A246DD800599340 /* PressableMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070252A246DD800599340 /* PressableMaterialButton.swift */; };
 		F49070282A246ED300599340 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070272A246ED300599340 /* UIColor.swift */; };
+		F4A8A0082A36D20B00868C94 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4A8A0052A36B78800868C94 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +47,7 @@
 		F48614F32A2C931700DDB6D5 /* ChapterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTableViewCell.swift; sourceTree = "<group>"; };
 		F48614F42A2C931700DDB6D5 /* ChapterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChapterTableViewCell.xib; sourceTree = "<group>"; };
 		F48614F72A2EB13100DDB6D5 /* YomiQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YomiQuizViewController.swift; sourceTree = "<group>"; };
-		F48614F92A2EC91B00DDB6D5 /* matchaicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = matchaicon.png; sourceTree = "<group>"; };
 		F490700B2A1D191000599340 /* ChapterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterViewController.swift; sourceTree = "<group>"; };
-		F49070132A20C49000599340 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		F49070192A20F2E700599340 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F490701A2A20F2E700599340 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		F490701D2A2256A000599340 /* VocabInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabInputViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +55,7 @@
 		F49070232A23641F00599340 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		F49070252A246DD800599340 /* PressableMaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableMaterialButton.swift; sourceTree = "<group>"; };
 		F49070272A246ED300599340 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		F4A8A0052A36B78800868C94 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +100,10 @@
 				F490701D2A2256A000599340 /* VocabInputViewController.swift */,
 				F48614F72A2EB13100DDB6D5 /* YomiQuizViewController.swift */,
 				F490701F2A22617D00599340 /* QuizViewController.swift */,
+				F4A8A0052A36B78800868C94 /* Launch Screen.storyboard */,
 				F49070232A23641F00599340 /* FinishViewController.swift */,
 				F49070252A246DD800599340 /* PressableMaterialButton.swift */,
 				F49070272A246ED300599340 /* UIColor.swift */,
-				F49070132A20C49000599340 /* Launch Screen.storyboard */,
-				F48614F92A2EC91B00DDB6D5 /* matchaicon.png */,
 				F47758442A19F76000A06944 /* Main.storyboard */,
 				F47758472A19F76E00A06944 /* Assets.xcassets */,
 				F477584C2A19F76E00A06944 /* Info.plist */,
@@ -202,14 +199,13 @@
 			files = (
 				F477585B2A1A115100A06944 /* 获取商用授权.url in Resources */,
 				F47758482A19F76E00A06944 /* Assets.xcassets in Resources */,
-				F49070142A20C49100599340 /* Launch Screen.storyboard in Resources */,
-				F48614FA2A2EC91C00DDB6D5 /* matchaicon.png in Resources */,
 				F48614F62A2C931800DDB6D5 /* ChapterTableViewCell.xib in Resources */,
 				F47758562A1A0B5C00A06944 /* OFL.txt in Resources */,
 				F490701C2A20F2E700599340 /* TableViewCell.xib in Resources */,
 				F47758462A19F76000A06944 /* Main.storyboard in Resources */,
 				F47758572A1A0B5C00A06944 /* Pacifico-Regular.ttf in Resources */,
 				F477585E2A1A117600A06944 /* kefa-bold.ttf in Resources */,
+				F4A8A0082A36D20B00868C94 /* Launch Screen.storyboard in Resources */,
 				F477585C2A1A115100A06944 /* Kyokasho.ttc in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,25 +365,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6V9LV44BZ5;
+				DEVELOPMENT_TEAM = T5L3A8N227;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Matcha/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Matcha;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.wada.wadachi.Matcha;
+				PRODUCT_BUNDLE_IDENTIFIER = app.wadachi.Matcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -399,25 +402,32 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 6V9LV44BZ5;
+				DEVELOPMENT_TEAM = T5L3A8N227;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Matcha/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Matcha;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = app.wada.wadachi.Matcha;
+				PRODUCT_BUNDLE_IDENTIFIER = app.wadachi.Matcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
