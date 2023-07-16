@@ -1108,7 +1108,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"ばか","kanji":"馬鹿","meaning":"fool, idiot"],
         ["hiragana":"ちか","kanji":"地下","meaning":"basement, cellar"],
         ["hiragana":"ちしき","kanji":"知識","meaning":"knowledge, information"],
-        ["hiragana":"でんせつ","kanji":"伝統","meaning":"tradition, convention"],
+        ["hiragana":"でんとう","kanji":"伝統","meaning":"tradition, convention"],
         ["hiragana":"どく","kanji":"毒","meaning":"poison, toxicant"],
         ["hiragana":"ふくそう","kanji":"服装","meaning":"garments, attire"],
         ["hiragana":"ふせぐ","kanji":"防ぐ","meaning":"to defend, to protect"],
@@ -2588,18 +2588,5 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             self.kotaeLabel.isHidden = true
         }
     }
-    
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

@@ -1112,7 +1112,7 @@ class VocabInputViewController: UIViewController {
         ["hiragana":"ばか","kanji":"馬鹿","meaning":"fool, idiot"],
         ["hiragana":"ちか","kanji":"地下","meaning":"basement, cellar"],
         ["hiragana":"ちしき","kanji":"知識","meaning":"knowledge, information"],
-        ["hiragana":"でんせつ","kanji":"伝統","meaning":"tradition, convention"],
+        ["hiragana":"でんとう","kanji":"伝統","meaning":"tradition, convention"],
         ["hiragana":"どく","kanji":"毒","meaning":"poison, toxicant"],
         ["hiragana":"ふくそう","kanji":"服装","meaning":"garments, attire"],
         ["hiragana":"ふせぐ","kanji":"防ぐ","meaning":"to defend, to protect"],
@@ -2025,6 +2025,7 @@ class VocabInputViewController: UIViewController {
         if LEVEL as! Int == 2 && CHAPTER as! Int == 24 {
             return n3ch25array.count
         }
+        
         return 0
         
     }
@@ -2749,7 +2750,6 @@ class VocabInputViewController: UIViewController {
             } else if level == 2 && chapter == 29 {
                 currentArray = n3ch30array
             }
-            
         }
     }
     
@@ -2983,15 +2983,5 @@ class VocabInputViewController: UIViewController {
         return [:]
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

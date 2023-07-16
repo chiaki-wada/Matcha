@@ -1109,7 +1109,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"ばか","kanji":"馬鹿","meaning":"fool, idiot"],
         ["hiragana":"ちか","kanji":"地下","meaning":"basement, cellar"],
         ["hiragana":"ちしき","kanji":"知識","meaning":"knowledge, information"],
-        ["hiragana":"でんせつ","kanji":"伝統","meaning":"tradition, convention"],
+        ["hiragana":"でんとう","kanji":"伝統","meaning":"tradition, convention"],
         ["hiragana":"どく","kanji":"毒","meaning":"poison, toxicant"],
         ["hiragana":"ふくそう","kanji":"服装","meaning":"garments, attire"],
         ["hiragana":"ふせぐ","kanji":"防ぐ","meaning":"to defend, to protect"],
@@ -1794,7 +1794,6 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"せんしゅ","kanji":"選手","meaning":"player, team member"],
         ["hiragana":"しめきり","kanji":"締め切り","meaning":"deadline, closing"]
     ]
-    
     
     var currentQuestionIndex: Int = 0
     var shuffledQuestions: [[String:String]] = []

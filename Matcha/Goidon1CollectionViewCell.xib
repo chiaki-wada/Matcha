@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="kefa-bold.ttf">
+            <string>Kefa-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Matcha" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Goidon1CollectionViewCell" id="gTV-IL-0wX" customClass="Goidon1CollectionViewCell" customModule="Matcha" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lesson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrP-jL-jGN">
+                        <rect key="frame" x="27" y="16.666666666666671" width="61" height="22"/>
+                        <fontDescription key="fontDescription" name="Kefa-Bold" family="Kefa" pointSize="19"/>
+                        <color key="textColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGW-GS-ypD">
+                        <rect key="frame" x="40.666666666666664" y="33" width="33.999999999999993" height="63"/>
+                        <fontDescription key="fontDescription" name="Kefa-Bold" family="Kefa" pointSize="54"/>
+                        <color key="textColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="EGW-GS-ypD" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="3H5-Hx-X9t"/>
+                <constraint firstItem="RrP-jL-jGN" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="OZF-QL-t94"/>
+                <constraint firstItem="EGW-GS-ypD" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="7" id="Va9-UA-8Fd"/>
+                <constraint firstItem="RrP-jL-jGN" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-28" id="jLA-yd-l65"/>
+            </constraints>
+            <connections>
+                <outlet property="lessonLabel" destination="EGW-GS-ypD" id="d9h-8K-iJU"/>
+            </connections>
+            <point key="canvasLocation" x="138.1679389312977" y="19.366197183098592"/>
+        </collectionViewCell>
+    </objects>
+</document>
