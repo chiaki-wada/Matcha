@@ -13,19 +13,24 @@ class Goidon2YomiQuizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
+    @IBOutlet var cardButton: UIButton!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet var checkButton: UIButton!
     @IBOutlet var kanjiLabel: UILabel!
+    @IBOutlet var meaningLabel: UILabel!
     @IBOutlet var checkmarkImageView: UIImageView!
     @IBOutlet var goodjobLabel: UILabel!
     @IBOutlet var relearnImageView: UIImageView!
     @IBOutlet var kotaeLabel: UILabel!
     
+    var currentArray: [[String: String]] = []
+    var index = 0
+    
     var CHAPTER: Int = 0
     var GOIDON2: Int = 0
     
-    //語彙ドン！vol.2
     var goidon2L1aarray = [
         ["hiragana":"がくしゅうする","kanji":"学習する","meaning":"to learn; to study"],
         ["hiragana":"わくぐみ","kanji":"枠組み","meaning":"framework; structure"],
@@ -117,93 +122,93 @@ class Goidon2YomiQuizViewController: UIViewController, UITextFieldDelegate {
     
     var goidon2L3barray = [
         ["hiragana":"かてい","kanji":"仮定","meaning":"assumption; hypothesis"],
-            ["hiragana":"かけい","kanji":"家計","meaning":"household economy; family finances"],
-            ["hiragana":"きんしする","kanji":"禁止する","meaning":"to prohibit; to forbid"],
-            ["hiragana":"ほうじん","kanji":"法人","meaning":"corporation; legal entity"],
-            ["hiragana":"めいん","kanji":"メイン","meaning":"main; primary"],
-            ["hiragana":"ぎょうむ","kanji":"業務","meaning":"business; work"],
-            ["hiragana":"かいせつする","kanji":"解説する","meaning":"to explain; to comment on"],
-            ["hiragana":"めいりょう","kanji":"明瞭","meaning":"clear; distinct"],
-            ["hiragana":"ちょうせいする","kanji":"調整する","meaning":"to adjust; to regulate"],
-            ["hiragana":"さいせいする","kanji":"再生する","meaning":"to reproduce; to regenerate"]
+        ["hiragana":"かけい","kanji":"家計","meaning":"household economy; family finances"],
+        ["hiragana":"きんしする","kanji":"禁止する","meaning":"to prohibit; to forbid"],
+        ["hiragana":"ほうじん","kanji":"法人","meaning":"corporation; legal entity"],
+        ["hiragana":"めいん","kanji":"メイン","meaning":"main; primary"],
+        ["hiragana":"ぎょうむ","kanji":"業務","meaning":"business; work"],
+        ["hiragana":"かいせつする","kanji":"解説する","meaning":"to explain; to comment on"],
+        ["hiragana":"めいりょう","kanji":"明瞭","meaning":"clear; distinct"],
+        ["hiragana":"ちょうせいする","kanji":"調整する","meaning":"to adjust; to regulate"],
+        ["hiragana":"さいせいする","kanji":"再生する","meaning":"to reproduce; to regenerate"]
     ]
     
     var goidon2L3carray = [
         ["hiragana":"りてん","kanji":"利点","meaning":"advantage; benefit"],
-            ["hiragana":"つうしんする","kanji":"通信する","meaning":"to communicate; to correspond"],
-            ["hiragana":"せいびする","kanji":"整備する","meaning":"to maintain; to service"],
-            ["hiragana":"しゅうりょうする","kanji":"終了する","meaning":"to end; to finish"],
-            ["hiragana":"せいきゅうする","kanji":"請求する","meaning":"to request payment; to invoice"],
-            ["hiragana":"そうごうする","kanji":"総合する","meaning":"to integrate; to consolidate"],
-            ["hiragana":"たい","kanji":"対","meaning":"versus; against"],
-            ["hiragana":"さだまる","kanji":"定まる","meaning":"to be determined; to be fixed"],
-            ["hiragana":"きゃっかん","kanji":"客観","meaning":"objective; impartial"],
-            ["hiragana":"いご","kanji":"以後","meaning":"from now on; hereafter"]
+        ["hiragana":"つうしんする","kanji":"通信する","meaning":"to communicate; to correspond"],
+        ["hiragana":"せいびする","kanji":"整備する","meaning":"to maintain; to service"],
+        ["hiragana":"しゅうりょうする","kanji":"終了する","meaning":"to end; to finish"],
+        ["hiragana":"せいきゅうする","kanji":"請求する","meaning":"to request payment; to invoice"],
+        ["hiragana":"そうごうする","kanji":"総合する","meaning":"to integrate; to consolidate"],
+        ["hiragana":"たい","kanji":"対","meaning":"versus; against"],
+        ["hiragana":"さだまる","kanji":"定まる","meaning":"to be determined; to be fixed"],
+        ["hiragana":"きゃっかん","kanji":"客観","meaning":"objective; impartial"],
+        ["hiragana":"いご","kanji":"以後","meaning":"from now on; hereafter"]
     ]
     
     var goidon2L4aarray = [
         ["hiragana": "ちく", "kanji": "地区", "meaning": "district; neighborhood"],
-            ["hiragana": "うんえいする", "kanji": "運営する", "meaning": "to operate; to manage"],
-            ["hiragana": "きょうかい", "kanji": "協会", "meaning": "association; society"],
-            ["hiragana": "さつえいする", "kanji": "撮影する", "meaning": "to photograph; to film"],
-            ["hiragana": "てきおうする", "kanji": "適応する", "meaning": "to adapt; to adjust"],
-            ["hiragana": "しゅかん", "kanji": "主観", "meaning": "subjective; subjectivity"],
-            ["hiragana": "しゅちょうする", "kanji": "主張する", "meaning": "to assert; to claim"],
-            ["hiragana": "かく", "kanji": "核", "meaning": "nucleus; core"],
-            ["hiragana": "じこ", "kanji": "自己", "meaning": "self; oneself"],
-            ["hiragana": "そうぞうする", "kanji": "創造する", "meaning": "to create; to innovate"]
+        ["hiragana": "うんえいする", "kanji": "運営する", "meaning": "to operate; to manage"],
+        ["hiragana": "きょうかい", "kanji": "協会", "meaning": "association; society"],
+        ["hiragana": "さつえいする", "kanji": "撮影する", "meaning": "to photograph; to film"],
+        ["hiragana": "てきおうする", "kanji": "適応する", "meaning": "to adapt; to adjust"],
+        ["hiragana": "しゅかん", "kanji": "主観", "meaning": "subjective; subjectivity"],
+        ["hiragana": "しゅちょうする", "kanji": "主張する", "meaning": "to assert; to claim"],
+        ["hiragana": "かく", "kanji": "核", "meaning": "nucleus; core"],
+        ["hiragana": "じこ", "kanji": "自己", "meaning": "self; oneself"],
+        ["hiragana": "そうぞうする", "kanji": "創造する", "meaning": "to create; to innovate"]
     ]
     
     var goidon2L4barray = [
         ["hiragana":"たしゃ","kanji":"他者","meaning":"others; other people"],
-            ["hiragana":"けい","kanji":"–系","meaning":"-based; -related"],
-            ["hiragana":"げんていする","kanji":"限定する","meaning":"to limit; to restrict"],
-            ["hiragana":"きょうちょうする","kanji":"強調する","meaning":"to emphasize; to highlight"],
-            ["hiragana":"たかめる","kanji":"高める","meaning":"to enhance; to increase"],
-            ["hiragana":"うながす","kanji":"促す","meaning":"to encourage; to prompt"],
-            ["hiragana":"しょぶんする","kanji":"処分する","meaning":"to dispose of; to handle"],
-            ["hiragana":"そこなう","kanji":"損なう","meaning":"to damage; to impair"],
-            ["hiragana":"そちする","kanji":"措置する","meaning":"to take measures; to implement actions"],
-            ["hiragana":"ていしゅつする","kanji":"提出する","meaning":"to submit; to hand in"]
+        ["hiragana":"けい","kanji":"–系","meaning":"-based; -related"],
+        ["hiragana":"げんていする","kanji":"限定する","meaning":"to limit; to restrict"],
+        ["hiragana":"きょうちょうする","kanji":"強調する","meaning":"to emphasize; to highlight"],
+        ["hiragana":"たかめる","kanji":"高める","meaning":"to enhance; to increase"],
+        ["hiragana":"うながす","kanji":"促す","meaning":"to encourage; to prompt"],
+        ["hiragana":"しょぶんする","kanji":"処分する","meaning":"to dispose of; to handle"],
+        ["hiragana":"そこなう","kanji":"損なう","meaning":"to damage; to impair"],
+        ["hiragana":"そちする","kanji":"措置する","meaning":"to take measures; to implement actions"],
+        ["hiragana":"ていしゅつする","kanji":"提出する","meaning":"to submit; to hand in"]
     ]
     
     var goidon2L4carray = [
         ["hiragana":"しょくいん","kanji":"職員","meaning":"staff; personnel"],
-            ["hiragana":"こんらんする","kanji":"混乱する","meaning":"to confuse; to be in chaos"],
-            ["hiragana":"とういつする","kanji":"統一する","meaning":"to unify; to integrate"],
-            ["hiragana":"じっせんする","kanji":"実践する","meaning":"to practice; to implement"],
-            ["hiragana":"にんちする","kanji":"認知する","meaning":"to recognize; to acknowledge"],
-            ["hiragana":"しょ–","kanji":"諸–","meaning":"various; multiple"],
-            ["hiragana":"ちつじょ","kanji":"秩序","meaning":"order; discipline"],
-            ["hiragana":"しんこうする","kanji":"進行する","meaning":"to progress; to advance"],
-            ["hiragana":"かいきゅう","kanji":"階級","meaning":"class; rank"],
-            ["hiragana":"みんかん","kanji":"民間","meaning":"private; civilian"]
+        ["hiragana":"こんらんする","kanji":"混乱する","meaning":"to confuse; to be in chaos"],
+        ["hiragana":"とういつする","kanji":"統一する","meaning":"to unify; to integrate"],
+        ["hiragana":"じっせんする","kanji":"実践する","meaning":"to practice; to implement"],
+        ["hiragana":"にんちする","kanji":"認知する","meaning":"to recognize; to acknowledge"],
+        ["hiragana":"しょ–","kanji":"諸–","meaning":"various; multiple"],
+        ["hiragana":"ちつじょ","kanji":"秩序","meaning":"order; discipline"],
+        ["hiragana":"しんこうする","kanji":"進行する","meaning":"to progress; to advance"],
+        ["hiragana":"かいきゅう","kanji":"階級","meaning":"class; rank"],
+        ["hiragana":"みんかん","kanji":"民間","meaning":"private; civilian"]
     ]
     
     var goidon2L5aarray = [
         ["hiragana":"きごう","kanji":"記号","meaning":"symbol; character"],
-            ["hiragana":"くみあわせ","kanji":"組み合わせ","meaning":"combination; permutation"],
-            ["hiragana":"へんかんする","kanji":"変換する","meaning":"to convert; to transform"],
-            ["hiragana":"ぐろーばる","kanji":"グローバル","meaning":"global; worldwide"],
-            ["hiragana":"こうてき","kanji":"公的","meaning":"public; official"],
-            ["hiragana":"けいさいする","kanji":"掲載する","meaning":"to publish; to post"],
-            ["hiragana":"はば","kanji":"幅","meaning":"width; range"],
-            ["hiragana":"とうがい","kanji":"当該","meaning":"relevant; respective"],
-            ["hiragana":"きせいする","kanji":"規制する","meaning":"to regulate; to control"],
-            ["hiragana":"あらかじめ","kanji":"予め","meaning":"in advance; beforehand"]
+        ["hiragana":"くみあわせ","kanji":"組み合わせ","meaning":"combination; permutation"],
+        ["hiragana":"へんかんする","kanji":"変換する","meaning":"to convert; to transform"],
+        ["hiragana":"ぐろーばる","kanji":"グローバル","meaning":"global; worldwide"],
+        ["hiragana":"こうてき","kanji":"公的","meaning":"public; official"],
+        ["hiragana":"けいさいする","kanji":"掲載する","meaning":"to publish; to post"],
+        ["hiragana":"はば","kanji":"幅","meaning":"width; range"],
+        ["hiragana":"とうがい","kanji":"当該","meaning":"relevant; respective"],
+        ["hiragana":"きせいする","kanji":"規制する","meaning":"to regulate; to control"],
+        ["hiragana":"あらかじめ","kanji":"予め","meaning":"in advance; beforehand"]
     ]
     
     var goidon2L5barray = [
         ["hiragana":"ふくし","kanji":"福祉","meaning":"welfare; well-being"],
-            ["hiragana":"かこうする","kanji":"加工する","meaning":"to process; to manipulate"],
-            ["hiragana":"そうち","kanji":"装置","meaning":"device; apparatus"],
-            ["hiragana":"じこう","kanji":"事項","meaning":"matter; item"],
-            ["hiragana":"どういする","kanji":"同意する","meaning":"to agree; to consent"],
-            ["hiragana":"げん–","kanji":"現–","meaning":"present; current"],
-            ["hiragana":"げんそく","kanji":"原則","meaning":"principle; fundamental rule"],
-            ["hiragana":"じゅうじつする","kanji":"充実する","meaning":"to enrich; to enhance"],
-            ["hiragana":"すいしんする","kanji":"推進する","meaning":"to promote; to drive forward"],
-            ["hiragana":"かくとくする","kanji":"獲得する","meaning":"to acquire; to obtain"]
+        ["hiragana":"かこうする","kanji":"加工する","meaning":"to process; to manipulate"],
+        ["hiragana":"そうち","kanji":"装置","meaning":"device; apparatus"],
+        ["hiragana":"じこう","kanji":"事項","meaning":"matter; item"],
+        ["hiragana":"どういする","kanji":"同意する","meaning":"to agree; to consent"],
+        ["hiragana":"げん–","kanji":"現–","meaning":"present; current"],
+        ["hiragana":"げんそく","kanji":"原則","meaning":"principle; fundamental rule"],
+        ["hiragana":"じゅうじつする","kanji":"充実する","meaning":"to enrich; to enhance"],
+        ["hiragana":"すいしんする","kanji":"推進する","meaning":"to promote; to drive forward"],
+        ["hiragana":"かくとくする","kanji":"獲得する","meaning":"to acquire; to obtain"]
     ]
     
     var goidon2L5carray = [
@@ -833,9 +838,11 @@ class Goidon2YomiQuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"おこたる","kanji":"怠る","meaning":"to neglect; to slack off"],
         ["hiragana":"もさくする","kanji":"模索する","meaning":"to search; to explore"]
     ]
-
+    
     var currentQuestionIndex: Int = 0
     var shuffledQuestions: [[String:String]] = []
+    
+    var isShowingMeaning = false
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
@@ -843,6 +850,10 @@ class Goidon2YomiQuizViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        progressView.transform = CGAffineTransformMakeScale(1.0, 2.0)
+        progressView.layer.cornerRadius = 5
+        progressView.clipsToBounds = true
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
@@ -854,6 +865,7 @@ class Goidon2YomiQuizViewController: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         
         // 初期状態で非表示に設定する
+        meaningLabel.isHidden = true
         checkmarkImageView.isHidden = true
         goodjobLabel.isHidden = true
         relearnImageView.isHidden = true
@@ -871,366 +883,427 @@ class Goidon2YomiQuizViewController: UIViewController, UITextFieldDelegate {
             chapterLabel.text = "601〜610"
             shuffledQuestions = shuffleArray(goidon2L1aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 0 && CHAPTER == 1 {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "611〜620"
             shuffledQuestions = shuffleArray(goidon2L1barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 0 && CHAPTER == 2 {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "621〜630"
             shuffledQuestions = shuffleArray(goidon2L1carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 1 && CHAPTER == 0 {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "631〜640"
             shuffledQuestions = shuffleArray(goidon2L2aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 1 && CHAPTER == 1 {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "641〜650"
             shuffledQuestions = shuffleArray(goidon2L2barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 1 && CHAPTER == 2 {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "651〜660"
             shuffledQuestions = shuffleArray(goidon2L2carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 2 && CHAPTER == 0 {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "661〜670"
             shuffledQuestions = shuffleArray(goidon2L3aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 2 && CHAPTER == 1 {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "671〜680"
             shuffledQuestions = shuffleArray(goidon2L3barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 2 && CHAPTER == 2 {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "681〜690"
             shuffledQuestions = shuffleArray(goidon2L3carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 3 && CHAPTER == 0 {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "691〜700"
             shuffledQuestions = shuffleArray(goidon2L4aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 3 && CHAPTER == 1 {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "701〜710"
             shuffledQuestions = shuffleArray(goidon2L4barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 3 && CHAPTER == 2 {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "711〜720"
             shuffledQuestions = shuffleArray(goidon2L4carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 4 && CHAPTER == 0 {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "721〜730"
             shuffledQuestions = shuffleArray(goidon2L5aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 4 && CHAPTER == 1 {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "731〜740"
             shuffledQuestions = shuffleArray(goidon2L5barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 4 && CHAPTER == 2 {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "741〜750"
             shuffledQuestions = shuffleArray(goidon2L5carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 5 && CHAPTER == 0 {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "751〜760"
             shuffledQuestions = shuffleArray(goidon2L6aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 5 && CHAPTER == 1 {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "761〜770"
             shuffledQuestions = shuffleArray(goidon2L6barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 5 && CHAPTER == 2 {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "771〜780"
             shuffledQuestions = shuffleArray(goidon2L6carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 6 && CHAPTER == 0 {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "781〜790"
             shuffledQuestions = shuffleArray(goidon2L7aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 6 && CHAPTER == 1 {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "791〜800"
             shuffledQuestions = shuffleArray(goidon2L7barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 6 && CHAPTER == 2 {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "801〜810"
             shuffledQuestions = shuffleArray(goidon2L7carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 7 && CHAPTER == 0 {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "811〜820"
             shuffledQuestions = shuffleArray(goidon2L8aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 7 && CHAPTER == 1 {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "821〜830"
             shuffledQuestions = shuffleArray(goidon2L8barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 7 && CHAPTER == 2 {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "831〜840"
             shuffledQuestions = shuffleArray(goidon2L8carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 8 && CHAPTER == 0 {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "841〜850"
             shuffledQuestions = shuffleArray(goidon2L9aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 8 && CHAPTER == 1 {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "851〜860"
             shuffledQuestions = shuffleArray(goidon2L9barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 8 && CHAPTER == 2 {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "861〜870"
             shuffledQuestions = shuffleArray(goidon2L9carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 9 && CHAPTER == 0 {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "871〜880"
             shuffledQuestions = shuffleArray(goidon2L10aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 9 && CHAPTER == 1 {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "881〜890"
             shuffledQuestions = shuffleArray(goidon2L10barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 9 && CHAPTER == 2 {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "891〜900"
             shuffledQuestions = shuffleArray(goidon2L10carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 10 && CHAPTER == 0 {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "901〜910"
             shuffledQuestions = shuffleArray(goidon2L11aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 10 && CHAPTER == 1 {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "911〜920"
             shuffledQuestions = shuffleArray(goidon2L11barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 10 && CHAPTER == 2 {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "921〜930"
             shuffledQuestions = shuffleArray(goidon2L11carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 11 && CHAPTER == 0 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "931〜940"
             shuffledQuestions = shuffleArray(goidon2L12aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 11 && CHAPTER == 1 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "941〜950"
             shuffledQuestions = shuffleArray(goidon2L12barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 11 && CHAPTER == 2 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "951〜960"
             shuffledQuestions = shuffleArray(goidon2L12carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 12 && CHAPTER == 0 {
             titleLabel.text = "Lesson 13"
             titleShadowLabel.text = "Lesson 13"
             chapterLabel.text = "961〜970"
             shuffledQuestions = shuffleArray(goidon2L13aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 12 && CHAPTER == 1 {
             titleLabel.text = "Lesson 13"
             titleShadowLabel.text = "Lesson 13"
             chapterLabel.text = "971〜980"
             shuffledQuestions = shuffleArray(goidon2L13barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 12 && CHAPTER == 2 {
             titleLabel.text = "Lesson 13"
             titleShadowLabel.text = "Lesson 13"
             chapterLabel.text = "981〜990"
             shuffledQuestions = shuffleArray(goidon2L13carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 13 && CHAPTER == 0 {
             titleLabel.text = "Lesson 14"
             titleShadowLabel.text = "Lesson 14"
             chapterLabel.text = "991〜1000"
             shuffledQuestions = shuffleArray(goidon2L14aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 13 && CHAPTER == 1 {
             titleLabel.text = "Lesson 14"
             titleShadowLabel.text = "Lesson 14"
             chapterLabel.text = "1001〜1010"
             shuffledQuestions = shuffleArray(goidon2L14barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 13 && CHAPTER == 2 {
             titleLabel.text = "Lesson 14"
             titleShadowLabel.text = "Lesson 14"
             chapterLabel.text = "1011〜1020"
             shuffledQuestions = shuffleArray(goidon2L14carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 14 && CHAPTER == 0 {
             titleLabel.text = "Lesson 15"
             titleShadowLabel.text = "Lesson 15"
             chapterLabel.text = "1021〜1030"
             shuffledQuestions = shuffleArray(goidon2L15aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 14 && CHAPTER == 1 {
             titleLabel.text = "Lesson 15"
             titleShadowLabel.text = "Lesson 15"
             chapterLabel.text = "1031〜1040"
             shuffledQuestions = shuffleArray(goidon2L15barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 14 && CHAPTER == 2 {
             titleLabel.text = "Lesson 15"
             titleShadowLabel.text = "Lesson 15"
             chapterLabel.text = "1041〜1050"
             shuffledQuestions = shuffleArray(goidon2L15carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 15 && CHAPTER == 0 {
             titleLabel.text = "Lesson 16"
             titleShadowLabel.text = "Lesson 16"
             chapterLabel.text = "1051〜1060"
             shuffledQuestions = shuffleArray(goidon2L16aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 15 && CHAPTER == 1 {
             titleLabel.text = "Lesson 16"
             titleShadowLabel.text = "Lesson 16"
             chapterLabel.text = "1061〜1070"
             shuffledQuestions = shuffleArray(goidon2L16barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 15 && CHAPTER == 2 {
             titleLabel.text = "Lesson 16"
             titleShadowLabel.text = "Lesson 16"
             chapterLabel.text = "1071〜1080"
             shuffledQuestions = shuffleArray(goidon2L16carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 16 && CHAPTER == 0 {
             titleLabel.text = "Lesson 17"
             titleShadowLabel.text = "Lesson 17"
             chapterLabel.text = "1081〜1090"
             shuffledQuestions = shuffleArray(goidon2L17aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 16 && CHAPTER == 1 {
             titleLabel.text = "Lesson 17"
             titleShadowLabel.text = "Lesson 17"
             chapterLabel.text = "1091〜1100"
             shuffledQuestions = shuffleArray(goidon2L17barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 16 && CHAPTER == 2 {
             titleLabel.text = "Lesson 17"
             titleShadowLabel.text = "Lesson 17"
             chapterLabel.text = "1101〜1110"
             shuffledQuestions = shuffleArray(goidon2L17carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 17 && CHAPTER == 0 {
             titleLabel.text = "Lesson 18"
             titleShadowLabel.text = "Lesson 18"
             chapterLabel.text = "1111〜1120"
             shuffledQuestions = shuffleArray(goidon2L18aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 17 && CHAPTER == 1 {
             titleLabel.text = "Lesson 18"
             titleShadowLabel.text = "Lesson 18"
             chapterLabel.text = "1121〜1130"
             shuffledQuestions = shuffleArray(goidon2L18barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 17 && CHAPTER == 2 {
             titleLabel.text = "Lesson 18"
             titleShadowLabel.text = "Lesson 18"
             chapterLabel.text = "1131〜1140"
             shuffledQuestions = shuffleArray(goidon2L18carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 18 && CHAPTER == 0 {
             titleLabel.text = "Lesson 19"
             titleShadowLabel.text = "Lesson 19"
             chapterLabel.text = "1141〜1150"
             shuffledQuestions = shuffleArray(goidon2L19aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 18 && CHAPTER == 1 {
             titleLabel.text = "Lesson 19"
             titleShadowLabel.text = "Lesson 19"
             chapterLabel.text = "1151〜1160"
             shuffledQuestions = shuffleArray(goidon2L19barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 18 && CHAPTER == 2 {
             titleLabel.text = "Lesson 19"
             titleShadowLabel.text = "Lesson 19"
             chapterLabel.text = "1161〜1170"
             shuffledQuestions = shuffleArray(goidon2L19carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 19 && CHAPTER == 0 {
             titleLabel.text = "Lesson 20"
             titleShadowLabel.text = "Lesson 20"
             chapterLabel.text = "1171〜1180"
             shuffledQuestions = shuffleArray(goidon2L20aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 19 && CHAPTER == 1 {
             titleLabel.text = "Lesson 20"
             titleShadowLabel.text = "Lesson 20"
             chapterLabel.text = "1181〜1190"
             shuffledQuestions = shuffleArray(goidon2L20barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 19 && CHAPTER == 2 {
             titleLabel.text = "Lesson 20"
             titleShadowLabel.text = "Lesson 20"
             chapterLabel.text = "1191〜1200"
             shuffledQuestions = shuffleArray(goidon2L20carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GOIDON2 == 20 && CHAPTER == 0 {
             titleLabel.text = "For My Thesis"
             titleShadowLabel.text = "For My Thesis"
             chapterLabel.text = "1〜25"
             shuffledQuestions = shuffleArray(goidon2thesisarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         }
     }
     
@@ -1244,6 +1317,30 @@ class Goidon2YomiQuizViewController: UIViewController, UITextFieldDelegate {
             newArray[randomIndex] = temp
         }
         return newArray
+    }
+    
+    @IBAction func tapCardButton(_ sender: UIButton) {
+        toggleMeaning()
+    }
+    
+    func updateCard() {
+        let word = currentArray[index]
+        
+        kanjiLabel.text = word["kanji"]
+        meaningLabel.text = word["meaning"]
+        
+        meaningLabel.isHidden = true
+        kanjiLabel.isHidden = false
+    }
+    
+    func toggleMeaning() {
+        if meaningLabel.isHidden {
+            meaningLabel.isHidden = false
+            kanjiLabel.isHidden = true
+        } else {
+            meaningLabel.isHidden = true
+            kanjiLabel.isHidden = false
+        }
     }
     
     @IBAction func tapCheckButton() {
@@ -1377,7 +1474,7 @@ class Goidon2YomiQuizViewController: UIViewController, UITextFieldDelegate {
         } else {
             return
         }
-    
+        
         let currentQuestion = shuffledQuestions[currentQuestionIndex]
         let shuffledAnswer = currentQuestion["hiragana"]
         
@@ -1389,9 +1486,21 @@ class Goidon2YomiQuizViewController: UIViewController, UITextFieldDelegate {
             if currentQuestionIndex < shuffledQuestions.count - 1 {
                 currentQuestionIndex += 1
                 let nextQuestion = shuffledQuestions[currentQuestionIndex]
-                kanjiLabel.text = nextQuestion["kanji"]
+                kanjiLabel.text = nextQuestion["kanji"] // 次の問題のkanjiを表示
+                meaningLabel.text = nextQuestion["meaning"] // 次の問題のmeaningを表示
                 
                 textField.text = ""
+                
+                if isShowingMeaning {
+                    meaningLabel.isHidden = false
+                    kanjiLabel.isHidden = true
+                } else {
+                    meaningLabel.isHidden = true
+                    kanjiLabel.isHidden = false
+                }
+                
+                // 正解の場合にprogressViewを進める
+                updateProgressView()
             } else {
                 // 不正解の場合の処理
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -1415,4 +1524,15 @@ class Goidon2YomiQuizViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func updateProgressView() {
+        // currentArrayの要素数を取得
+        let numberOfItemsInCurrentArray = shuffledQuestions.count
+        
+        // 現在の進捗を計算（0% ～ 100%）
+        let currentProgress = Float(currentQuestionIndex + 1) / Float(numberOfItemsInCurrentArray)
+        
+        progressView.setProgress(currentProgress, animated: true)
+    }
+    
 }
+

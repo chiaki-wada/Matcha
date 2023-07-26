@@ -37,7 +37,7 @@
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.81568627449999997" green="0.68627450980000004" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="MDO-Bk-k4v" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="3" id="4sw-ab-yTq"/>
                 <constraint firstItem="x4l-J0-JBo" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-28" id="Q9y-g8-qBe"/>
@@ -48,7 +48,7 @@
             <connections>
                 <outlet property="levelLabel" destination="MDO-Bk-k4v" id="dtA-k1-4eX"/>
             </connections>
-            <point key="canvasLocation" x="179.38931297709922" y="17.95774647887324"/>
+            <point key="canvasLocation" x="178.62595419847327" y="17.605633802816904"/>
         </collectionViewCell>
     </objects>
 </document>

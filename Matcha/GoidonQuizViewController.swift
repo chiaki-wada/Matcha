@@ -13,6 +13,7 @@ class GoidonQuizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet var checkButton: UIButton!
@@ -23,10 +24,12 @@ class GoidonQuizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var kotaeLabel: UILabel!
     @IBOutlet var yomiganaLabel: UILabel!
     
+    var currentArray: [[String: String]] = []
+    var index = 0
+    
     var CHAPTER: Int = 0
     var GOIDON1: Int = 0
     
-    //語彙ドン！vol.1
     var goidon1L1aarray = [
         ["hiragana":"れべる","kanji":"レベル","meaning":"level"],
         ["hiragana":"せつめい","kanji":"説明する","meaning":"to explain"],
@@ -817,6 +820,10 @@ class GoidonQuizViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        progressView.transform = CGAffineTransformMakeScale(1.0, 2.0)
+        progressView.layer.cornerRadius = 5
+        progressView.clipsToBounds = true
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // 下側の二つの角を角丸にする
@@ -1360,6 +1367,9 @@ class GoidonQuizViewController: UIViewController, UITextFieldDelegate {
                 meaningLabel.text = nextQuestion["meaning"]
                 
                 textField.text = ""
+                
+                // 正解の場合にprogressViewを進める
+                updateProgressView()
             } else {
                 // 不正解の場合の処理
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -1383,6 +1393,21 @@ class GoidonQuizViewController: UIViewController, UITextFieldDelegate {
             self.relearnImageView.isHidden = true
             self.kotaeLabel.isHidden = true
             self.yomiganaLabel.isHidden = true
+        }
+    }
+    
+    func updateProgressView() {
+        // currentArrayの要素数を取得
+        let numberOfItemsInCurrentArray = shuffledQuestions.count
+
+        // 現在の進捗を計算（0% ～ 100%）
+        let currentProgress = Float(currentQuestionIndex) / Float(numberOfItemsInCurrentArray)
+        
+        // Set progress to 1.0 if on the last element
+        if currentQuestionIndex == shuffledQuestions.count - 1 {
+            progressView.setProgress(1.0, animated: true)
+        } else {
+            progressView.setProgress(currentProgress, animated: true)
         }
     }
     

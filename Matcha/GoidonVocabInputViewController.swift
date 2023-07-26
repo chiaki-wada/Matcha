@@ -13,6 +13,7 @@ class GoidonVocabInputViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet var cardButton: UIButton!
     
@@ -814,7 +815,6 @@ class GoidonVocabInputViewController: UIViewController {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //語彙ドン！vol.1
         if GOIDON1 as! Int == 0 && CHAPTER as! Int == 0 {
             return goidon1L1aarray.count
         }
@@ -1002,6 +1002,10 @@ class GoidonVocabInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        progressView.transform = CGAffineTransformMakeScale(1.0, 2.0)
+        progressView.layer.cornerRadius = 5
+            progressView.clipsToBounds = true
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // 下側の二つの角を角丸にする
@@ -1011,7 +1015,6 @@ class GoidonVocabInputViewController: UIViewController {
         
         backButton.isHidden = true
         
-        //語彙ドン！vol.1
         if GOIDON1 as! Int == 0 && CHAPTER as! Int == 0 {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
@@ -1460,17 +1463,37 @@ class GoidonVocabInputViewController: UIViewController {
         }
     }
     
+    
     @IBAction func tapBackButton(_ sender: UIButton) {
         if index > 0 {
             index -= 1
             updateCard()
+            
+            updateProgress()
         }
     }
     
     @IBAction func tapNextButton(_ sender: UIButton) {
-        if index < goidon1L1aarray.count - 1 {
+        if index < currentArray.count - 1 {
             index += 1
             updateCard()
+        
+            updateProgress()
+        }
+    }
+    
+    func updateProgress() {
+        // currentArrayの要素数を取得
+        let numberOfItemsInCurrentArray = currentArray.count
+        
+        // 現在の進捗を計算（0% ～ 100%）
+        let currentProgress = Float(index) / Float(numberOfItemsInCurrentArray)
+        
+        // Set progress to 1.0 if on the last element
+        if index == currentArray.count - 1 {
+                progressView.setProgress(1.0, animated: true)
+        } else {
+            progressView.setProgress(currentProgress, animated: true)
         }
     }
     
@@ -1499,7 +1522,6 @@ class GoidonVocabInputViewController: UIViewController {
         if let meaning = word["meaning"] {
             meaningLabel.text = meaning
         }
-        
         if meaningLabel.isHidden {
             meaningLabel.isHidden = false
             hiraganaLabel.isHidden = true
@@ -1636,14 +1658,5 @@ class GoidonVocabInputViewController: UIViewController {
         return [:]
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+
 }

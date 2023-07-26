@@ -15,20 +15,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Matcha" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Goidon2CollectionViewCell" id="gTV-IL-0wX" customClass="Goidon2CollectionViewCell" customModule="Matcha" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Genki1CollectionViewCell" id="r44-9u-fYo" customClass="Genki1CollectionViewCell" customModule="Matcha" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lesson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2G-2S-ufM">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lesson" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iqv-ig-wfp">
                         <rect key="frame" x="24.666666666666671" y="16" width="61" height="22"/>
                         <fontDescription key="fontDescription" name="Kefa-Bold" family="Kefa" pointSize="19"/>
                         <color key="textColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wza-t2-jO8">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mcP-Kn-RLe">
                         <rect key="frame" x="38" y="30.666666666666671" width="34" height="63"/>
                         <fontDescription key="fontDescription" name="Kefa-Bold" family="Kefa" pointSize="54"/>
                         <color key="textColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -36,16 +36,16 @@
                     </label>
                 </subviews>
             </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <color key="backgroundColor" red="0.81568627449999997" green="0.68627450980000004" blue="0.29803921570000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <viewLayoutGuide key="safeArea" id="wH0-x5-2KZ"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="j2G-2S-ufM" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-28" id="JGT-vX-LOB"/>
-                <constraint firstItem="j2G-2S-ufM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="UiE-VA-rMu"/>
-                <constraint firstItem="Wza-t2-jO8" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="evU-me-C8d"/>
-                <constraint firstItem="Wza-t2-jO8" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="7" id="t9Z-YJ-Nyq"/>
+                <constraint firstItem="Iqv-ig-wfp" firstAttribute="centerY" secondItem="r44-9u-fYo" secondAttribute="centerY" constant="-28" id="2ij-yE-1Ad"/>
+                <constraint firstItem="mcP-Kn-RLe" firstAttribute="centerY" secondItem="r44-9u-fYo" secondAttribute="centerY" constant="7" id="TP0-No-9cQ"/>
+                <constraint firstItem="Iqv-ig-wfp" firstAttribute="centerX" secondItem="r44-9u-fYo" secondAttribute="centerX" id="acN-tY-V23"/>
+                <constraint firstItem="mcP-Kn-RLe" firstAttribute="centerX" secondItem="r44-9u-fYo" secondAttribute="centerX" id="pUu-yF-AD6"/>
             </constraints>
             <connections>
-                <outlet property="lessonLabel" destination="Wza-t2-jO8" id="vyg-iM-fi0"/>
+                <outlet property="lessonLabel" destination="mcP-Kn-RLe" id="QQi-zE-REz"/>
             </connections>
             <point key="canvasLocation" x="137.40458015267174" y="19.014084507042256"/>
         </collectionViewCell>

@@ -14,6 +14,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet weak var textField: UITextField!
     @IBOutlet var checkButton: UIButton!
@@ -23,6 +24,9 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var relearnImageView: UIImageView!
     @IBOutlet var kotaeLabel: UILabel!
     @IBOutlet var yomiganaLabel: UILabel!
+    
+    var currentArray: [[String: String]] = []
+    var index = 0
     
     var CHAPTER: Int = 0
     var LEVEL: Int = 0
@@ -1805,6 +1809,10 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        progressView.transform = CGAffineTransformMakeScale(1.0, 2.0)
+        progressView.layer.cornerRadius = 5
+            progressView.clipsToBounds = true
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // 下側の二つの角を角丸にする
@@ -2555,6 +2563,7 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
             // エラー処理
             return
         }
+        
         let currentQuestion = shuffledQuestions[currentQuestionIndex]
         
         let shuffledAnswer = currentQuestion["kanji"]
@@ -2571,6 +2580,9 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
                 meaningLabel.text = nextQuestion["meaning"]
                 
                 textField.text = ""
+                
+                // 正解の場合にprogressViewを進める
+                updateProgressView()
             } else {
                 // 不正解の場合の処理
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -2597,17 +2609,19 @@ class QuizViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    func updateProgressView() {
+        // currentArrayの要素数を取得
+        let numberOfItemsInCurrentArray = shuffledQuestions.count
+
+        // 現在の進捗を計算（0% ～ 100%）
+        let currentProgress = Float(currentQuestionIndex) / Float(numberOfItemsInCurrentArray)
+        
+        // Set progress to 1.0 if on the last element
+        if currentQuestionIndex == shuffledQuestions.count - 1 {
+            progressView.setProgress(1.0, animated: true)
+        } else {
+            progressView.setProgress(currentProgress, animated: true)
+        }
+    }
     
 }

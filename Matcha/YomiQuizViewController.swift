@@ -14,14 +14,20 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
+    @IBOutlet var cardButton: UIButton!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet var checkButton: UIButton!
     @IBOutlet var kanjiLabel: UILabel!
+    @IBOutlet var meaningLabel: UILabel!
     @IBOutlet var checkmarkImageView: UIImageView!
     @IBOutlet var goodjobLabel: UILabel!
     @IBOutlet var relearnImageView: UIImageView!
     @IBOutlet var kotaeLabel: UILabel!
+    
+    var currentArray: [[String: String]] = []
+    var index = 0
     
     var CHAPTER: Int = 0
     var LEVEL: Int = 0
@@ -1798,12 +1804,18 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
     var currentQuestionIndex: Int = 0
     var shuffledQuestions: [[String:String]] = []
     
+    var isShowingMeaning = false
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        progressView.transform = CGAffineTransformMakeScale(1.0, 2.0)
+        progressView.layer.cornerRadius = 5
+            progressView.clipsToBounds = true
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
@@ -1815,6 +1827,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         
         // 初期状態で非表示に設定する
+        meaningLabel.isHidden = true
         checkmarkImageView.isHidden = true
         goodjobLabel.isHidden = true
         relearnImageView.isHidden = true
@@ -1833,6 +1846,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch1array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 1 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1840,6 +1854,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch2array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 2 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1847,6 +1862,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch3array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 3 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1854,6 +1870,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch4array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 4 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1861,6 +1878,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch5array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 5 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1868,6 +1886,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch6array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 6 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1875,6 +1894,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch7array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 7 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1882,6 +1902,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch8array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 8 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1889,6 +1910,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch9array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 9 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1896,6 +1918,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch10array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 10 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1903,6 +1926,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch11array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 11 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1910,6 +1934,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch12array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 12 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1917,6 +1942,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch13array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 13 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1924,6 +1950,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch14array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 14 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1931,6 +1958,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch15array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 15 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1938,6 +1966,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch16array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 16 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1945,6 +1974,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch17array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 17 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1952,6 +1982,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch18array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 18 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1959,6 +1990,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch19array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 19 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1966,6 +1998,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch20array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 20 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1973,6 +2006,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n1ch21array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 0 && CHAPTER == 21 {
             titleLabel.text = "JLPT N1 Vocabulary"
             titleShadowLabel.text = "JLPT N1 Vocabulary"
@@ -1980,6 +2014,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 13 words"
             shuffledQuestions = shuffleArray(n1ch22array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
             
         // JLPT N2
         } else if LEVEL == 1 && CHAPTER == 0 {
@@ -1989,6 +2024,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch1array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 1 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -1996,6 +2032,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch2array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 2 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2003,6 +2040,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch3array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 3 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2010,6 +2048,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch4array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 4 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2017,6 +2056,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch5array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 5 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2024,6 +2064,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch6array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 6 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2031,6 +2072,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch7array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 7 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2038,6 +2080,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch8array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 8 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2045,6 +2088,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch9array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 9 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2052,6 +2096,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch10array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 10 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2059,6 +2104,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch11array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 11 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2066,6 +2112,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch12array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 12 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2073,6 +2120,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch13array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 13 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2080,6 +2128,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch14array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 14 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2087,6 +2136,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch15array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 15 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2094,6 +2144,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch16array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 16 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2101,6 +2152,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch17array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 17 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2108,6 +2160,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch18array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 18 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2115,6 +2168,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch19array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 19 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2122,6 +2176,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch20array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 20 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2129,6 +2184,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch21array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 21 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2136,6 +2192,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch22array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 22 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2143,6 +2200,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch23array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 23 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2150,6 +2208,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch24array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 1 && CHAPTER == 24 {
             titleLabel.text = "JLPT N2 Vocabulary"
             titleShadowLabel.text = "JLPT N2 Vocabulary"
@@ -2157,6 +2216,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n2ch25array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
             
         // JLPT N3
         } else if LEVEL == 2 && CHAPTER == 0 {
@@ -2166,6 +2226,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch1array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 1 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2173,6 +2234,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch2array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 2 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2180,6 +2242,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch3array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 3 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2187,6 +2250,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch4array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 4 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2194,6 +2258,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch5array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 5 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2201,6 +2266,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch6array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 6 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2208,6 +2274,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch7array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 7 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2215,6 +2282,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch8array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 8 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2222,6 +2290,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch9array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 9 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2229,6 +2298,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch10array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 10 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2236,6 +2306,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch11array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 11 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2243,6 +2314,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch12array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 12 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2250,6 +2322,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch13array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 13 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2257,6 +2330,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch14array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 14 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2264,6 +2338,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch15array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 15 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2271,6 +2346,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch16array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 16 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2278,6 +2354,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch17array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 17 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2285,6 +2362,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch18array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 18 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2292,6 +2370,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch19array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 19 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2299,6 +2378,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch20array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 20 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2306,6 +2386,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch21array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 21 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2313,6 +2394,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch22array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 22 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2320,6 +2402,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch23array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 23 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2327,6 +2410,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch24array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 24 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2334,6 +2418,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch25array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 25 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2341,6 +2426,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch26array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 26 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2348,6 +2434,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch27array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 27 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2355,6 +2442,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch28array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 28 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2362,6 +2450,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch29array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if LEVEL == 2 && CHAPTER == 29 {
             titleLabel.text = "JLPT N3 Vocabulary"
             titleShadowLabel.text = "JLPT N3 Vocabulary"
@@ -2369,6 +2458,7 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             totalLabel.text = "total 20 words"
             shuffledQuestions = shuffleArray(n3ch30array)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
+            meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         }
     }
     
@@ -2382,6 +2472,30 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             newArray[randomIndex] = temp
         }
         return newArray
+    }
+    
+    @IBAction func tapCardButton(_ sender: UIButton) {
+        toggleMeaning()
+    }
+    
+    func updateCard() {
+        let word = shuffledQuestions[currentQuestionIndex]
+        
+        kanjiLabel.text = word["kanji"]
+        meaningLabel.text = word["meaning"]
+        
+        meaningLabel.isHidden = true
+        kanjiLabel.isHidden = false
+    }
+    
+    func toggleMeaning() {
+        if meaningLabel.isHidden {
+            meaningLabel.isHidden = false
+            kanjiLabel.isHidden = true
+        } else {
+            meaningLabel.isHidden = true
+            kanjiLabel.isHidden = false
+        }
     }
     
     @IBAction func tapCheckButton() {
@@ -2552,7 +2666,6 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
         }
         
         let currentQuestion = shuffledQuestions[currentQuestionIndex]
-        
         let shuffledAnswer = currentQuestion["hiragana"]
         
         if answer == shuffledAnswer {
@@ -2563,9 +2676,21 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             if currentQuestionIndex < shuffledQuestions.count - 1 {
                 currentQuestionIndex += 1
                 let nextQuestion = shuffledQuestions[currentQuestionIndex]
-                kanjiLabel.text = nextQuestion["kanji"]
+                kanjiLabel.text = nextQuestion["kanji"] // 次の問題のkanjiを表示
+                meaningLabel.text = nextQuestion["meaning"] // 次の問題のmeaningを表示
                 
                 textField.text = ""
+                
+                if isShowingMeaning {
+                    meaningLabel.isHidden = false
+                    kanjiLabel.isHidden = true
+                } else {
+                    meaningLabel.isHidden = true
+                    kanjiLabel.isHidden = false
+                }
+                
+                // 正解の場合にprogressViewを進める
+                updateProgressView()
             } else {
                 // 不正解の場合の処理
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -2587,6 +2712,16 @@ class YomiQuizViewController: UIViewController, UITextFieldDelegate {
             self.relearnImageView.isHidden = true
             self.kotaeLabel.isHidden = true
         }
+    }
+    
+    func updateProgressView() {
+        // currentArrayの要素数を取得
+        let numberOfItemsInCurrentArray = shuffledQuestions.count
+
+        // 現在の進捗を計算（0% ～ 100%）
+        let currentProgress = Float(currentQuestionIndex + 1) / Float(numberOfItemsInCurrentArray)
+        
+        progressView.setProgress(currentProgress, animated: true)
     }
     
 }

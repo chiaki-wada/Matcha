@@ -13,6 +13,7 @@ class Goidon2VocabInputViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
+    @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet var cardButton: UIButton!
     
@@ -1033,6 +1034,10 @@ class Goidon2VocabInputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        progressView.transform = CGAffineTransformMakeScale(1.0, 2.0)
+        progressView.layer.cornerRadius = 5
+            progressView.clipsToBounds = true
+        
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // 下側の二つの角を角丸にする
@@ -1502,6 +1507,8 @@ class Goidon2VocabInputViewController: UIViewController {
         if index > 0 {
             index -= 1
             updateCard()
+            
+            updateProgress()
         }
     }
     
@@ -1509,6 +1516,23 @@ class Goidon2VocabInputViewController: UIViewController {
         if index < currentArray.count - 1 {
             index += 1
             updateCard()
+            
+            updateProgress()
+        }
+    }
+    
+    func updateProgress() {
+        // currentArrayの要素数を取得
+        let numberOfItemsInCurrentArray = currentArray.count
+        
+        // 現在の進捗を計算（0% ～ 100%）
+        let currentProgress = Float(index) / Float(numberOfItemsInCurrentArray)
+        
+        // Set progress to 1.0 if on the last element
+        if index == currentArray.count - 1 {
+                progressView.setProgress(1.0, animated: true)
+        } else {
+            progressView.setProgress(currentProgress, animated: true)
         }
     }
     
@@ -1678,16 +1702,5 @@ class Goidon2VocabInputViewController: UIViewController {
         return [:]
     }
     
-    
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

@@ -12,8 +12,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     @IBOutlet var jlptCollectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var goidon1CollectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var goidon2CollectionViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var genki1CollectionViewHeightConstraint: NSLayoutConstraint!
     
     @IBOutlet var jlptCollectionView: UICollectionView!
+    @IBOutlet var genki1CollectionView: UICollectionView!
     @IBOutlet var goidon1CollectionView: UICollectionView!
     @IBOutlet var goidon2CollectionView: UICollectionView!
     
@@ -22,11 +24,15 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     var jlptItemSize: CGSize!
     var goidon1ItemSize: CGSize!
     var goidon2ItemSize: CGSize!
+    var genki1ItemSize: CGSize!
     
     var logoImageView: UIImageView!
     var jlptLevelArray = ["N1","N2","N3"]
+    var genki1LessonArray =
+        ["1","2","3","4","5","6","7","8","9","10","11","12"]
     var goidon1LessonArray = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"]
     var goidon2LessonArray = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","★"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +46,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         jlptCollectionView.delegate = self
         jlptCollectionView.dataSource = self
         
+        genki1CollectionView.register(UINib(nibName: "Genki1CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Genki1CollectionViewCell")
+        genki1CollectionView.delegate = self
+        genki1CollectionView.dataSource = self
+        
         goidon1CollectionView.register(UINib(nibName: "Goidon1CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Goidon1CollectionViewCell")
         goidon1CollectionView.delegate = self
         goidon1CollectionView.dataSource = self
@@ -47,6 +57,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         goidon2CollectionView.register(UINib(nibName: "Goidon2CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Goidon2CollectionViewCell")
         goidon2CollectionView.delegate = self
         goidon2CollectionView.dataSource = self
+        
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
@@ -56,6 +67,13 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         jlptLayout.minimumLineSpacing = 10
         jlptLayout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         jlptCollectionView.collectionViewLayout = jlptLayout
+        
+        let genki1Layout = UICollectionViewFlowLayout()
+        genki1Layout.scrollDirection = .horizontal
+        genki1Layout.itemSize = CGSize(width: genki1CollectionView.bounds.height, height: genki1CollectionView.bounds.height)
+        genki1Layout.minimumLineSpacing = 10
+        genki1Layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        genki1CollectionView.collectionViewLayout = genki1Layout
         
         let goidon1Layout = UICollectionViewFlowLayout()
         goidon1Layout.scrollDirection = .horizontal
@@ -76,6 +94,8 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == jlptCollectionView {
             return jlptLevelArray.count
+        } else if collectionView == genki1CollectionView {
+            return genki1LessonArray.count
         } else if collectionView == goidon1CollectionView {
             return goidon1LessonArray.count
         } else if collectionView == goidon2CollectionView {
@@ -89,6 +109,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             let cell: CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
             cell.levelLabel.text = jlptLevelArray[indexPath.item]
             return cell
+        } else if collectionView == genki1CollectionView {
+            let cell: Genki1CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Genki1CollectionViewCell", for: indexPath) as! Genki1CollectionViewCell
+            cell.lessonLabel.text = genki1LessonArray[indexPath.item]
+            return cell
         } else if collectionView == goidon1CollectionView {
             let cell: Goidon1CollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Goidon1CollectionViewCell", for: indexPath) as! Goidon1CollectionViewCell
             cell.lessonLabel.text = goidon1LessonArray[indexPath.item]
@@ -101,6 +125,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         return UICollectionViewCell()
     }
     
+    //この部分いらない説？
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == jlptCollectionView {
             let width = jlptCollectionView.bounds.width / 3
@@ -110,6 +135,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             return CGSize(width: width, height: width)
         } else if collectionView == goidon2CollectionView {
             let width = goidon1CollectionView.bounds.width / 20
+            return CGSize(width: width, height: width)
+        } else if collectionView == genki1CollectionView {
+            let width = genki1CollectionView.bounds.width / 12
             return CGSize(width: width, height: width)
         }
         return CGSize.zero
@@ -127,6 +155,11 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let chapterVC = storyboard.instantiateViewController(withIdentifier: "ChapterViewController") as! ChapterViewController
                 navigationController?.pushViewController(chapterVC, animated: true)
+            } else if collectionView == genki1CollectionView {
+                saveData.set(indexPath.item, forKey: "GENKI1")
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let genki1LessonVC = storyboard.instantiateViewController(withIdentifier: "Genki1LessonViewController") as! Genki1LessonViewController
+                navigationController?.pushViewController(genki1LessonVC, animated: true)
             } else if collectionView == goidon1CollectionView {
                 saveData.set(indexPath.item, forKey: "GOIDON1")
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)

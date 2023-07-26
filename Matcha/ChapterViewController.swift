@@ -75,7 +75,7 @@ class ChapterViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            //let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "ChapterCell", for: indexPath)
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "ChapterCell", for: indexPath) as! ChapterTableViewCell
             
             if LEVEL as! Int == 0 {

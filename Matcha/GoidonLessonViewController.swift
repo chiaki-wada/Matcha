@@ -266,7 +266,6 @@ class GoidonLessonViewController: UIViewController, UITableViewDelegate, UITable
         else if GOIDON1 as! Int == 19 {
             cell.chapterLabel!.text = goidon1L20array[indexPath.row]
         }
-        
         return cell
     }
     

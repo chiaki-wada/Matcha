@@ -34,6 +34,12 @@
 		F49070242A23641F00599340 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070232A23641F00599340 /* FinishViewController.swift */; };
 		F49070262A246DD800599340 /* PressableMaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070252A246DD800599340 /* PressableMaterialButton.swift */; };
 		F49070282A246ED300599340 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49070272A246ED300599340 /* UIColor.swift */; };
+		F49741CF2A6ED8400095D0DD /* Genki1CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49741CD2A6ED8400095D0DD /* Genki1CollectionViewCell.swift */; };
+		F49741D02A6ED8400095D0DD /* Genki1CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F49741CE2A6ED8400095D0DD /* Genki1CollectionViewCell.xib */; };
+		F49741D22A6F64540095D0DD /* Genki1LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49741D12A6F64540095D0DD /* Genki1LessonViewController.swift */; };
+		F49741D42A6F6CA00095D0DD /* Genki1VocabInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49741D32A6F6CA00095D0DD /* Genki1VocabInputViewController.swift */; };
+		F49741D62A6F6CB70095D0DD /* Genki1YomiQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49741D52A6F6CB70095D0DD /* Genki1YomiQuizViewController.swift */; };
+		F49741D82A6F6CCA0095D0DD /* Genki1QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49741D72A6F6CCA0095D0DD /* Genki1QuizViewController.swift */; };
 		F49B2D2D2A6005ED00A7C2E0 /* GoidonLessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49B2D2C2A6005ED00A7C2E0 /* GoidonLessonViewController.swift */; };
 		F49B2D2F2A605A4800A7C2E0 /* GoidonVocabInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49B2D2E2A605A4800A7C2E0 /* GoidonVocabInputViewController.swift */; };
 		F49B2D312A605F8500A7C2E0 /* GoidonYomiQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49B2D302A605F8500A7C2E0 /* GoidonYomiQuizViewController.swift */; };
@@ -75,6 +81,12 @@
 		F49070232A23641F00599340 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		F49070252A246DD800599340 /* PressableMaterialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressableMaterialButton.swift; sourceTree = "<group>"; };
 		F49070272A246ED300599340 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		F49741CD2A6ED8400095D0DD /* Genki1CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genki1CollectionViewCell.swift; sourceTree = "<group>"; };
+		F49741CE2A6ED8400095D0DD /* Genki1CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Genki1CollectionViewCell.xib; sourceTree = "<group>"; };
+		F49741D12A6F64540095D0DD /* Genki1LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genki1LessonViewController.swift; sourceTree = "<group>"; };
+		F49741D32A6F6CA00095D0DD /* Genki1VocabInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genki1VocabInputViewController.swift; sourceTree = "<group>"; };
+		F49741D52A6F6CB70095D0DD /* Genki1YomiQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genki1YomiQuizViewController.swift; sourceTree = "<group>"; };
+		F49741D72A6F6CCA0095D0DD /* Genki1QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genki1QuizViewController.swift; sourceTree = "<group>"; };
 		F49B2D2C2A6005ED00A7C2E0 /* GoidonLessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoidonLessonViewController.swift; sourceTree = "<group>"; };
 		F49B2D2E2A605A4800A7C2E0 /* GoidonVocabInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoidonVocabInputViewController.swift; sourceTree = "<group>"; };
 		F49B2D302A605F8500A7C2E0 /* GoidonYomiQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoidonYomiQuizViewController.swift; sourceTree = "<group>"; };
@@ -122,12 +134,15 @@
 				F47758422A19F76000A06944 /* ViewController.swift */,
 				F427E3642A6448F700DCE044 /* VerticalScrollView.swift */,
 				F48F25D32A5D3E68006B4939 /* CollectionViewCell.swift */,
-				F48F25D42A5D3E68006B4939 /* CollectionViewCell.xib */,
+				F49741CD2A6ED8400095D0DD /* Genki1CollectionViewCell.swift */,
 				F48FF79E2A5FC42C00435AD0 /* Goidon1CollectionViewCell.swift */,
-				F48FF79F2A5FC42C00435AD0 /* Goidon1CollectionViewCell.xib */,
 				F48FF7A22A5FC5A600435AD0 /* Goidon2CollectionViewCell.swift */,
+				F48F25D42A5D3E68006B4939 /* CollectionViewCell.xib */,
+				F49741CE2A6ED8400095D0DD /* Genki1CollectionViewCell.xib */,
+				F48FF79F2A5FC42C00435AD0 /* Goidon1CollectionViewCell.xib */,
 				F48FF7A32A5FC5A600435AD0 /* Goidon2CollectionViewCell.xib */,
 				F490700B2A1D191000599340 /* ChapterViewController.swift */,
+				F49741D12A6F64540095D0DD /* Genki1LessonViewController.swift */,
 				F49B2D2C2A6005ED00A7C2E0 /* GoidonLessonViewController.swift */,
 				F49B2D342A615D6900A7C2E0 /* Goidon2LessonViewController.swift */,
 				F48614F32A2C931700DDB6D5 /* ChapterTableViewCell.swift */,
@@ -136,10 +151,13 @@
 				F490701D2A2256A000599340 /* VocabInputViewController.swift */,
 				F49B2D2E2A605A4800A7C2E0 /* GoidonVocabInputViewController.swift */,
 				F49B2D362A615DF100A7C2E0 /* Goidon2VocabInputViewController.swift */,
+				F49741D32A6F6CA00095D0DD /* Genki1VocabInputViewController.swift */,
 				F48614F72A2EB13100DDB6D5 /* YomiQuizViewController.swift */,
+				F49741D52A6F6CB70095D0DD /* Genki1YomiQuizViewController.swift */,
 				F49B2D302A605F8500A7C2E0 /* GoidonYomiQuizViewController.swift */,
 				F49B2D382A615E3600A7C2E0 /* Goidon2YomiQuizViewController.swift */,
 				F490701F2A22617D00599340 /* QuizViewController.swift */,
+				F49741D72A6F6CCA0095D0DD /* Genki1QuizViewController.swift */,
 				F49B2D322A60667100A7C2E0 /* GoidonQuizViewController.swift */,
 				F49B2D3A2A615E8800A7C2E0 /* Goidon2QuizViewController.swift */,
 				F49070232A23641F00599340 /* FinishViewController.swift */,
@@ -240,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F477585B2A1A115100A06944 /* 获取商用授权.url in Resources */,
+				F49741D02A6ED8400095D0DD /* Genki1CollectionViewCell.xib in Resources */,
 				F47758482A19F76E00A06944 /* Assets.xcassets in Resources */,
 				F48FF7A12A5FC42C00435AD0 /* Goidon1CollectionViewCell.xib in Resources */,
 				F48FF7A52A5FC5A600435AD0 /* Goidon2CollectionViewCell.xib in Resources */,
@@ -264,7 +283,9 @@
 				F490700C2A1D191000599340 /* ChapterViewController.swift in Sources */,
 				F49B2D2F2A605A4800A7C2E0 /* GoidonVocabInputViewController.swift in Sources */,
 				F490701E2A2256A000599340 /* VocabInputViewController.swift in Sources */,
+				F49741CF2A6ED8400095D0DD /* Genki1CollectionViewCell.swift in Sources */,
 				F49B2D352A615D6900A7C2E0 /* Goidon2LessonViewController.swift in Sources */,
+				F49741D42A6F6CA00095D0DD /* Genki1VocabInputViewController.swift in Sources */,
 				F49070202A22617E00599340 /* QuizViewController.swift in Sources */,
 				F47758432A19F76000A06944 /* ViewController.swift in Sources */,
 				F48FF7A42A5FC5A600435AD0 /* Goidon2CollectionViewCell.swift in Sources */,
@@ -273,11 +294,14 @@
 				F48FF79D2A5EBE7600435AD0 /* ListViewController.swift in Sources */,
 				F49B2D3B2A615E8800A7C2E0 /* Goidon2QuizViewController.swift in Sources */,
 				F48FF7A02A5FC42C00435AD0 /* Goidon1CollectionViewCell.swift in Sources */,
+				F49741D62A6F6CB70095D0DD /* Genki1YomiQuizViewController.swift in Sources */,
 				F49070242A23641F00599340 /* FinishViewController.swift in Sources */,
 				F47758412A19F76000A06944 /* SceneDelegate.swift in Sources */,
 				F49B2D332A60667100A7C2E0 /* GoidonQuizViewController.swift in Sources */,
 				F427E3652A6448F700DCE044 /* VerticalScrollView.swift in Sources */,
 				F49B2D392A615E3600A7C2E0 /* Goidon2YomiQuizViewController.swift in Sources */,
+				F49741D22A6F64540095D0DD /* Genki1LessonViewController.swift in Sources */,
+				F49741D82A6F6CCA0095D0DD /* Genki1QuizViewController.swift in Sources */,
 				F48F25D52A5D3E68006B4939 /* CollectionViewCell.swift in Sources */,
 				F49070262A246DD800599340 /* PressableMaterialButton.swift in Sources */,
 				F49B2D2D2A6005ED00A7C2E0 /* GoidonLessonViewController.swift in Sources */,
@@ -423,7 +447,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.1;
 				DEVELOPMENT_TEAM = T5L3A8N227;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Matcha/Info.plist;
@@ -441,7 +465,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.wadachi.Matcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -460,7 +484,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2.1;
 				DEVELOPMENT_TEAM = T5L3A8N227;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Matcha/Info.plist;
@@ -478,7 +502,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = app.wadachi.Matcha;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
