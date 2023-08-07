@@ -13,6 +13,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
+    @IBOutlet var totalLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet var cardButton: UIButton!
@@ -45,9 +46,9 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
     ]
     
     var genki1L1barray = [
-        ["hiragana":"–さん","kanji":"–さん","meaning":"Ms./Mr. (after a person's name (or position, etc.))"],
-        ["hiragana":"じ","kanji":"–時","meaning":"o'clock"],
-        ["hiragana":"じん","kanji":"–人","meaning":"-ian (e.g. Italian) (indicates nationality, race, origin, etc.)"],
+        ["hiragana":"〜さん","kanji":"〜さん","meaning":"Ms./Mr. (after a person's name (or position, etc.))"],
+        ["hiragana":"じ","kanji":"〜時","meaning":"o'clock"],
+        ["hiragana":"じん","kanji":"〜人","meaning":"-ian (e.g. Italian) (indicates nationality, race, origin, etc.)"],
         ["hiragana":"せんせい","kanji":"先生","meaning":"teacher"],
         ["hiragana":"せんもん","kanji":"専門","meaning":"speciality"],
         ["hiragana":"だいがく","kanji":"大学","meaning":"university"],
@@ -59,7 +60,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
     
     var genki1L1carray = [
         ["hiragana":"にほん","kanji":"日本","meaning":"Japan"],
-        ["hiragana":"ねんせい","kanji":"–年生","meaning":"student in ... year"],
+        ["hiragana":"ねんせい","kanji":"〜年生","meaning":"student in ... year"],
         ["hiragana":"はい","kanji":"はい","meaning":"half"],
         ["hiragana":"はん","kanji":"半","meaning":"half"],
         ["hiragana":"ばんごう","kanji":"番号","meaning":"number"],
@@ -664,7 +665,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"あるく","kanji":"歩く","meaning":"to walk"],
         ["hiragana":"いちばん","kanji":"一番","meaning":"number one; first; first place; best"],
         ["hiragana":"かげつ","kanji":"か月","meaning":"months (period of)"],
-        ["hiragana":"ご","kanji":"–後","meaning":"after"],
+        ["hiragana":"ご","kanji":"〜後","meaning":"after"],
         ["hiragana":"このごろ","kanji":"この頃","meaning":"these days"]
     ]
     
@@ -806,9 +807,9 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"でしょう","kanji":"でしょう","meaning":"right?; don't you agree?"],
         ["hiragana":"ど","kanji":"度","meaning":"degree (angle, temperature, scale, etc.)"],
         ["hiragana":"にさんにち","kanji":"二、三日","meaning":"two or three days"],
-        ["hiragana":"–ので","kanji":"–ので","meaning":"because of...; the reason is ...; given that ..."],
+        ["hiragana":"ので","kanji":"ので","meaning":"because of...; the reason is ...; given that ..."],
         ["hiragana":"はじめて","kanji":"初めて","meaning":"for the first time"],
-        ["hiragana":"もうすぐ","kanji":"もうする","meaning":"soon; before long"]
+        ["hiragana":"もうすぐ","kanji":"もうすぐ","meaning":"soon; before long"]
     ]
     
     var currentQuestionIndex: Int = 0
@@ -853,6 +854,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L1aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -860,6 +862,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L1barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -867,6 +870,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L1carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -874,6 +878,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L1darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -881,6 +886,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "41〜50"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L1earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -888,6 +894,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "51〜58"
+            totalLabel.text = "total 8 words"
             shuffledQuestions = shuffleArray(genki1L1farray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -895,6 +902,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L2aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -902,6 +910,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L2barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -909,6 +918,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L2carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -916,6 +926,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L2darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -923,6 +934,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "41〜45"
+            totalLabel.text = "total 5 words"
             shuffledQuestions = shuffleArray(genki1L2earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -930,6 +942,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L3aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -937,6 +950,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L3barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -944,6 +958,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L3carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -951,6 +966,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L3darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -958,6 +974,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "41〜47"
+            totalLabel.text = "total 7 words"
             shuffledQuestions = shuffleArray(genki1L3earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -965,6 +982,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L4aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -972,6 +990,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L4barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -979,6 +998,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L4carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -986,6 +1006,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L4darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -993,6 +1014,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "41〜50"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L4earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1000,6 +1022,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "51〜53"
+            totalLabel.text = "total 3 words"
             shuffledQuestions = shuffleArray(genki1L4farray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1007,6 +1030,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L5aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1014,6 +1038,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L5barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1021,6 +1046,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L5carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1028,6 +1054,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L5darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1035,6 +1062,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "41〜50"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L5earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1042,6 +1070,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L6aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1049,6 +1078,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L6barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1056,6 +1086,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L6carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1063,6 +1094,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L6darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1070,6 +1102,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "41〜48"
+            totalLabel.text = "total 8 words"
             shuffledQuestions = shuffleArray(genki1L6earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1077,6 +1110,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L7aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1084,6 +1118,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L7barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1091,6 +1126,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L7carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1098,6 +1134,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L7darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1105,6 +1142,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "41〜46"
+            totalLabel.text = "total 6 words"
             shuffledQuestions = shuffleArray(genki1L7earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1112,6 +1150,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L8aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1119,6 +1158,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L8barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1126,6 +1166,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L8carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1133,6 +1174,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L8darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1140,6 +1182,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "41〜47"
+            totalLabel.text = "total 7 words"
             shuffledQuestions = shuffleArray(genki1L8earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1147,6 +1190,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L9aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1154,6 +1198,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L9barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1161,6 +1206,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L9carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1168,6 +1214,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L9darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1175,6 +1222,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "41〜50"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L9earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1182,6 +1230,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L10aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1189,6 +1238,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L10barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1196,6 +1246,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L10carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1203,6 +1254,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L10darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1210,6 +1262,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "41〜48"
+            totalLabel.text = "total 8 words"
             shuffledQuestions = shuffleArray(genki1L10earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1217,6 +1270,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L11aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1224,6 +1278,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L11barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1231,6 +1286,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L11carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1238,6 +1294,7 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L11darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1245,41 +1302,47 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "41〜51"
+            totalLabel.text = "total 11 words"
             shuffledQuestions = shuffleArray(genki1L11earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
-        } else if GENKI1 == 10 && CHAPTER == 0 {
+        } else if GENKI1 == 11 && CHAPTER == 0 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L12aarray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
-        } else if GENKI1 == 10 && CHAPTER == 1 {
+        } else if GENKI1 == 11 && CHAPTER == 1 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L12barray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
-        } else if GENKI1 == 10 && CHAPTER == 2 {
+        } else if GENKI1 == 11 && CHAPTER == 2 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L12carray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
-        } else if GENKI1 == 10 && CHAPTER == 3 {
+        } else if GENKI1 == 11 && CHAPTER == 3 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L12darray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
-        } else if GENKI1 == 10 && CHAPTER == 4 {
+        } else if GENKI1 == 11 && CHAPTER == 4 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "41〜51"
+            totalLabel.text = "total 11 words"
             shuffledQuestions = shuffleArray(genki1L12earray)
             kanjiLabel.text = shuffledQuestions[currentQuestionIndex]["kanji"]
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
@@ -1456,52 +1519,54 @@ class Genki1YomiQuizViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let currentQuestion = shuffledQuestions[currentQuestionIndex]
-        let shuffledAnswer = currentQuestion["hiragana"]
-        
-        if answer == shuffledAnswer {
-            // 正解の場合の処理
-            checkmarkImageView.isHidden = false
-            goodjobLabel.isHidden = false
+        if currentQuestionIndex < shuffledQuestions.count {
+            let currentQuestion = shuffledQuestions[currentQuestionIndex]
+            let shuffledAnswer = currentQuestion["hiragana"]
             
-            if currentQuestionIndex < shuffledQuestions.count - 1 {
-                currentQuestionIndex += 1
-                let nextQuestion = shuffledQuestions[currentQuestionIndex]
-                kanjiLabel.text = nextQuestion["kanji"] // 次の問題のkanjiを表示
-                meaningLabel.text = nextQuestion["meaning"] // 次の問題のmeaningを表示
+            if answer == shuffledAnswer {
+                // 正解の場合の処理
+                checkmarkImageView.isHidden = false
+                goodjobLabel.isHidden = false
                 
-                textField.text = ""
-                
-                if isShowingMeaning {
-                    meaningLabel.isHidden = false
-                    kanjiLabel.isHidden = true
+                if currentQuestionIndex < shuffledQuestions.count - 1 {
+                    currentQuestionIndex += 1
+                    let nextQuestion = shuffledQuestions[currentQuestionIndex]
+                    kanjiLabel.text = nextQuestion["kanji"] // 次の問題のkanjiを表示
+                    meaningLabel.text = nextQuestion["meaning"] // 次の問題のmeaningを表示
+                    
+                    textField.text = ""
+                    
+                    if isShowingMeaning {
+                        meaningLabel.isHidden = false
+                        kanjiLabel.isHidden = true
+                    } else {
+                        meaningLabel.isHidden = true
+                        kanjiLabel.isHidden = false
+                    }
+                    
+                    // 正解の場合にprogressViewを進める
+                    updateProgressView()
                 } else {
-                    meaningLabel.isHidden = true
-                    kanjiLabel.isHidden = false
+                    // 不正解の場合の処理
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let genki1QuizViewController = storyboard.instantiateViewController(withIdentifier: "Genki1QuizViewController") as! Genki1QuizViewController
+                        self.navigationController?.pushViewController(genki1QuizViewController, animated: true)
+                    }
+                    return
                 }
-                
-                // 正解の場合にprogressViewを進める
-                updateProgressView()
             } else {
-                // 不正解の場合の処理
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                    let genki1QuizViewController = storyboard.instantiateViewController(withIdentifier: "Genki1QuizViewController") as! Genki1QuizViewController
-                    self.navigationController?.pushViewController(genki1QuizViewController, animated: true)
-                }
-                return
+                relearnImageView.isHidden = false
+                kotaeLabel.isHidden = false
+                kotaeLabel.text = shuffledAnswer
             }
-        } else {
-            relearnImageView.isHidden = false
-            kotaeLabel.isHidden = false
-            kotaeLabel.text = shuffledAnswer
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            self.checkmarkImageView.isHidden = true
-            self.goodjobLabel.isHidden = true
-            self.relearnImageView.isHidden = true
-            self.kotaeLabel.isHidden = true
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.checkmarkImageView.isHidden = true
+                self.goodjobLabel.isHidden = true
+                self.relearnImageView.isHidden = true
+                self.kotaeLabel.isHidden = true
+            }
         }
     }
     

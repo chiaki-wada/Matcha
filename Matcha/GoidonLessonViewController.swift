@@ -104,7 +104,7 @@ class GoidonLessonViewController: UIViewController, UITableViewDelegate, UITable
         }
         else if GOIDON1 as! Int == 12 {
             titleLabel.text = "Lesson 13"
-            titleShadowLabel.text = "esson 13"
+            titleShadowLabel.text = "Lesson 13"
         }
         else if GOIDON1 as! Int == 13 {
             titleLabel.text = "Lesson 14"

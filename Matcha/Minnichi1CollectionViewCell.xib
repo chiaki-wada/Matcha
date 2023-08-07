@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="kefa-bold.ttf">
+            <string>Kefa-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController" customModule="Matcha" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Minnichi1CollectionViewCell" id="4AT-yI-bfv" customClass="Minnichi1CollectionViewCell" customModule="Matcha" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="第" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZ8-t0-6W3">
+                        <rect key="frame" x="17.666666666666668" y="16" width="19.000000000000004" height="22"/>
+                        <fontDescription key="fontDescription" name="Kefa-Bold" family="Kefa" pointSize="19"/>
+                        <color key="textColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crQ-wQ-vSa">
+                        <rect key="frame" x="38" y="23.666666666666671" width="34" height="63"/>
+                        <fontDescription key="fontDescription" name="Kefa-Bold" family="Kefa" pointSize="54"/>
+                        <color key="textColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="課" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78R-1V-NBF">
+                        <rect key="frame" x="73.666666666666671" y="72" width="19" height="22"/>
+                        <fontDescription key="fontDescription" name="Kefa-Bold" family="Kefa" pointSize="19"/>
+                        <color key="textColor" red="0.92549019610000005" green="0.90980392160000001" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="NT8-ud-Hs1"/>
+            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="78R-1V-NBF" firstAttribute="centerY" secondItem="4AT-yI-bfv" secondAttribute="centerY" constant="28" id="AnZ-HH-Nv7"/>
+                <constraint firstItem="crQ-wQ-vSa" firstAttribute="centerY" secondItem="4AT-yI-bfv" secondAttribute="centerY" id="Uhu-DA-xVY"/>
+                <constraint firstItem="crQ-wQ-vSa" firstAttribute="centerX" secondItem="4AT-yI-bfv" secondAttribute="centerX" id="VzO-qB-F4I"/>
+                <constraint firstItem="LZ8-t0-6W3" firstAttribute="centerX" secondItem="4AT-yI-bfv" secondAttribute="centerX" constant="-28" id="YF4-GB-Y5J"/>
+                <constraint firstItem="LZ8-t0-6W3" firstAttribute="centerY" secondItem="4AT-yI-bfv" secondAttribute="centerY" constant="-28" id="ba2-xp-2aA"/>
+                <constraint firstItem="78R-1V-NBF" firstAttribute="centerX" secondItem="4AT-yI-bfv" secondAttribute="centerX" constant="28" id="eVt-Mj-jAc"/>
+            </constraints>
+            <connections>
+                <outlet property="lessonLabel" destination="crQ-wQ-vSa" id="d87-Lb-1TY"/>
+            </connections>
+            <point key="canvasLocation" x="137.40458015267174" y="19.014084507042256"/>
+        </collectionViewCell>
+    </objects>
+</document>

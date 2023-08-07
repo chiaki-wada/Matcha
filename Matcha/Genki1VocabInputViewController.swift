@@ -808,7 +808,7 @@ class Genki1VocabInputViewController: UIViewController {
         ["hiragana":"にさんにち","kanji":"二、三日","meaning":"two or three days"],
         ["hiragana":"–ので","kanji":"–ので","meaning":"because of...; the reason is ...; given that ..."],
         ["hiragana":"はじめて","kanji":"初めて","meaning":"for the first time"],
-        ["hiragana":"もうすぐ","kanji":"もうする","meaning":"soon; before long"]
+        ["hiragana":"もうすぐ","kanji":"もうすぐ","meaning":"soon; before long"]
     ]
     
     var isShowingMeaning = false

@@ -13,6 +13,7 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var titleShadowLabel: UILabel!
     @IBOutlet var chapterLabel: UILabel!
+    @IBOutlet var totalLabel: UILabel!
     @IBOutlet weak var progressView: UIProgressView!
     
     @IBOutlet weak var textField: UITextField!
@@ -44,9 +45,9 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
     ]
     
     var genki1L1barray = [
-        ["hiragana":"–さん","kanji":"–さん","meaning":"Ms./Mr. (after a person's name (or position, etc.))"],
-        ["hiragana":"じ","kanji":"–時","meaning":"o'clock"],
-        ["hiragana":"じん","kanji":"–人","meaning":"-ian (e.g. Italian) (indicates nationality, race, origin, etc.)"],
+        ["hiragana":"さん","kanji":"〜さん","meaning":"Ms./Mr. (after a person's name (or position, etc.))"],
+        ["hiragana":"じ","kanji":"〜時","meaning":"o'clock"],
+        ["hiragana":"じん","kanji":"〜人","meaning":"-ian (e.g. Italian) (indicates nationality, race, origin, etc.)"],
         ["hiragana":"せんせい","kanji":"先生","meaning":"teacher"],
         ["hiragana":"せんもん","kanji":"専門","meaning":"speciality"],
         ["hiragana":"だいがく","kanji":"大学","meaning":"university"],
@@ -58,7 +59,7 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
     
     var genki1L1carray = [
         ["hiragana":"にほん","kanji":"日本","meaning":"Japan"],
-        ["hiragana":"ねんせい","kanji":"–年生","meaning":"student in ... year"],
+        ["hiragana":"ねんせい","kanji":"〜年生","meaning":"student in ... year"],
         ["hiragana":"はい","kanji":"はい","meaning":"half"],
         ["hiragana":"はん","kanji":"半","meaning":"half"],
         ["hiragana":"ばんごう","kanji":"番号","meaning":"number"],
@@ -663,7 +664,7 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"あるく","kanji":"歩く","meaning":"to walk"],
         ["hiragana":"いちばん","kanji":"一番","meaning":"number one; first; first place; best"],
         ["hiragana":"かげつ","kanji":"か月","meaning":"months (period of)"],
-        ["hiragana":"ご","kanji":"–後","meaning":"after"],
+        ["hiragana":"ご","kanji":"〜後","meaning":"after"],
         ["hiragana":"このごろ","kanji":"この頃","meaning":"these days"]
     ]
     
@@ -805,9 +806,9 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
         ["hiragana":"でしょう","kanji":"でしょう","meaning":"right?; don't you agree?"],
         ["hiragana":"ど","kanji":"度","meaning":"degree (angle, temperature, scale, etc.)"],
         ["hiragana":"にさんにち","kanji":"二、三日","meaning":"two or three days"],
-        ["hiragana":"–ので","kanji":"–ので","meaning":"because of...; the reason is ...; given that ..."],
+        ["hiragana":"ので","kanji":"ので","meaning":"because of...; the reason is ...; given that ..."],
         ["hiragana":"はじめて","kanji":"初めて","meaning":"for the first time"],
-        ["hiragana":"もうすぐ","kanji":"もうする","meaning":"soon; before long"]
+        ["hiragana":"もうすぐ","kanji":"もうすぐ","meaning":"soon; before long"]
     ]
     
     var currentQuestionIndex: Int = 0
@@ -850,372 +851,434 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L1aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 0 && CHAPTER == 1 {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L1barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 0 && CHAPTER == 2 {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L1carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 0 && CHAPTER == 3 {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L1darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 0 && CHAPTER == 4 {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "41〜50"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L1earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 0 && CHAPTER == 5 {
             titleLabel.text = "Lesson 1"
             titleShadowLabel.text = "Lesson 1"
             chapterLabel.text = "51〜58"
+            totalLabel.text = "total 8 words"
             shuffledQuestions = shuffleArray(genki1L1farray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 1 && CHAPTER == 0 {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L2aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 1 && CHAPTER == 1 {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L2barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 1 && CHAPTER == 2 {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L2carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 1 && CHAPTER == 3 {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L2darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 1 && CHAPTER == 4 {
             titleLabel.text = "Lesson 2"
             titleShadowLabel.text = "Lesson 2"
             chapterLabel.text = "41〜45"
+            totalLabel.text = "total 5 words"
             shuffledQuestions = shuffleArray(genki1L2earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 2 && CHAPTER == 0 {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L3aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 2 && CHAPTER == 1 {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L3barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 2 && CHAPTER == 2 {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L3carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 2 && CHAPTER == 3 {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L3darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 2 && CHAPTER == 4 {
             titleLabel.text = "Lesson 3"
             titleShadowLabel.text = "Lesson 3"
             chapterLabel.text = "41〜47"
+            totalLabel.text = "total 7 words"
             shuffledQuestions = shuffleArray(genki1L3earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 3 && CHAPTER == 0 {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L4aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 3 && CHAPTER == 1 {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L4barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 3 && CHAPTER == 2 {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L4carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 3 && CHAPTER == 3 {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L4darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 3 && CHAPTER == 4 {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "41〜50"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L4earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 4 && CHAPTER == 5 {
             titleLabel.text = "Lesson 4"
             titleShadowLabel.text = "Lesson 4"
             chapterLabel.text = "51〜53"
+            totalLabel.text = "total 3 words"
             shuffledQuestions = shuffleArray(genki1L4farray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 4 && CHAPTER == 0 {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L5aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 4 && CHAPTER == 1 {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L5barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 4 && CHAPTER == 2 {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L5carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 4 && CHAPTER == 3 {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L5darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 4 && CHAPTER == 4 {
             titleLabel.text = "Lesson 5"
             titleShadowLabel.text = "Lesson 5"
             chapterLabel.text = "41〜50"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L5earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 5 && CHAPTER == 0 {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L6aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 5 && CHAPTER == 1 {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L6barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 5 && CHAPTER == 2 {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L6carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 5 && CHAPTER == 3 {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L6darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 5 && CHAPTER == 4 {
             titleLabel.text = "Lesson 6"
             titleShadowLabel.text = "Lesson 6"
             chapterLabel.text = "41〜48"
+            totalLabel.text = "total 8 words"
             shuffledQuestions = shuffleArray(genki1L6earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 6 && CHAPTER == 0 {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L7aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 6 && CHAPTER == 1 {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L7barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 6 && CHAPTER == 2 {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L7carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 6 && CHAPTER == 3 {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L7darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 6 && CHAPTER == 4 {
             titleLabel.text = "Lesson 7"
             titleShadowLabel.text = "Lesson 7"
             chapterLabel.text = "41〜46"
+            totalLabel.text = "total 6 words"
             shuffledQuestions = shuffleArray(genki1L7earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 7 && CHAPTER == 0 {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L8aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 7 && CHAPTER == 1 {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L8barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 7 && CHAPTER == 2 {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L8carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 7 && CHAPTER == 3 {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L8darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 7 && CHAPTER == 4 {
             titleLabel.text = "Lesson 8"
             titleShadowLabel.text = "Lesson 8"
             chapterLabel.text = "41〜47"
+            totalLabel.text = "total 7 words"
             shuffledQuestions = shuffleArray(genki1L8earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 8 && CHAPTER == 0 {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L9aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 8 && CHAPTER == 1 {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L9barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 8 && CHAPTER == 2 {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L9carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 8 && CHAPTER == 3 {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L9darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 8 && CHAPTER == 4 {
             titleLabel.text = "Lesson 9"
             titleShadowLabel.text = "Lesson 9"
             chapterLabel.text = "41〜50"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L9earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 9 && CHAPTER == 0 {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L10aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 9 && CHAPTER == 1 {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L10barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 9 && CHAPTER == 2 {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L10carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 9 && CHAPTER == 3 {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L10darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 9 && CHAPTER == 4 {
             titleLabel.text = "Lesson 10"
             titleShadowLabel.text = "Lesson 10"
             chapterLabel.text = "41〜48"
+            totalLabel.text = "total 8 words"
             shuffledQuestions = shuffleArray(genki1L10earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 10 && CHAPTER == 0 {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L11aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 10 && CHAPTER == 1 {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L11barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 10 && CHAPTER == 2 {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L11carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 10 && CHAPTER == 3 {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L11darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 10 && CHAPTER == 4 {
             titleLabel.text = "Lesson 11"
             titleShadowLabel.text = "Lesson 11"
             chapterLabel.text = "41〜51"
+            totalLabel.text = "total 11 words"
             shuffledQuestions = shuffleArray(genki1L11earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
-        } else if GENKI1 == 10 && CHAPTER == 0 {
+        } else if GENKI1 == 11 && CHAPTER == 0 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "1〜10"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L12aarray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
-        } else if GENKI1 == 10 && CHAPTER == 1 {
+        } else if GENKI1 == 11 && CHAPTER == 1 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "11〜20"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L12barray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
-        } else if GENKI1 == 10 && CHAPTER == 2 {
+        } else if GENKI1 == 11 && CHAPTER == 2 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "21〜30"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L12carray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
-        } else if GENKI1 == 10 && CHAPTER == 3 {
+        } else if GENKI1 == 11 && CHAPTER == 3 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "31〜40"
+            totalLabel.text = "total 10 words"
             shuffledQuestions = shuffleArray(genki1L12darray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         } else if GENKI1 == 10 && CHAPTER == 4 {
             titleLabel.text = "Lesson 12"
             titleShadowLabel.text = "Lesson 12"
             chapterLabel.text = "41〜51"
+            totalLabel.text = "total 11 words"
             shuffledQuestions = shuffleArray(genki1L12earray)
             meaningLabel.text = shuffledQuestions[currentQuestionIndex]["meaning"]
         }
@@ -1234,7 +1297,6 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func tapCheckButton() {
-        
         guard let answer = textField.text else { return }
         
         let currentQuestionArray: [Dictionary<String, String>]
@@ -1366,7 +1428,8 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
         } else {
             return
         }
-    
+        
+        //現在の問題を取得
         let currentQuestion = shuffledQuestions[currentQuestionIndex]
         
         let shuffledAnswer = currentQuestion["kanji"]
@@ -1378,6 +1441,7 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
             goodjobLabel.isHidden = false
             
             if currentQuestionIndex < shuffledQuestions.count - 1 {
+                // 次の問題がある場合、次の問題に進む
                 currentQuestionIndex += 1
                 let nextQuestion = shuffledQuestions[currentQuestionIndex]
                 meaningLabel.text = nextQuestion["meaning"]
@@ -1387,7 +1451,7 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
                 // 正解の場合にprogressViewを進める
                 updateProgressView()
             } else {
-                // 不正解の場合の処理
+                // 最後の問題まで回答した場合の処理
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let finishViewController = storyboard.instantiateViewController(withIdentifier: "FinishViewController") as! FinishViewController
@@ -1396,6 +1460,7 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
                 return
             }
         } else {
+            // 不正解の場合の処理
             relearnImageView.isHidden = false
             kotaeLabel.isHidden = false
             yomiganaLabel.isHidden = false
@@ -1404,6 +1469,7 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            // 2秒後に表示を隠す
             self.checkmarkImageView.isHidden = true
             self.goodjobLabel.isHidden = true
             self.relearnImageView.isHidden = true
@@ -1415,7 +1481,7 @@ class Genki1QuizViewController: UIViewController, UITextFieldDelegate {
     func updateProgressView() {
         // currentArrayの要素数を取得
         let numberOfItemsInCurrentArray = shuffledQuestions.count
-
+        
         // 現在の進捗を計算（0% ～ 100%）
         let currentProgress = Float(currentQuestionIndex) / Float(numberOfItemsInCurrentArray)
         
